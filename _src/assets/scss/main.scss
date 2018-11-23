@@ -1,1 +1,127 @@
-@import 'core/variables';
+@import "core/variables";
+
+.body-index {
+  margin: 0;
+  padding: 0;
+  background-color: $color_1;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.logo_awesome {
+  width: 250px;
+  margin-top: 59px;
+}
+
+.text_create-card {
+  text-align: center;
+}
+
+.h1-index {
+  color: $color_2;
+  font-size: 19px;
+  font-weight: $font-weight_bold;
+  font-family: $font-family_1;
+}
+
+.h2-index {
+  color: $color_3;
+  font-size: 16px;
+  font-family: $font-family_2;
+  font-weight: $font-weight_regular;
+}
+
+.p-index {
+  color: $color_4;
+  font-size: 13px;
+  font-weight: $font-weight_regular;
+  font-family: $font-family_2;
+}
+
+.nav-index {
+  box-sizing: border-box;
+  border: 2px solid $color_2;
+  border-radius: 4px;
+  margin: 25px;
+}
+
+.ul-index {
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.li-index {
+  list-style-type: none;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fa-object-ungroup,
+.fa-keyboard {
+  font-weight: $font-weight_regular;
+}
+
+.fas {
+  color: $color_2;
+  font-size: 28px;
+}
+
+.btn-start {
+  background-color: $color_5;
+  border: 1px solid $color_6;
+  border-radius: 21px;
+  width: 129px;
+  height: 42px;
+  margin-bottom: 30px;
+  &:hover {
+    background-color: $color_4;
+    border: 3px solid $color_9;
+  }
+  &:hover .btn-start_a {
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+.btn-start_a {
+  color: $color_7;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: $font-weight_semi-bold;
+  font-family: $font-family_2;
+  margin-top: 38px;
+}
+
+.btn-start_center {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-index {
+  background-color: $color_7;
+  border: 1px solid $color_8;
+  text-align: center;
+  padding: 20px;
+}
+
+.copyright-index {
+  color: $color_9;
+  font-size: 14px;
+  font-weight: $font-weight_regular;
+  font-family: $font-family_2;
+}
+
+.logo-adalab {
+  height: 40px;
+}
+
+.logo-undefined {
+  width: 150px;
+}
