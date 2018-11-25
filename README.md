@@ -45,6 +45,7 @@ The structure of the folders looks like this:
 /
 `- _src
    |- assets
+   |  |- icons
    |  |- images
    |  |- js
    |  `- scss
@@ -60,6 +61,9 @@ Is included the package [**gulp-html-partial**](https://www.npmjs.com/package/gu
 
 ## CSS
 Is included the package [**gulp-combine-mq**](https://www.npmjs.com/package/gulp-combine-mq) groups all media queries at the end of the CSS document.
+
+## Images and icons
+We have in **_src/** a folder for the project’s images and another for the icons as the favicon  or the icons for mobile devices. The last ones are generated in the root of the folders **public/** and **docs/**.
 
 ## JS
 The JSON with configuration specifies the JS files we use and the order they must process theirselves.
