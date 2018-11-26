@@ -1,10 +1,14 @@
 @import "core/variables";
-
-.body-index {
-  margin: 0;
+*{
+  box-sizing: border-box;
+  margin:0;
   padding: 0;
-  background-color: $color_1;
 }
+
+body{
+  background-color: $color_main_boneWhite;
+}
+
 
 header {
   display: flex;
@@ -21,29 +25,29 @@ header {
 }
 
 .h1-index {
-  color: $color_2;
+  color: $color_main_orange;
   font-size: 19px;
   font-weight: $font-weight_bold;
-  font-family: $font-family_1;
+  font-family: $font-family_title;
 }
 
 .h2-index {
-  color: $color_3;
+  color: $color_main_gray;
   font-size: 16px;
-  font-family: $font-family_2;
+  font-family: $font-family_main;
   font-weight: $font-weight_regular;
 }
 
 .p-index {
-  color: $color_4;
+  color: $color_main_green;
   font-size: 13px;
   font-weight: $font-weight_regular;
-  font-family: $font-family_2;
+  font-family: $font-family_main;
 }
 
 .nav-index {
   box-sizing: border-box;
-  border: 2px solid $color_2;
+  border: 2px solid $color_main_orange;
   border-radius: 4px;
   margin: 25px;
 }
@@ -69,20 +73,20 @@ header {
 }
 
 .fas {
-  color: $color_2;
+  color: $color_main_orange;
   font-size: 28px;
 }
 
 .btn-start {
-  background-color: $color_5;
-  border: 1px solid $color_6;
+  background-color: $color_green_Medium;
+  border: 1px solid $color_border_gray;
   border-radius: 21px;
   width: 129px;
   height: 42px;
   margin-bottom: 30px;
   &:hover {
-    background-color: $color_4;
-    border: 3px solid $color_9;
+    background-color: $color_green_Dark;
+    border: 3px solid $color_footer_gray;
   }
   &:hover .btn-start_a {
     font-weight: bold;
@@ -91,11 +95,11 @@ header {
 }
 
 .btn-start_a {
-  color: $color_7;
+  color: $color_main_pureWhite;
   text-decoration: none;
   font-size: 16px;
   font-weight: $font-weight_semi-bold;
-  font-family: $font-family_2;
+  font-family: $font-family_main;
   margin-top: 38px;
 }
 
@@ -105,17 +109,17 @@ header {
 }
 
 .footer-index {
-  background-color: $color_7;
-  border: 1px solid $color_8;
+  background-color: $color_main_pureWhite;
+  border: 1px solid $color_main_division;
   text-align: center;
   padding: 20px;
 }
 
 .copyright-index {
-  color: $color_9;
+  color: $color_footer_gray;
   font-size: 14px;
   font-weight: $font-weight_regular;
-  font-family: $font-family_2;
+  font-family: $font-family_main;
 }
 
 .logo-adalab {
