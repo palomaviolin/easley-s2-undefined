@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>undefined-team project</title>
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/card.css">
     </head>
     
     <body>
@@ -34,39 +34,58 @@
                     </ul>
                 </div>
             </section>
-            <section>
-                <ul>
-                    <li>
+            <section class="section2">
+                <ul class="section2__list">
+                    <li class="section2__list--collapsible1">
                          <h2><i class="far fa-object-ungroup"></i>Design</h2>
+
                         <div>^</div>
-                        <div>
-                            <div>Colors</div>
-                            <label></label>
-                            <input>
-                            <label></label>
-                            <input>
-                            <label></label>
-                            <input>
-                        </div>
-                        <div>
-                            <div>Fonts</div>
-                            <label></label>
-                            <input>
-                            <label></label>
-                            <input>
-                            <label></label>
-                            <input>
+                        <div class="hidden">
+                            <div class="section2__colors--wrapper">
+                                <div>Colors</div>
+                                <div>
+                                    <label for="palette__green">
+                                        <input id="palette__green" type="radio" value="color__green" name="palette__color">
+                                        <div class="palette__green--dark"></div>
+                                        <div class="palette__green--medium"></div>
+                                        <div class="palette__green--light"></div>
+                                    </label>
+                                    <label for="palette__red">
+                                        <input id="palette__red" type="radio" value="color__red" name="palette__color">
+                                        <div class="palette__red--dark"></div>
+                                        <div class="palette__red--medium"></div>
+                                        <div class="palette__red--light"></div>
+                                    </label>
+                                    <label for="palette__gray">
+                                        <input id="palette__gray" type="radio" value="color__gray" name="palette__color">
+                                        <div class="palette__gray--dark"></div>
+                                        <div class="palette__gray--medium"></div>
+                                        <div class="palette__gray--light"></div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <div>Fonts</div>
+                                <label for="font__option--1">
+                                    <input id="font__option--1" type="radio" value="Ubuntu" name="fontfamily__option">Ubuntu</label>
+                                <label for="font__option--2">
+                                    <input id="font__option--2" type="radio" value="Comic Sans" name="fontfamily__option">Comic Sans</label>
+                                <label for="font__option--3">
+                                    <input id="font__option--3" type="radio" value="Montserrat" name="fontfamily__option">Montserrat</label>
+                            </div>
                         </div>
                     </li>
-                    <li>
-                         <h2><i class="far fa-object-ungroup"></i>Fill</h2>
+                    <li class="section2__list--collapsible2">
+                         <h2><i class="fas fa-keyboard"></i>Complete</h2>
+
                         <div>^</div>
                         <form></form>
                     </li>
-                    <li>
-                         <h2><i class="far fa-object-ungroup"></i>Share</h2>
+                    <li class="section2__list--collapsible3">
+                         <h2><i class="fas fa-share-alt"></i>Share</h2>
+
                         <div>^</div>
-                        <button><i></i><a></a>
+                        <button><i></i><a>Create visit card</a>
                         </button>
                     </li>
                 </ul>
@@ -86,3 +105,6 @@
     </body>
 
 </html>
+<!-- DESIGN - Colors - Fonts COMPLETE - Full name - Job position - Profile
+image + Add image - Email - Telephone number - LinkedIn - GitHub - Skills
+(max 3) + HTML/CSS/React SHARE -->
