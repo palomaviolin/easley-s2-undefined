@@ -16,19 +16,115 @@ body{
     display:flex;
     flex-direction: row;
 }
-.palette__green--dark{ 
-    background-color: $color_green_Dark;
+
+/* Here starts DESIGN styles */
+
+.palette__triple--box {
+    display: flex;
+    flex-direction: row;
+}
+
+.palette__dimensions{
     width: 30px;
     height: 25px;
 }
 
+.palette__green, .palette__red, .palette__gray {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.palette__green--dark{ 
+    background-color: $color_green_Dark;
+}
+
 .palette__green--medium{ 
     background-color: $color_green_Medium;
-    width: 30px;
-    height: 25px;
 }
-.palette__green--medium{ 
+
+.palette__green--light{ 
     background-color: $color_green_Light;
-    width: 30px;
-    height: 25px;
+}
+
+.palette__red--dark{ 
+    background-color: $color_red_Dark;
+}
+
+.palette__red--medium{ 
+    background-color: $color_red_Medium;
+}
+.palette__red--light{ 
+    background-color: $color_red_Light;
+}
+
+.palette__gray--dark{ 
+    background-color: $color_gray_Dark;
+}
+
+.palette__gray--medium{ 
+    background-color: $color_gray_Medium;
+}
+.palette__gray--light{ 
+    background-color: $color_gray_Light;
+}
+
+
+.fonts__container{
+    display: flex;
+    flex-direction: row;
+}
+
+.fontfamily__types{
+    display: flex;
+    flex-direction: column;
+}
+
+.h2__card--page {
+    font-family: $font-family_main;
+    font-weight: $font-weight_semi-bold;
+    font-size: 18px;
+    color: $color_main_gray;
+    text-transform: uppercase;
+}
+
+.icon__card-page {
+    color: $color_main_orange;
+    font-size: 18px;
+}
+
+.icon__arrow--card-page{
+    font-size: 18px;
+    color: $color_main_gray;
+}
+
+.fonts__color--and--font {
+    font-family: $font-family_main;
+    font-weight: $font-weight_semi-bold;
+    font-size: 14px;
+    color: $color_main_gray;
+    text-transform: uppercase;
+}
+
+/* Here starts COLLAPSIBLES */
+
+.collapsible {
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.active, .collapsible:hover {
+    background-color: $color_main_division;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
 }
