@@ -20,3 +20,16 @@
   width: 110px;
   margin: 7px;
 }
+
+@media all and (min-width: 768px) {
+  .footer-index {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .copy__and--logoundefined {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
