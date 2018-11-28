@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    
+
     <header>
         <img class="logo_awesome" src="assets/images/descarga.svg">
     </header class="header-index">
@@ -118,10 +118,12 @@
                         <form action="">
 
                             <div class="titles__complete-form"><label for="email">Full name</label></div>
-                            <div><input size="43" placeholder="Ej: Sally Hill" id="name" type="text" name="name" required></div>
+                            <div><input size="43" placeholder="Ej: Sally Hill" id="name" type="text" name="name"
+                                    required></div>
 
                             <div class="titles__complete-form"><label for="email">Job position</label></div>
-                            <div><input size="43" placeholder="Ej: Front-end unicorn" id="job" type="text" name="job" required></div>
+                            <div><input size="43" placeholder="Ej: Front-end unicorn" id="job" type="text" name="job"
+                                    required></div>
 
                             <div class="titles__complete-form"><label for="image">Profile image</label></div>
                             <div>
@@ -130,16 +132,20 @@
                             </div>
 
                             <div class="titles__complete-form"><label for="email">Email</label></div>
-                            <div><input size="43" placeholder="Ej: sally.hill@gmail.com" id="email" type="email" name="email" required></div>
+                            <div><input size="43" placeholder="Ej: sally.hill@gmail.com" id="email" type="email" name="email"
+                                    required></div>
 
                             <div class="titles__complete-form"><label for="telf_movil">Telephone number</label></div>
-                            <div><input size="43" placeholder="Ej: 555-55-55-55" id="telf_movil" type="text" name="telf_movil" pattern="^6[0-9]{8}$" required></div>
+                            <div><input size="43" placeholder="Ej: 555-55-55-55" id="telf_movil" type="text" name="telf_movil"
+                                    pattern="^6[0-9]{8}$" required></div>
 
                             <div class="titles__complete-form"><label for="email">LinkedIn</label></div>
-                            <div><input size="43" placeholder="Ej: linkedin.com/in/sally-hill" id="linkedin" type="email" name="linkedin" required></div>
+                            <div><input size="43" placeholder="Ej: linkedin.com/in/sally-hill" id="linkedin" type="email"
+                                    name="linkedin" required></div>
 
                             <div class="titles__complete-form"><label for="email">GitHub</label></div>
-                            <div><input size="43" placeholder="Ej: @sally-hill" id="github" type="email" name="github" required></div>
+                            <div><input size="43" placeholder="Ej: @sally-hill" id="github" type="email" name="github"
+                                    required></div>
 
                             <div class="titles__complete-form"><label for="skills">Skills (max 3)</label></div>
 
@@ -167,28 +173,28 @@
                         <div><i class="fas fa-angle-up icon__arrow--card-page"></i></div>
                     </div>
                     <div class="content">
-                        <button class="button__create-card collapsible__button--share">
+                        <button class="collapsible button__create-card">
                             <i class="far fa-id-card"></i>
                             <a> Create visit card</a>
                         </button>
+                        <div class="content content2">
+                            <div class="title__card--created">La tarjeta ha sido creada</div>
+                            <a class="title__card--link">https://awesome-profile-card.com?id=A456DF0001</a>
+                            <button class="button__twitter">
+                                <i class="fab fa-twitter"></i>
+                                <a>Compartir en twitter</a>
+                            </button>
+                        </div>
                     </div>
                 </li>
             </ul>
-            <div class="content__of-button-create-card">
-                <div class="title__card--created">La tarjeta ha sido creada</div>
-                <a class="title__card--link">https://awesome-profile-card.com?id=A456DF0001</a>
-                <button class="button__twitter">
-                    <i class="fab fa-twitter"></i>
-                    <a>Compartir en twitter</a>
-                </button>
-            </div>
+
         </section>
     </main>
-    
+
     <partial src="_footer.html" label="Main"></partial>
 
     <script type="text/javascript" src="assets/js/main.min.js"></script>
 </body>
 
 </html>
-

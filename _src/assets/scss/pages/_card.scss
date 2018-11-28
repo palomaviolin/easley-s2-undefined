@@ -227,12 +227,22 @@
 
 /* Here start COLLAPSIBLE of ButtonShare */
 
-.active__button--share,
-.collapsible__button--share:hover {
+.activeButtonShare,
+.collapsibleButtonShare:hover {
   background-color: $color_main_inactive;
 }
 
-.content__of-button-create-card {
-  display: none;
-  overflow: hidden;
+.title__card--created, .title__card--link, .button__twitter {
+  display: flex;
+  justify-content: center;
+  margin: 5px auto;
+}
+
+.button__create-card {
+  width: 220px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
