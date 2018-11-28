@@ -1,18 +1,56 @@
-$color_1: #f5f5f5;
-$color_2: #e17334;
-$color_3: #54585a;
-$color_4: #114e4e;
-$color_5: #438792;
-$color_6: #979797;
-$color_7: white;
-$color_8: #d8d8d8;
-$color_9: #6b6b6b;
+///-----COLORS-----///
 
-$font-family_1: 'Merriweather', serif;
-$font-family_2: 'Open Sans', sans-serif;
-$font-family_3: 'Montserrat', sans-serif;
-$font-family_4: 'Ubuntu', sans-serif;
-$font-family_5: 'Comic Sans MS', arial;
+//--MAIN COLORS--//
+
+//background
+$color_main_boneWhite: #f5f5f5;
+$color_main_pureWhite: white;
+
+//fonts
+$color_main_gray: #54585a;
+$color_footer_gray: #6b6b6b;
+$color_main_green: #114e4e;
+
+//elements
+$color_main_orange: #e17334;
+$color_main_division: #d8d8d8;
+$color_main_inactive: #d5d5d5;
+$color_main_blueTwitter: #00a0f5;
+$color_border_gray: #979797;
+
+//--PALETTES--//
+
+//green
+$color_green_Dark: $color_main_green;
+$color_green_Medium: #438792;
+$color_green_Light: #a2deaf;
+
+//red
+$color_red_Dark: #420101;
+$color_red_Medium: #bd1010;
+$color_red_Light: #e95626;
+
+//gray
+$color_gray_Dark: #3e5b65;
+$color_gray_Medium: #dfe5eb;
+$color_gray_Light:#a0c0cf;
+
+
+///-----FONT FAMILIES----///
+
+$font-family_title: 'Merriweather',
+serif;
+$font-family_main: 'Open Sans',
+sans-serif;
+$font-family_option1: 'Ubuntu',
+sans-serif;
+$font-family_option2: 'Comic Sans MS',
+arial;
+$font-family_option3: 'Montserrat',
+sans-serif;
+
+
+///-----WEIGHTS-----///
 
 $font-weight_regular: 400;
 $font-weight_medium: 500;
