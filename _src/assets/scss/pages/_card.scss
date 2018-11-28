@@ -5,16 +5,19 @@
   );
 }
 
-.section2__colors--wrapper {
-  display: flex;
-  flex-direction: row;
-}
-
 /* Here start DESIGN styles */
+
+.section2__colors--wrapper {
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    padding-bottom: 8px;
+}
 
 .palette__triple--box {
   display: flex;
   flex-direction: row;
+  padding-left: 8px;
 }
 
 .palette__dimensions {
@@ -27,6 +30,7 @@
 .palette__gray {
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin-bottom: 20px;
 }
 
@@ -67,6 +71,7 @@
 .fonts__container {
   display: flex;
   flex-direction: row;
+  padding-bottom: 20px;
 }
 
 .fontfamily__types {
@@ -98,26 +103,39 @@
   font-size: 14px;
   color: $color_main_gray;
   text-transform: uppercase;
+  width: 50%;
+}
+
+.fontfamily__options {
+    margin-bottom: 9px;
 }
 
 .ubuntu {
   font-family: $font-family_option1;
   font-weight: $font-weight_semi-bold;
   font-size: 16px;
+  padding-left: 3px;
 }
 
 .comic-sans {
   font-family: $font-family_option2;
   font-size: 16px;
+  padding-left: 3px;
 }
 
 .merriweather {
   font-family: $font-family_option3;
   font-weight: $font-weight_regular;
   font-size: 16px;
+  padding-left: 3px;
 }
 
 /* Here start COMPLETE styles */
+
+.titles__complete-form {
+    padding-top: 10px;
+    padding-bottom: 2px;
+}
 
 .button__add--image {
   width: 140px;
@@ -202,7 +220,7 @@
 }
 
 .content {
-  padding: 0 18px;
+  padding: 0 18px 30px 18px;
   display: none;
   overflow: hidden;
 }
