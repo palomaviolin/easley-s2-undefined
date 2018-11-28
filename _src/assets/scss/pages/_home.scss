@@ -28,6 +28,8 @@
   border: 2px solid $color_main_orange;
   border-radius: 4px;
   margin: 25px;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 
 .ul-index {
@@ -61,6 +63,7 @@
   border-radius: 21px;
   width: 129px;
   height: 42px;
+  margin-top: 10px;
   margin-bottom: 30px;
   &:hover {
     background-color: $color_green_Dark;
