@@ -253,7 +253,8 @@
   color: $color_main_green;
 }
 
-.icon_radius {
-  border-radius: 2px;
-  color: $color_green_Light;
+.icon_border {
+  width: 32px;
+  height: 32px;
+  border-radius: 2px solid $color_green_Light;
 }
