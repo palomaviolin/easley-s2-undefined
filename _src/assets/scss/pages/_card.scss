@@ -251,7 +251,6 @@
 /* Here start list icons profile */
 .list_contact {
   display: flex;
-  flex-direction: row;
 }
 
 .icon_border {
@@ -268,4 +267,27 @@
   color: $color_main_green;
   width: 12px;
   height: 18px;
+  margin: 10px 0 10px 20px;
+}
+
+
+.fa-envelope {
+  color: $color_main_green;
+  width: 18px;
+  height: 18px;
+  margin: 10px 0 10px 10px;
+}
+
+.fa-linkedin-in {
+  color: $color_main_green;
+  width: 16px;
+  height: 18px;
+  margin: 10px 0 10px 10px;
+}
+
+.fa-github-alt {
+  color: $color_main_green;
+  width: 17px;
+  height: 18px; 
+  margin: 10px 0 10px 10px;
 }
