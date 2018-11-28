@@ -291,3 +291,18 @@
   height: 18px; 
   margin: 10px 0 10px 10px;
 }
+
+.list_skills {
+  display: flex;
+}
+
+.skill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  color: white;
+  background-color: $color_green_Medium;
+  font-family: $font-family_main;
+  font-weight: $font-weight_regular; 
+}
