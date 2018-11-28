@@ -18,8 +18,8 @@
     
     <body>
         <header>
-            <img src="">
-        </header>
+            <img class="logo_awesome" src="assets/images/descarga.svg">
+        </header class="header-index">
         <main>
             <section>
                 <button> <i></i>
@@ -27,8 +27,8 @@
 
                 </button>
                 <div>
-                    <div>nombre apellido</div>
-                    <div>professión</div>
+                    <div>Name Surname</div>
+                    <div>Job</div>
                     <div>img</div>
                     <ul>
                         <li></li>
@@ -86,9 +86,13 @@
                                 <div class="fonts__color--and--font">Fonts</div>
                                 <div class="fontfamily__types">
                                     <label for="font__option--1">
-                                        <input id="font__option--1" type="radio" value="Ubuntu" name="fontfamily__option">Ubuntu</label>
+                                        <input id="font__option--1" type="radio" value="Ubuntu" name="fontfamily__option"> <span class="ubuntu">Ubuntu</span>
+
+                                    </label>
                                     <label for="font__option--2">
-                                        <input id="font__option--2" type="radio" value="Comic Sans" name="fontfamily__option">Comic Sans</label>
+                                        <input id="font__option--2" type="radio" value="Comic Sans" name="fontfamily__option"> <span class="comic-sans">Comic Sans</span>
+
+                                    </label>
                                     <label for="font__option--3">
                                         <input id="font__option--3" type="radio" value="Montserrat" name="fontfamily__option">Montserrat</label>
                                 </div>
@@ -179,16 +183,21 @@
                             </div>
                         </div>
                         <div class="content">
-                            <button class="button__create-card"><i class="far fa-id-card"></i><a> Create visit card</a>
+                            <button class="button__create-card collapsible__button--share"> <i class="far fa-id-card"></i>
+ <a> Create visit card</a>
+
                             </button>
                         </div>
                     </li>
                 </ul>
-                <div>
-                    <div></div> <a></a>
+                <div class="content__of-button-create-card">
+                    <div class="title__card--created">La tarjeta ha sido creada</div> <a class="title__card--link">https://awesome-profile-card.com?id=A456DF0001</a>
 
-                    <button><i></i><a></a>
-                    </button>
+                    <button
+                    class="button__twitter"> <i class="fab fa-twitter"></i>
+ <a>Compartir en twitter</a>
+
+                        </button>
                 </div>
             </section>
         </main>
