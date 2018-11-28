@@ -7,3 +7,11 @@ header {
   width: 250px;
   margin-top: 94px;
 }
+
+@media all and (min-width: 768px) {
+  .logo_awesome {
+    width: 419px;
+    margin-top: 107px;
+    margin-bottom: 31px;
+  }
+}

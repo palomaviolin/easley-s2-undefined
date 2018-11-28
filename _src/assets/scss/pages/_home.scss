@@ -1,7 +1,3 @@
-.main-index{
-  height: 100vh;
-}
-
 .text_create-card {
   text-align: center;
 }
@@ -11,6 +7,7 @@
   font-size: 19px;
   font-weight: $font-weight_bold;
   font-family: $font-family_title;
+  margin-bottom: 4px;
 }
 
 .h2-index {
@@ -31,9 +28,11 @@
   box-sizing: border-box;
   border: 2px solid $color_main_orange;
   border-radius: 4px;
-  margin: 25px;
+  margin: 25px auto;
   padding-top: 15px;
   padding-bottom: 10px;
+  width: 268px;
+  height: 74px;
 }
 
 .ul-index {
@@ -91,4 +90,26 @@
 .btn-start_center {
   display: flex;
   justify-content: center;
+}
+
+@media all and (min-width: 768px) {
+  .nav-index {
+    width: 325px;
+    height: 86px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 120px;
+  }
+
+  .h1-index {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .p-index {
+    font-size: 16px;
+    width: 331px;
+    height: 48px;
+    margin: 0 auto;
+  }
 }
