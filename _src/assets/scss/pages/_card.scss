@@ -249,12 +249,23 @@
 
 
 /* Here start list icons profile */
-.fa-mobile-alt {
-  color: $color_main_green;
+.list_contact {
+  display: flex;
+  flex-direction: row;
 }
 
 .icon_border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 32px;
   height: 32px;
-  border-radius: 2px solid $color_green_Light;
+  border: 2px solid $color_green_Light;
+  border-radius: 50%;
+}
+
+.fa-mobile-alt {
+  color: $color_main_green;
+  width: 12px;
+  height: 18px;
 }
