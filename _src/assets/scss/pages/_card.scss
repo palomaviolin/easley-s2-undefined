@@ -327,6 +327,12 @@ ul, ol {
 /* Here start list icons profile */
 .list_contact {
   display: flex;
+  margin: 10px auto 10px 20px;
+}
+
+.border_bottom {
+  border-bottom: 2px solid $color_green_Medium;
+  opacity: .2;
 }
 
 .icon_border {
@@ -337,39 +343,17 @@ ul, ol {
   height: 32px;
   border: 2px solid $color_green_Light;
   border-radius: 50%;
-}
-
-.fa-mobile-alt {
-  color: $color_main_green;
-  width: 12px;
-  height: 18px;
-  margin: 10px 0 10px 20px;
-}
-
-
-.fa-envelope {
-  color: $color_main_green;
-  width: 18px;
-  height: 18px;
-  margin: 10px 0 10px 10px;
-}
-
-.fa-linkedin-in {
-  color: $color_main_green;
-  width: 16px;
-  height: 18px;
-  margin: 10px 0 10px 10px;
-}
-
-.fa-github-alt {
-  color: $color_main_green;
-  width: 17px;
-  height: 18px; 
-  margin: 10px 0 10px 10px;
+  margin-right: 10px;
+  .ico {
+    font-size: 18px;
+    color: $color_main_green;
+    
+  }
 }
 
 .list_skills {
   display: flex;
+  margin: 10px auto 10px 15px;
 }
 
 .skill {
@@ -380,6 +364,8 @@ ul, ol {
   color: white;
   font-family: $font-family_main;
   font-weight: $font-weight_regular; 
+  margin-right: 10px;
+  font-size: 13px;
 }
 
 .skill1{
@@ -387,7 +373,6 @@ ul, ol {
   height: 18px;
   border-radius: 4px;
   background-color: $color_green_Medium;
-  padding: 10px 0 10px 20px; 
 }
 
 .skill2{
@@ -395,7 +380,6 @@ ul, ol {
   height: 18px;
   border-radius: 4px;
   background-color: $color_green_Medium;
-  padding: 10px 0 10px 10px; 
 }
 
 .skill3{
@@ -403,5 +387,4 @@ ul, ol {
   height: 18px;
   border-radius: 4px;
   background-color: $color_green_Medium;
-  padding: 10px 0 10px 10px; 
 }
