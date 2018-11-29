@@ -302,19 +302,30 @@
   align-items: center;
   text-transform: uppercase;
   color: white;
-  background-color: $color_green_Medium;
   font-family: $font-family_main;
   font-weight: $font-weight_regular; 
 }
 
 .skill1{
-  margin: 10px 0 10px 20px; 
+  width: 46px;
+  height: 18px;
+  border-radius: 4px;
+  background-color: $color_green_Medium;
+  padding: 10px 0 10px 20px; 
 }
 
 .skill2{
-  margin: 10px 0 10px 10px; 
+  width: 33px;
+  height: 18px;
+  border-radius: 4px;
+  background-color: $color_green_Medium;
+  padding: 10px 0 10px 10px; 
 }
 
 .skill3{
-  margin: 10px 0 10px 10px; 
+  width: 44px;
+  height: 18px;
+  border-radius: 4px;
+  background-color: $color_green_Medium;
+  padding: 10px 0 10px 10px; 
 }
