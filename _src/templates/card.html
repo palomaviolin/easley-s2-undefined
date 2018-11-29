@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>undefined-team project</title>
-    <link rel="icon" href="favicon.png" />
+    <link rel="icon" href="../assets/icons/favicon.ico" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
     <link href="http://allfont.es/allfont.css?fonts=comic-sans-ms" rel="stylesheet" type="text/css" />
@@ -15,24 +15,25 @@
 
 <body>
 
-    <header>
+    <header class="header-index">
         <img class="logo_awesome" src="assets/images/descarga.svg">
-    </header class="header-index">
+    </header>
 
     <main>
-        <section>
-            <button>
-                <i></i>
-                <span></span>
+        <section class="profile">
+            <button class="profile__action">
+                <i class="far fa-trash-alt"></i>
+                <span class="profile__action-text">Reset</span>
             </button>
-            <div>
-                <div>
-                    Name Surname
+            <div class="profile__data">
+                <div class="profile__data-top">
+                    <div class="profile__vertical-line"></div>
+                    <div class="profile__data-group">
+                        <div class="profile__name">Name Surname</div>
+                        <div class="profile__profession">Job</div>
+                    </div>
                 </div>
-                <div>
-                    Job
-                </div>
-                <div>img</div>
+                <img class="profile__picture" src="../assets/images/default_picture.jpg" alt="Default picture">
                 <ul class="list_contact">
                         <li class="icon_border">
                             <i class="fas fa-mobile-alt"></i>
@@ -52,6 +53,18 @@
                         <li class="skill skill2">css</li>
                         <li class="skill skill3">gulp</li>
                     </ul>
+                
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
             </div>
         </section>
 
