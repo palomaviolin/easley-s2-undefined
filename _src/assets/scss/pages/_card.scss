@@ -13,11 +13,15 @@
     padding-top: 30px;
     padding-bottom: 8px;
 }
+.formdesing__circle{
+  height: 17px;
+  width: 17px;
+}
 
 .palette__triple--box {
   display: flex;
   flex-direction: row;
-  padding-left: 8px;
+  padding-left: 10px;
 }
 
 .palette__dimensions {
@@ -108,26 +112,28 @@
 
 .fontfamily__options {
     margin-bottom: 9px;
+    display: flex;
+    align-items: center;
 }
 
 .ubuntu {
   font-family: $font-family_option1;
   font-weight: $font-weight_semi-bold;
   font-size: 16px;
-  padding-left: 3px;
+  padding-left: 10px;
 }
 
 .comic-sans {
   font-family: $font-family_option2;
   font-size: 16px;
-  padding-left: 3px;
+  padding-left: 10px;
 }
 
 .merriweather {
   font-family: $font-family_option3;
   font-weight: $font-weight_regular;
   font-size: 16px;
-  padding-left: 3px;
+  padding-left: 10px;
 }
 
 /* Here start COMPLETE styles */
@@ -142,6 +148,11 @@
   padding:2px;
   border: 1px solid $color_green_Light;
 }
+.formcomplete__container--addimage{
+  display:flex;
+  flex-direction: row;
+}
+
 .button__add--image {
   width: 140px;
   height: 30px;
@@ -150,6 +161,14 @@
   color: $color_main_pureWhite;
   font-size: 14px;
   font-family: $font-family_main;
+  margin-right: 20px;
+}
+
+.formcomplete__imagepreview{
+  width: 30px;
+  height: 30px;
+  border: 1px solid $color_green_Light;
+
 }
 
 .titles__complete-form {
