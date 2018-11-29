@@ -337,36 +337,40 @@ ul, ol {
   height: 32px;
   border: 2px solid $color_green_Light;
   border-radius: 50%;
+  .ico {
+    font-size: 18px;
+    color: $color_main_green;
+  }
 }
 
-.fa-mobile-alt {
-  color: $color_main_green;
-  width: 12px;
-  height: 18px;
-  margin: 10px 0 10px 20px;
-}
+// .fa-mobile-alt {
+//   color: $color_main_green;
+//   width: 12px;
+//   height: 18px;
+//   margin: 10px 0 10px 20px;
+// }
 
 
-.fa-envelope {
-  color: $color_main_green;
-  width: 18px;
-  height: 18px;
-  margin: 10px 0 10px 10px;
-}
+// .fa-envelope {
+//   color: $color_main_green;
+//   width: 18px;
+//   height: 18px;
+//   margin: 10px 0 10px 10px;
+// }
 
-.fa-linkedin-in {
-  color: $color_main_green;
-  width: 16px;
-  height: 18px;
-  margin: 10px 0 10px 10px;
-}
+// .fa-linkedin-in {
+//   color: $color_main_green;
+//   width: 16px;
+//   height: 18px;
+//   margin: 10px 0 10px 10px;
+// }
 
-.fa-github-alt {
-  color: $color_main_green;
-  width: 17px;
-  height: 18px; 
-  margin: 10px 0 10px 10px;
-}
+// .fa-github-alt {
+//   color: $color_main_green;
+//   width: 17px;
+//   height: 18px; 
+//   margin: 10px 0 10px 10px;
+// }
 
 .list_skills {
   display: flex;
