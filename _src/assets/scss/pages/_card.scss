@@ -248,6 +248,82 @@
 }
 
 
+/* Here start PROFILE styles */
+
+.profile {
+  width: 320px;
+  height: 460px;
+  background: linear-gradient(#2ee2c4, #2effc4);
+  margin: 0 auto;
+  font-family: $font-family_option2;
+}
+ul, ol {
+  list-style: none;;
+}
+.profile__action {
+  width: 75px;
+  height: 30px;
+  font-size: 12px;
+  line-height: 12px;
+  background-color: transparent;
+  border: 1px solid $color_main_pureWhite;
+  border-radius: 15px;
+  margin: 10px auto 20px 45px;
+  // color: $color_main_gray;
+  color: $color_main_pureWhite;
+  transition: .3s all ease-in-out;
+  cursor: pointer;
+  box-shadow: 0px 2px 5px 0px rgba(2,158,158,.2);
+    &:hover {
+      color: #2ee2c4;
+      background-color:$color_main_pureWhite;
+      box-shadow: 0px 5px 5px 0px rgba(2,158,158,.2);
+      transform: translateY(-3px);
+    }
+}
+.profile__action-text {
+  text-transform: uppercase;
+  margin-left: 5px;
+}
+.profile__data {
+  width: 240px;
+  height: 370px;
+  background-color: $color_main_pureWhite;
+  border-radius: 2px;
+  margin: 0 auto 30px;
+  box-shadow: 0px 2px 7px 0px rgba(4,204,204,1);
+  overflow: hidden;
+}
+.profile__data-top {
+  display: flex;
+}
+.profile__vertical-line {
+  width: 5px;
+  height: 40px;
+  background-color: $color_green_Light;
+  margin: 25px 15px 10px 0;
+}
+.profile__data-group {
+  margin-top: 25px;
+}
+.profile__name {
+  font-weight: $font-weight_bold;
+  color: $color_green_Dark;
+  font-size: 18px;
+  line-height: 18px;
+}
+.profile__profession {
+  color: $color_main_gray;
+  font-size: 16px;
+  line-height: 16px;
+  margin-top: 5px;
+}
+.profile__picture {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
 /* Here start list icons profile */
 .list_contact {
   display: flex;
