@@ -142,7 +142,12 @@
   padding-top: 10px;
   padding-bottom: 2px;
 }
-
+.section2__completeform--input{
+  width: 100%;
+  height: 30px;
+  padding:2px;
+  border: 1px solid $color_green_Light;
+}
 .button__add--image {
   width: 140px;
   height: 30px;
