@@ -1,10 +1,12 @@
 .card__section2 {
-  background-image: linear-gradient(
-    $color_main_boneWhite,
-    $color_main_pureWhite
-  );
+  background: linear-gradient($color_main_boneWhite, $color_main_pureWhite);
 }
-
+.section2__list {
+  margin: 0 20px;
+}
+.section2__list--collapsible {
+  border-bottom: 1px solid $color_main_division;
+}
 /* Here start DESIGN styles */
 
 .section2__colors--wrapper {
@@ -12,6 +14,7 @@
     flex-direction: row;
     padding-top: 30px;
     padding-bottom: 8px;
+    justify-content: space-between;
 }
 
 .palette__triple--box {
@@ -70,6 +73,7 @@
 
 .fonts__container {
   display: flex;
+  justify-content: space-between;
   flex-direction: row;
   padding-bottom: 20px;
 }
@@ -205,7 +209,7 @@
 
 .collapsible {
   cursor: pointer;
-  padding: 18px;
+  padding: 18px 0;
   width: 100%;
   border: none;
   text-align: left;
@@ -245,20 +249,37 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 0 13px;
+  line-height: 18px;
+  margin: 30px auto;
 }
 
 
 /* Here start PROFILE styles */
+.header-logo {
+  width: 240px;
+  height: 50px;
+  margin: 30px auto;
+  .logo_awesome {
+    margin: 0;
+    width: 200px;
+  }
+}
 
 .profile {
-  width: 320px;
+  width: 100%;
   height: 460px;
-  background: linear-gradient(#2ee2c4, #2effc4);
+  background: linear-gradient(#4dcea6, #a6f3ba);
+  
   margin: 0 auto;
   font-family: $font-family_option2;
 }
 ul, ol {
   list-style: none;;
+}
+.profile__container {
+  width: 240px;
+  margin: 0 auto;
 }
 .profile__action {
   width: 75px;
@@ -268,14 +289,14 @@ ul, ol {
   background-color: transparent;
   border: 1px solid $color_main_pureWhite;
   border-radius: 15px;
-  margin: 10px auto 20px 45px;
+  margin: 10px 0 20px;
   // color: $color_main_gray;
   color: $color_main_pureWhite;
   transition: .3s all ease-in-out;
   cursor: pointer;
   box-shadow: 0px 2px 5px 0px rgba(2,158,158,.2);
     &:hover {
-      color: #2ee2c4;
+      color: $color_green_Light;
       background-color:$color_main_pureWhite;
       box-shadow: 0px 5px 5px 0px rgba(2,158,158,.2);
       transform: translateY(-3px);
@@ -291,7 +312,7 @@ ul, ol {
   background-color: $color_main_pureWhite;
   border-radius: 2px;
   margin: 0 auto 30px;
-  box-shadow: 0px 2px 7px 0px rgba(4,204,204,1);
+  box-shadow: 0px 2px 40px 0px #65b39f;
   overflow: hidden;
 }
 .profile__data-top {
@@ -318,9 +339,15 @@ ul, ol {
   line-height: 16px;
   margin-top: 5px;
 }
+.profile__picture-container {
+  width: 240px;
+  height: 200px;
+}
 .profile__picture {
+  display: block;
   max-width: 100%;
   max-height: 100%;
+  margin: 0 auto;
 }
 
 
@@ -387,4 +414,46 @@ ul, ol {
   height: 18px;
   border-radius: 4px;
   background-color: $color_green_Medium;
+}
+@media all and (min-width: 768px)  {
+  .header-logo {
+    margin: 30px auto 30px 40px;
+  }
+  .main__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: linear-gradient($color_main_boneWhite, $color_main_pureWhite)
+  }
+  .profile {
+    width: 100%;
+    height: 815px;
+    margin: 0 0 0 30px;
+    border-radius: 5px;
+    order: 1;
+    display: flex;
+    align-items: center;
+  }
+  .card__section2 {
+    min-width: 350px;
+  }
+  .section2__list {
+    margin: 0;
+  }
+  .footer-index {
+    padding: 20px 40px;
+  }
+  .copyright-index {
+    min-width: 350px;
+    text-align: left;
+  }
+  .footer__logos {
+    display: flex;
+    width: 100%;
+    margin-left: 30px;
+    justify-content: space-between;
+  }
+  .logo-undefined {
+    margin: 0;
+  }
 }
