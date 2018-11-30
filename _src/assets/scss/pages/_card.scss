@@ -457,3 +457,58 @@ ul, ol {
     margin: 0;
   }
 }
+/* Red style for profile card*/
+
+.red {
+  .profile__name {
+    color: $color_red_Dark;
+  }
+
+  .ico {
+    color: $color_red_Dark;
+  }
+
+  .border_bottom {
+    border-bottom: 2px solid $color_red_Medium;
+  }
+
+  .skill {
+    background-color: $color_red_Medium;
+  }
+
+  .icon_border {
+    border: 2px solid $color_red_Light;
+  }
+
+  .profile__vertical-line {
+    background-color: $color_red_Light;
+  }  
+}
+
+/* Gray style for profile card*/
+
+.gray {
+  .profile__name {
+    color: $color_gray_Dark;
+  }
+
+  .ico {
+    color: $color_gray_Dark;
+  }
+
+  .border_bottom {
+    border-bottom: 2px solid $color_gray_Medium;
+  }
+  
+  .skill {
+    background-color: $color_gray_Medium;
+  }
+
+  .icon_border {
+    border: 2px solid $color_gray_Light;
+  }
+
+  .profile__vertical-line {
+    background-color: $color_gray_Light;
+  }  
+}
