@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>undefined-team project</title>
-        <link rel="icon" href="favicon.png">
+        <link rel="icon" href="favicon.ico">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
@@ -17,53 +17,60 @@
     </head>
     
     <body>
-        <header class="header-index">
+        <header class="header-index"> <a class="header-logo" href="index.html">
             <img class="logo_awesome" src="assets/images/descarga.svg">
+        </a>
+
         </header>
-        <main>
+        <main class="main__container">
             <section class="profile">
-                <button class="profile__action"> <i class="far fa-trash-alt"></i>
+                <div class="profile__container">
+                    <button class="profile__action"> <i class="far fa-trash-alt"></i>
  <span class="profile__action-text">Reset</span>
 
-                </button>
-                <div class="profile__data">
-                    <div class="profile__data-top">
-                        <div class="profile__vertical-line"></div>
-                        <div class="profile__data-group">
-                            <div class="profile__name">Name Surname</div>
-                            <div class="profile__profession">Job</div>
+                    </button>
+                    <div class="profile__data">
+                        <div class="profile__data-top">
+                            <div class="profile__vertical-line"></div>
+                            <div class="profile__data-group">
+                                <div class="profile__name">Name Surname</div>
+                                <div class="profile__profession">Job</div>
+                            </div>
                         </div>
+                        <div class="profile__picture-container">
+                            <img class="profile__picture" src="../assets/images/default_picture.jpg"
+                            alt="Default picture">
+                        </div>
+                        <ul class="list_contact">
+                            <li class="icon_border"> <a class="icon-link" href=""><i class="fas fa-mobile-alt ico"></i></a>
+
+                            </li>
+                            <li class="icon_border"> <a class="icon-link" href=""><i class="far fa-envelope ico"></i></a>
+
+                            </li>
+                            <li class="icon_border"> <a class="icon-link" href=""><i class="fab fa-linkedin-in ico"></i></a>
+
+                            </li>
+                            <li class="icon_border"> <a class="icon-link" href=""><i class="fab fa-github-alt ico"></i></a>
+
+                            </li>
+                        </ul>
+                        <div class="border_bottom"></div>
+                        <ul class="list_skills">
+                            <li class="skill skill1">html</li>
+                            <li class="skill skill2">css</li>
+                            <li class="skill skill3">gulp</li>
+                        </ul>
                     </div>
-                    <img class="profile__picture" src="../assets/images/default_picture.jpg"
-                    alt="Default picture">
-                    <ul class="list_contact">
-                        <li class="icon_border"> <i class="fas fa-mobile-alt"></i>
-
-                        </li>
-                        <li class="icon_border"> <i class="far fa-envelope"></i>
-
-                        </li>
-                        <li class="icon_border"> <i class="fab fa-linkedin-in"></i>
-
-                        </li>
-                        <li class="icon_border"> <i class="fab fa-github-alt"></i>
-
-                        </li>
-                    </ul>
-                    <ul class="list_skills">
-                        <li class="skill skill1">html</li>
-                        <li class="skill skill2">css</li>
-                        <li class="skill skill3">gulp</li>
-                    </ul>
                 </div>
             </section>
             <section class="card__section2">
                 <ul class="section2__list">
-                    <li class="section2__list--collapsible1">
+                    <li class="section2__list--collapsible">
                         <div class="collapsible">
                              <h2 class="h2__card--page"><i class="far fa-object-ungroup icon__card-page"></i> Design</h2>
 
-                            <div><i class="fas fa-angle-up icon__arrow--card-page"></i>
+                            <div><i class="fas fa-chevron-down icon__arrow--card-page"></i>
                             </div>
                         </div>
                         <div class="content">
@@ -115,11 +122,11 @@
                             </div>
                         </div>
                     </li>
-                    <li class="section2__list--collapsible2">
+                    <li class="section2__list--collapsible">
                         <div class="collapsible">
                              <h2 class="h2__card--page"><i class="fas fa-keyboard icon__card-page"></i> Complete</h2>
 
-                            <div><i class="fas fa-angle-up icon__arrow--card-page"></i>
+                            <div><i class="fas fa-chevron-down icon__arrow--card-page"></i>
                             </div>
                         </div>
                         <div class="content">
@@ -191,11 +198,11 @@
                             </form>
                         </div>
                     </li>
-                    <li class="section2__list--collapsible3">
+                    <li class="section2__list--collapsible">
                         <div class="collapsible">
                              <h2 class="h2__card--page"><i class="fas fa-share-alt icon__card-page"></i> Share</h2>
 
-                            <div><i class="fas fa-angle-up icon__arrow--card-page"></i>
+                            <div><i class="fas fa-chevron-down icon__arrow--card-page"></i>
                             </div>
                         </div>
                         <div class="content">
@@ -218,14 +225,12 @@
             </section>
         </main>
         <footer class="footer-index">
-            <div class="copy__and--logoundefined">
-                <div class="copyright-index">Awesome profile cards @2018</div>
-                <div>
+            <div class="copyright-index">Awesome profile cards @2018</div>
+            <div class="footer__logos">
+                <div class="footer__logo">
                     <img class="logo-undefined" src="assets/images/undefined-logo.svg" alt="Undefined logo">
-                </div>
-            </div>
-            <div>
-                <img class="logo-adalab" src="assets/images/logo-adalab.svg" alt="Adalab logo">
+                </div> <a class="footer__logo" href="https://adalab.es/"><img class="logo-adalab" src="assets/images/logo-adalab.svg" alt="Adalab logo"></a>
+
             </div>
         </footer>
         <script type="text/javascript" src="assets/js/main.min.js"></script>
