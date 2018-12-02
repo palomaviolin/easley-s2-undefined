@@ -11,7 +11,8 @@
         crossorigin="anonymous">
         <link href="http://allfont.es/allfont.css?fonts=comic-sans-ms" rel="stylesheet"
         type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900|Montserrat:400,600|Open+Sans:400,600|Ubuntu:400,500,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900|Montserrat:400,600|Open+Sans:400,600|Ubuntu:400,500,700"
+        rel="stylesheet">
         <link rel="stylesheet" href="assets/css/main.css">
     </head>
     
@@ -67,17 +68,17 @@
                 <ul class="section2__list">
                     <li class="section2__list--collapsible">
                         <div class="collapsible">
-                             <h2 class="h2__card--page"><i class="far fa-object-ungroup icon__card-page"></i> Design</h2>
-
+                             <h2 class="section2__list--h2"><i class="far fa-object-ungroup icon__card-page"></i> Design</h2> 
                             <div><i class="fas fa-chevron-down icon__arrow--card-page"></i>
                             </div>
                         </div>
                         <div class="content">
                             <div class="section2__colors--wrapper">
-                                <div class="fonts__color--and--font">Colors</div>
+                                <div class="section2__desing--titles">Colors</div>
                                 <div>
                                     <label for="palette__green" class="palette__green">
-                                        <input id="palette__green" type="radio" value="color__green" name="palette__color">
+                                        <input class="formdesing__circle" id="palette__green" type="radio" value="color__green"
+                                        name="palette__color">
                                         <div class="palette__triple--box">
                                             <div class="palette__dimensions palette__green--dark"></div>
                                             <div class="palette__dimensions palette__green--medium"></div>
@@ -85,7 +86,8 @@
                                         </div>
                                     </label>
                                     <label for="palette__red" class="palette__red">
-                                        <input id="palette__red" type="radio" value="color__red" name="palette__color">
+                                        <input class="formdesing__circle" id="palette__red" type="radio" value="color__red"
+                                        name="palette__color">
                                         <div class="palette__triple--box">
                                             <div class="palette__dimensions palette__red--dark"></div>
                                             <div class="palette__dimensions palette__red--medium"></div>
@@ -93,7 +95,8 @@
                                         </div>
                                     </label>
                                     <label for="palette__gray" class="palette__gray">
-                                        <input id="palette__gray" type="radio" value="color__gray" name="palette__color">
+                                        <input class="formdesing__circle" id="palette__gray" type="radio" value="color__gray"
+                                        name="palette__color">
                                         <div class="palette__triple--box">
                                             <div class="palette__dimensions palette__gray--dark"></div>
                                             <div class="palette__dimensions palette__gray--medium"></div>
@@ -103,18 +106,21 @@
                                 </div>
                             </div>
                             <div class="fonts__container">
-                                <div class="fonts__color--and--font">Fonts</div>
+                                <div class="section2__desing--titles">Fonts</div>
                                 <div class="fontfamily__types">
                                     <label for="font__option--1" class="fontfamily__options">
-                                        <input id="font__option--1" type="radio" value="Ubuntu" name="fontfamily__option"> <span class="ubuntu">Ubuntu</span>
+                                        <input class="formdesing__circle" id="font__option--1" type="radio" value="Ubuntu"
+                                        name="fontfamily__option"> <span class="ubuntu">Ubuntu</span>
 
                                     </label>
                                     <label for="font__option--2" class="fontfamily__options">
-                                        <input id="font__option--2" type="radio" value="Comic Sans" name="fontfamily__option"> <span class="comic-sans">Comic Sans</span>
+                                        <input class="formdesing__circle" id="font__option--2" type="radio" value="Comic Sans"
+                                        name="fontfamily__option"> <span class="comic-sans">Comic Sans</span>
 
                                     </label>
                                     <label for="font__option--3" class="fontfamily__options">
-                                        <input id="font__option--3" type="radio" value="Montserrat" name="fontfamily__option"> <span class="merriweather">Montserrat</span>
+                                        <input class="formdesing__circle" id="font__option--3" type="radio" value="Montserrat"
+                                        name="fontfamily__option"> <span class="merriweather">Montserrat</span>
 
                                     </label>
                                 </div>
@@ -123,7 +129,7 @@
                     </li>
                     <li class="section2__list--collapsible">
                         <div class="collapsible">
-                             <h2 class="h2__card--page"><i class="fas fa-keyboard icon__card-page"></i> Complete</h2>
+                             <h2 class="section2__list--h2"><i class="fas fa-keyboard icon__card-page"></i> Complete</h2>
 
                             <div><i class="fas fa-chevron-down icon__arrow--card-page"></i>
                             </div>
@@ -147,9 +153,9 @@
                                 <div class="titles__complete-form">
                                     <label for="image">Profile image</label>
                                 </div>
-                                <div>
+                                <div class="formcomplete__container--addimage">
                                     <button class="button__add--image">Add image</button>
-                                    <input id="image" type="checkbox" value="image" name="image">
+                                    <div class="formcomplete__imagepreview"></div>
                                 </div>
                                 <div class="titles__complete-form">
                                     <label for="email">Email</label>
@@ -197,28 +203,27 @@
                             </form>
                         </div>
                     </li>
-                    <li class="section2__list--collapsible"></li>
-                    <div class="collapsible">
-                         <h2 class="h2__card--page"><i class="fas fa-share-alt icon__card-page"></i> Share</h2>
-
-                        <div><i class="fas fa-chevron-down icon__arrow--card-page"></i>
+                    <li class="section2__list--collapsible">
+                        <div class="collapsible">
+                             <h2 class="section2__list--h2"><i class="fas fa-share-alt icon__card-page"></i> Share</h2> 
+                            <div><i class="fas fa-chevron-down icon__arrow--card-page"></i>
+                            </div>
                         </div>
-                    </div>
-                    <div class="content">
-                        <button class="collapsible button__create-card"> <i class="far fa-id-card"></i>
+                        <div class="content">
+                            <button class="collapsible button__create-card"> <i class="far fa-id-card"></i>
  <a> Create visit card</a>
 
-                        </button>
-                        <div class="content content2">
-                            <div class="title__card--created">The card has been created</div> <a class="title__card--link">https://awesome-profile-card.com?id=A456DF0001</a>
+                            </button>
+                            <div class="content content2">
+                                <div class="title__card--created">The card has been created</div> <a class="title__card--link">https://awesome-profile-card.com?id=A456DF0001</a>
 
-                            <button
-                            class="button__twitter"> <i class="fab fa-twitter"></i>
+                                <button
+                                class="button__twitter"> <i class="fab fa-twitter"></i>
  <a>Share on twitter</a>
 
-                                </button>
+                                    </button>
+                            </div>
                         </div>
-                    </div>
                     </li>
                 </ul>
             </section>
@@ -232,7 +237,7 @@
 
             </div>
         </footer>
-        <script type="text/javascript" src="assets/js/main.min.js"></script>
+        <script type="text/javascript" src="assets/js/main.js"></script>
     </body>
 
 </html>
