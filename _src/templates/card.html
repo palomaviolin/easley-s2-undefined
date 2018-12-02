@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
     <link href="http://allfont.es/allfont.css?fonts=comic-sans-ms" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900|Montserrat:400,600|Open+Sans:400,600|Ubuntu:400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900|Montserrat:400,600|Open+Sans:400,600|Ubuntu:400,500,700"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -26,7 +27,6 @@
                     <i class="far fa-trash-alt"></i>
                     <span class="profile__action-text">Reset</span>
                 </button>
-
                 <div class="profile__data">
                     <div class="profile__data-top">
                         <div class="profile__vertical-line"></div>
@@ -64,20 +64,18 @@
 
         <section class="card__section2">
             <ul class="section2__list">
-                <li class="section2__list--collapsible">
-
+                <li id="first_child" class="section2__list--collapsible">
                     <div class="collapsible">
-                        <h2 class="section2__list--h2"><i class="far fa-object-ungroup icon__card-page"></i> Design</h2>                    
+                        <h2 class="section2__list--h2"><i class="far fa-object-ungroup icon__card-page"></i> Design</h2>
                         <div><i class="fas fa-chevron-down icon__arrow--card-page"></i></div>
                     </div>
-
                     <div class="content">
-
                         <div class="section2__colors--wrapper">
                             <div class="section2__desing--titles">Colors</div>
                             <div>
                                 <label for="palette__green" class="palette__green">
-                                    <input class="formdesing__circle" id="palette__green" type="radio" value="color__green" name="palette__color">
+                                    <input class="formdesing__circle" id="palette__green" type="radio" value="color__green"
+                                        name="palette__color">
                                     <div class="palette__triple--box">
                                         <div class="palette__dimensions palette__green--dark"></div>
                                         <div class="palette__dimensions palette__green--medium"></div>
@@ -85,7 +83,8 @@
                                     </div>
                                 </label>
                                 <label for="palette__red" class="palette__red">
-                                    <input class="formdesing__circle" id="palette__red" type="radio" value="color__red" name="palette__color">
+                                    <input class="formdesing__circle" id="palette__red" type="radio" value="color__red"
+                                        name="palette__color">
                                     <div class="palette__triple--box">
                                         <div class="palette__dimensions palette__red--dark"></div>
                                         <div class="palette__dimensions palette__red--medium"></div>
@@ -93,7 +92,8 @@
                                     </div>
                                 </label>
                                 <label for="palette__gray" class="palette__gray">
-                                    <input class="formdesing__circle" id="palette__gray" type="radio" value="color__gray" name="palette__color">
+                                    <input class="formdesing__circle" id="palette__gray" type="radio" value="color__gray"
+                                        name="palette__color">
                                     <div class="palette__triple--box">
                                         <div class="palette__dimensions palette__gray--dark"></div>
                                         <div class="palette__dimensions palette__gray--medium"></div>
@@ -107,15 +107,18 @@
                             <div class="section2__desing--titles">Fonts</div>
                             <div class="fontfamily__types">
                                 <label for="font__option--1" class="fontfamily__options">
-                                    <input class="formdesing__circle"  id="font__option--1" type="radio" value="Ubuntu" name="fontfamily__option">
+                                    <input class="formdesing__circle" id="font__option--1" type="radio" value="Ubuntu"
+                                        name="fontfamily__option">
                                     <span class="ubuntu">Ubuntu</span>
                                 </label>
                                 <label for="font__option--2" class="fontfamily__options">
-                                    <input class="formdesing__circle"  id="font__option--2" type="radio" value="Comic Sans" name="fontfamily__option">
+                                    <input class="formdesing__circle" id="font__option--2" type="radio" value="Comic Sans"
+                                        name="fontfamily__option">
                                     <span class="comic-sans">Comic Sans</span>
                                 </label>
                                 <label for="font__option--3" class="fontfamily__options">
-                                    <input class="formdesing__circle"  id="font__option--3" type="radio" value="Montserrat" name="fontfamily__option">
+                                    <input class="formdesing__circle" id="font__option--3" type="radio" value="Montserrat"
+                                        name="fontfamily__option">
                                     <span class="merriweather">Montserrat</span>
                                 </label>
                             </div>
@@ -123,22 +126,20 @@
                     </div>
 
                 </li>
-
-                <li class="section2__list--collapsible">
+                <li id ="second_child" class="section2__list--collapsible">
                     <div class="collapsible">
                         <h2 class="section2__list--h2"><i class="fas fa-keyboard icon__card-page"></i> Complete</h2>
                         <div><i class="fas fa-chevron-down icon__arrow--card-page"></i></div>
                     </div>
                     <div class="content">
                         <form action="">
-
                             <div class="titles__complete-form"><label for="email">Full name</label></div>
-                            <div><input class="section2__completeform--input" placeholder="Ex: Sally Hill" id="name" type="text" name="name"
-                                    required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: Sally Hill" id="name"
+                                    type="text" name="name" required></div>
 
                             <div class="titles__complete-form"><label for="email">Job position</label></div>
-                            <div><input class="section2__completeform--input" placeholder="Ex: Front-end unicorn" id="job" type="text" name="job"
-                                    required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: Front-end unicorn" id="job"
+                                    type="text" name="job" required></div>
 
                             <div class="titles__complete-form"><label for="image">Profile image</label></div>
                             <div class="formcomplete__container--addimage">
@@ -147,20 +148,20 @@
                             </div>
 
                             <div class="titles__complete-form"><label for="email">Email</label></div>
-                            <div><input class="section2__completeform--input" placeholder="Ex: sally.hill@gmail.com" id="email" type="email" name="email"
-                                    required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: sally.hill@gmail.com" id="email"
+                                    type="email" name="email" required></div>
 
                             <div class="titles__complete-form"><label for="telf_movil">Telephone number</label></div>
-                            <div><input class="section2__completeform--input" placeholder="Ex: 555-55-55-55" id="telf_movil" type="text" name="telf_movil"
-                                    pattern="^6[0-9]{8}$" required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: 555-55-55-55" id="telf_movil"
+                                    type="text" name="telf_movil" pattern="^6[0-9]{8}$" required></div>
 
                             <div class="titles__complete-form"><label for="email">LinkedIn</label></div>
-                            <div><input class="section2__completeform--input"  placeholder="Ex: linkedin.com/in/sally-hill" id="linkedin" type="email"
-                                    name="linkedin" required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: linkedin.com/in/sally-hill"
+                                    id="linkedin" type="email" name="linkedin" required></div>
 
                             <div class="titles__complete-form"><label for="email">GitHub</label></div>
-                            <div><input class="section2__completeform--input" placeholder="Ex: @sally-hill" id="github" type="email" name="github"
-                                    required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: @sally-hill" id="github"
+                                    type="email" name="github" required></div>
 
                             <div class="titles__complete-form"><label for="skills">Skills (max 3)</label></div>
 
@@ -182,9 +183,9 @@
                         </form>
                     </div>
                 </li>
-                <li class="section2__list--collapsible">
+                <li id="third_child" class="section2__list--collapsible">
                     <div class="collapsible">
-                        <h2 class="section2__list--h2"><i class="fas fa-share-alt icon__card-page"></i> Share</h2>        
+                        <h2 class="section2__list--h2"><i class="fas fa-share-alt icon__card-page"></i> Share</h2>
                         <div><i class="fas fa-chevron-down icon__arrow--card-page"></i></div>
                     </div>
                     <div class="content">
@@ -203,12 +204,9 @@
                     </div>
                 </li>
             </ul>
-
         </section>
     </main>
-
     <partial src="_footer.html" label="Main"></partial>
-
     <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 
