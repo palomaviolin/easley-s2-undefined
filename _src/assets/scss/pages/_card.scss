@@ -497,6 +497,36 @@ ol {
   }
 }
 
+/* Green style for profile card*/
+
+.green {
+  .profile__name {
+    color: $color_green_Dark;
+  }
+
+  .ico {
+    color: $color_green_Dark;
+  }
+
+  .border_bottom {
+    border-bottom: 2px solid $color_green_Medium;
+  }
+
+  .skill {
+    background-color: $color_green_Medium;
+  }
+
+  .icon_border {
+    border: 2px solid $color_green_Light;
+  }
+
+  .profile__vertical-line {
+    background-color: $color_green_Light;
+  }
+}
+
+
+
 /* Red style for profile card*/
 
 .red {
