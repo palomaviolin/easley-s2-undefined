@@ -24,20 +24,22 @@ const uploadBtn = document.querySelector('.button__add--image');
 
 const fileField = document.querySelector('#img-selector');
 
-const profileImage = document.querySelector('.profile__picture');
+const profileImages = document.querySelectorAll('.profile__picture');
 
-function getImage(e){
+function getImage(e) {
   var myFile = e.currentTarget.files[0];
   fr.addEventListener('load', writeImage);
   fr.readAsDataURL(myFile);
 }
 
 function writeImage() {
-  profileImage.src= fr.result;
+  for (const cardImage of profileImages) {
+    cardImage.src = fr.result;
+  }
 }
 
 function fakeFileClick() {
- fileField.click(); 
+  fileField.click();
 }
 
 fileField.addEventListener('change', getImage);
