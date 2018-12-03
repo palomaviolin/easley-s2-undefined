@@ -16,3 +16,29 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+////IMAGE 
+
+const fr = new FileReader();
+const uploadBtn = document.querySelector('.button__add--image');
+
+const fileField = document.querySelector('#img-selector');
+
+const profileImage = document.querySelector('.profile__picture');
+
+function getImage(e){
+  var myFile = e.currentTarget.files[0];
+  fr.addEventListener('load', writeImage);
+  fr.readAsDataURL(myFile);
+}
+
+function writeImage() {
+  profileImage.src= fr.result;
+}
+
+function fakeFileClick() {
+ fileField.click(); 
+}
+
+fileField.addEventListener('change', getImage);
+uploadBtn.addEventListener('click', fakeFileClick);
