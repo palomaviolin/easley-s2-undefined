@@ -26,11 +26,14 @@ const fileField = document.querySelector('#img-selector');
 
 const profileImages = document.querySelectorAll('.profile__picture');
 
+//get user image
 function getImage(e) {
   var myFile = e.currentTarget.files[0];
   fr.addEventListener('load', writeImage);
   fr.readAsDataURL(myFile);
 }
+
+//put image in both places; profile and preview. using "for of", we don't need to write index of array
 
 function writeImage() {
   for (const cardImage of profileImages) {
