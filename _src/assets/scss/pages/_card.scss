@@ -1,6 +1,7 @@
 .card__section2 {
   background: linear-gradient($color_main_boneWhite, $color_main_pureWhite);
 }
+
 .section2__list {
   margin: 0 20px;
 }
@@ -146,6 +147,7 @@
   padding: 2px;
   border: 1px solid $color_green_Light;
 }
+
 .formcomplete__container--addimage {
   display: flex;
   flex-direction: row;
@@ -250,10 +252,9 @@
   border-bottom: 1px solid $color_main_division;
   height: 61px;
   overflow: hidden;
-  transition: height .5s ease-in-out;
+  transition: height 0.5s ease-in-out;
 }
 .section2__list--collapsible.open {
-  height: auto;
   .icon__arrow--card-page {
     transform: rotate(180deg);
   }
@@ -262,10 +263,13 @@
   height: 341px;
 }
 .second_block.open {
-  height: 612px;
+  height: 630px;
 }
 .third_block.open {
-  height: 176px;
+  height: 180px;
+}
+.third_block.open.add_height {
+  height: 280px;
 }
 .icon__arrow--card-page {
   transition: 0.3s;
@@ -288,6 +292,7 @@
   width: 240px;
   height: 50px;
   margin: 30px auto;
+
   .logo_awesome {
     margin: 0;
     width: 200px;
@@ -298,7 +303,6 @@
   width: 100%;
   height: 460px;
   background: linear-gradient(#a6f3ba, #4dcea6);
-
   margin: 0 auto;
   font-family: $font-family_option2;
 }
@@ -307,10 +311,12 @@ ul,
 ol {
   list-style: none;
 }
+
 .profile__container {
   width: 240px;
   margin: 0 auto;
 }
+
 .profile__action {
   width: 75px;
   height: 30px;
@@ -320,7 +326,6 @@ ol {
   border: 1px solid $color_main_pureWhite;
   border-radius: 15px;
   margin: 10px 0 20px;
-  // color: $color_main_gray;
   color: $color_main_pureWhite;
   transition: 0.3s all ease-in-out;
   cursor: pointer;
@@ -376,10 +381,12 @@ ol {
   line-height: 16px;
   margin-top: 5px;
 }
+
 .profile__picture-container {
   width: 240px;
   height: 200px;
 }
+
 .profile__picture {
   display: block;
   max-width: 100%;
@@ -451,6 +458,34 @@ ol {
   background-color: $color_green_Medium;
 }
 
+/* Green style for profile card*/
+
+.green {
+  .profile__name {
+    color: $color_green_Dark;
+  }
+
+  .ico {
+    color: $color_green_Dark;
+  }
+
+  .border_bottom {
+    border-bottom: 2px solid $color_green_Medium;
+  }
+
+  .skill {
+    background-color: $color_green_Medium;
+  }
+
+  .icon_border {
+    border: 2px solid $color_green_Light;
+  }
+
+  .profile__vertical-line {
+    background-color: $color_green_Light;
+  }
+}
+
 /* Red style for profile card*/
 
 .red {
@@ -480,7 +515,6 @@ ol {
 }
 
 /* Gray style for profile card*/
-
 .gray {
   .profile__name {
     color: $color_gray_Dark;
@@ -506,6 +540,7 @@ ol {
     background-color: $color_gray_Light;
   }
 }
+
 @media all and (min-width: 768px) {
   .header-logo {
     margin: 30px auto 30px 40px;
@@ -546,5 +581,25 @@ ol {
   }
   .footer__logo {
     margin-left: 30px;
+  }
+}
+
+/* Font styles for profile card*/
+
+.ubuntu {
+  .profile__data-group {
+    font-family: $font-family_option1;
+  }
+}
+
+.comic {
+  .profile__data-group {
+    font-family: $font-family_option2;
+  }
+}
+
+.montserrat {
+  .profile__data-group {
+    font-family: $font-family_option3;
   }
 }
