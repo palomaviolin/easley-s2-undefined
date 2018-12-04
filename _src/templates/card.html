@@ -31,8 +31,8 @@
                     <div class="profile__data-top">
                         <div class="profile__vertical-line"></div>
                         <div class="profile__data-group">
-                            <div class="profile__name">Name Surname</div>
-                            <div class="profile__profession">Job</div>
+                            <div id="name" class="profile__name">Name Surname</div>
+                            <div id="job-card" class="profile__profession">Job</div>
                         </div>
                     </div>
                     <div class="profile__picture-container">
@@ -54,9 +54,9 @@
                     </ul>
                     <div class="border_bottom"></div>
                     <ul class="list_skills">
-                        <li class="skill skill1">html</li>
-                        <li class="skill skill2">css</li>
-                        <li class="skill skill3">gulp</li>
+                        <li id="html" style="display:none" class="skill skill1">html</li>
+                        <li id="css" style="display:none" class="skill skill2">css</li>
+                        <li id="react" style="display:none" class="skill skill3">gulp</li>
                     </ul>
                 </div>
             </div>
@@ -134,12 +134,10 @@
                     <div class="content">
                         <form action="">
                             <div class="titles__complete-form"><label for="email">Full name</label></div>
-                            <div><input class="section2__completeform--input" placeholder="Ex: Sally Hill" id="name"
-                                    type="text" name="name" required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: Sally Hill" id="name-input" type="text" name="name" required></div>
 
                             <div class="titles__complete-form"><label for="email">Job position</label></div>
-                            <div><input class="section2__completeform--input" placeholder="Ex: Front-end unicorn" id="job"
-                                    type="text" name="job" required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: Front-end unicorn" id="job-input" type="text" name="job" required></div>
 
                             <div class="titles__complete-form"><label for="image">Profile image</label></div>
                             <div class="formcomplete__container--addimage">
@@ -167,17 +165,17 @@
 
                             <div class="titles__complete-form">
                                 <label for="html">
-                                    <input id="html" type="checkbox" value="html" name="html">HTML
+                                    <input id="myCheck" type="checkbox" value="html" name="html" onclick="myFunction()">HTML
                                 </label>
                             </div>
                             <div class="titles__complete-form">
                                 <label for="css">
-                                    <input id="css" type="checkbox" value="css" name="css">CSS
+                                    <input id="css-input" type="checkbox" value="css" name="css" onclick="myFunction2()">CSS
                                 </label>
                             </div>
                             <div class="titles__complete-form">
                                 <label for="react">
-                                    <input id="react" type="checkbox" value="react" name="react">React
+                                    <input id="react-input" type="checkbox" value="react" name="react" onclick="myFunction3()">React
                                 </label>
                             </div>
                         </form>
