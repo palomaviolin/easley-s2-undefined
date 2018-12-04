@@ -19,7 +19,7 @@
   padding-bottom: 8px;
   justify-content: space-between;
 }
-.formdesing__circle{
+.formdesign__circle{
   height: 17px;
   width: 17px;
 }
@@ -112,7 +112,7 @@
 
 .section2__design--titles {
   font-family: $font-family_main;
-  font-weight: $font-weight_semi-bold;
+  font-weight: $font-weight_medium;
   font-size: 14px;
   color: $color_main_gray;
   text-transform: uppercase;
@@ -138,7 +138,7 @@
   padding-left: 10px;
 }
 
-.merriweather {
+.montserrat {
   font-family: $font-family_option3;
   font-weight: $font-weight_regular;
   font-size: 16px;
@@ -603,21 +603,30 @@ ol {
 
 /* Font styles for profile card*/
 
-.ubuntu {
-  .profile__data-group {
+.font-ubuntu {
+
+  .profile__name {
+    font-family: $font-family_option1;
+  }
+  .profile__profession {
     font-family: $font-family_option1;
   }
 } 
   
-.comic {
-  .profile__data-group {
+.font-comic {
+  .profile__name {
+    font-family: $font-family_option2;
+  }
+  .profile__profession {
     font-family: $font-family_option2;
   }
 } 
   
-.montserrat {
-  .profile__data-group {
+.font-montserrat {
+  .profile__name {
     font-family: $font-family_option3;
   }
-} 
-  
+  .profile__profession {
+    font-family: $font-family_option3;
+  }
+}
