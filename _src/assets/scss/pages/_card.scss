@@ -151,7 +151,14 @@
   display: flex;
   flex-direction: row;
 }
-
+.profile__image{
+  background-image: url(../images/default_picture.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.action__hiddenField{
+  display:none;
+}
 .button__add--image {
   width: 140px;
   height: 30px;

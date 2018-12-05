@@ -33,9 +33,8 @@
                             <div class="profile__profession">Job</div>
                         </div>
                     </div>
-                    <div class="profile__picture-container">
-                        <img class="profile__picture" src="../assets/images/default_picture.jpg" alt="Default picture">
-                    </div>
+                    <div class="profile__picture-container profile__image">
+                   </div>
                     <ul class="list_contact">
                         <li class="icon_border">
                             <a class="icon-link" href=""><i class="fas fa-mobile-alt ico"></i></a>
@@ -136,7 +135,8 @@
                             <div class="titles__complete-form"><label for="image">Profile image</label></div>
                             <div class="formcomplete__container--addimage">
                                 <button class="button__add--image">Add image</button>
-                                <div class="formcomplete__imagepreview"></div>
+                                <input type="file" name="" id="img-selector" class="action__hiddenField">
+                                <div class="formcomplete__imagepreview profile__image"></div>
                             </div>
 
                             <div class="titles__complete-form"><label for="email">Email</label></div>
