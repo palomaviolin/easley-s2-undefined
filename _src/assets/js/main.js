@@ -24,7 +24,7 @@ const uploadBtn = document.querySelector('.button__add--image');
 
 const fileField = document.querySelector('#img-selector');
 
-const profileImages = document.querySelectorAll('.profile__picture');
+const profileImages = document.querySelectorAll('.profile__image');
 
 //get user image
 function getImage(e) {
@@ -37,7 +37,7 @@ function getImage(e) {
 
 function writeImage() {
   for (const cardImage of profileImages) {
-    cardImage.src = fr.result;
+    cardImage.style.backgroundImage = `url(${fr.result})`;
   }
 }
 

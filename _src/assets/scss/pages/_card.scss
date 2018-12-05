@@ -174,7 +174,6 @@
   width: 30px;
   height: 30px;
   border: 1px solid $color_green_Light;
-
 }
 
 .titles__complete-form {
@@ -377,16 +376,17 @@ ol {
   line-height: 16px;
   margin-top: 5px;
 }
+.profile__image {
+  background-image: url(../images/default_picture.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
 .profile__picture-container {
   width: 240px;
   height: 200px;
 }
-.profile__picture {
-  display: block;
-  max-width: 100%;
-  max-height: 100%;
-  margin: 0 auto;
-}
+
 .action__hiddenField{
   display:none;
 }
