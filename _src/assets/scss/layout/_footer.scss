@@ -16,7 +16,7 @@
   display: block;
 }
 .logo-undefined {
-  height: 40px;
+  height: 50px;
   margin-bottom: 20px;
 }
 .logo-adalab {
@@ -28,8 +28,23 @@
     justify-content: space-between;
     align-items: center;
     border-top: 1px solid $color_main_division;
+    padding: 20px 40px;
+  }
+  .logo-undefined {
+    margin-bottom: 0;
+  }
+  .copyright-index {
+    min-width: 350px;
+    text-align: left;
   }
   .footer__logos {
     margin: 0;
+    display: flex;
+    margin-left: 30px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer__logo {
+    margin-left: 30px;
   }
 }

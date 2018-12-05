@@ -1,22 +1,20 @@
 .card__section2 {
   background: linear-gradient($color_main_boneWhite, $color_main_pureWhite);
 }
+
 .section2__list {
   margin: 0 20px;
-}
-.section2__list--collapsible {
-  border-bottom: 1px solid $color_main_division;
 }
 /* Here start DESIGN styles */
 
 .section2__colors--wrapper {
-    display: flex;
-    flex-direction: row;
-    padding-top: 30px;
-    padding-bottom: 8px;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  padding-top: 30px;
+  padding-bottom: 8px;
+  justify-content: space-between;
 }
-.formdesing__circle{
+.formdesign__circle{
   height: 17px;
   width: 17px;
 }
@@ -89,7 +87,7 @@
   flex-direction: column;
 }
 
-.section2__list--h2{
+.section2__list--h2 {
   font-family: $font-family_main;
   font-weight: $font-weight_semi-bold;
   font-size: 18px;
@@ -102,14 +100,9 @@
   font-size: 18px;
 }
 
-.icon__arrow--card-page {
-  font-size: 18px;
-  color: $color_main_gray;
-}
-
 .section2__design--titles {
   font-family: $font-family_main;
-  font-weight: $font-weight_semi-bold;
+  font-weight: $font-weight_medium;
   font-size: 14px;
   color: $color_main_gray;
   text-transform: uppercase;
@@ -117,9 +110,9 @@
 }
 
 .fontfamily__options {
-    margin-bottom: 9px;
-    display: flex;
-    align-items: center;
+  margin-bottom: 9px;
+  display: flex;
+  align-items: center;
 }
 
 .ubuntu {
@@ -135,7 +128,7 @@
   padding-left: 10px;
 }
 
-.merriweather {
+.montserrat {
   font-family: $font-family_option3;
   font-weight: $font-weight_regular;
   font-size: 16px;
@@ -148,14 +141,14 @@
   padding-top: 10px;
   padding-bottom: 2px;
 }
-.section2__completeform--input{
+.section2__completeform--input {
   width: 100%;
   height: 30px;
-  padding:2px;
+  padding: 2px;
   border: 1px solid $color_green_Light;
 }
-.formcomplete__container--addimage{
-  display:flex;
+.formcomplete__container--addimage {
+  display: flex;
   flex-direction: row;
 }
 
@@ -170,7 +163,7 @@
   margin-right: 20px;
 }
 
-.formcomplete__imagepreview{
+.formcomplete__imagepreview {
   width: 30px;
   height: 30px;
   border: 1px solid $color_green_Light;
@@ -183,23 +176,41 @@
 }
 
 /* Here start SHARE styles */
-
+.title__card--created,
+.title__card--link,
+.button__twitter {
+  display: flex;
+  justify-content: center;
+  margin: 5px auto;
+}
+.button_container {
+  text-align: center;
+}
 .button__create-card {
   cursor: pointer;
-  width: 200px;
+  width: 220px;
   height: 50px;
   border-radius: 12px;
   background-color: $color_main_orange;
   color: $color_main_pureWhite;
   font-size: 18px;
+  line-height: 18px;
   font-family: $font-family_main;
   text-transform: uppercase;
-  margin-top: 30px;
+  outline-style: none;
+  transition: background-color 0.3s ease-in-out;
+  margin: 30px auto;
 }
-
-.content__of-button-create-card {
-  display: flex;
-  flex-direction: column;
+.button__create-card.active {
+  background-color: $color_main_inactive;
+}
+.create__mesage {
+  height: 0;
+  transition: 0.3s ease-in-out;
+}
+.create__mesage.show {
+  height: 100px;
+  // height: auto;
 }
 
 .button__twitter {
@@ -212,8 +223,13 @@
   font-size: 14px;
   font-family: $font-family_main;
   font-weight: $font-weight_regular;
+  align-items: center;
+  line-height: 20px;
+  margin: 10px auto 30px;
 }
-
+.fa-twitter {
+  margin-right: 10px;
+}
 .title__card--created {
   font-family: $font-family_main;
   font-weight: $font-weight_semi-bold;
@@ -231,7 +247,34 @@
 }
 
 /* Here start COLLAPSIBLES: Design, Complete, Share */
-
+.section2__list--collapsible {
+  border-bottom: 1px solid $color_main_division;
+  height: 61px;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
+.section2__list--collapsible.open {
+  .icon__arrow--card-page {
+    transform: rotate(180deg);
+  }
+}
+.first_block.open {
+  height: 341px;
+}
+.second_block.open {
+  height: 630px;
+}
+.third_block.open {
+  height: 180px;
+}
+.third_block.open.add_height {
+  height: 280px;
+}
+.icon__arrow--card-page {
+  transition: 0.3s;
+  font-size: 18px;
+  color: $color_main_gray;
+}
 .collapsible {
   cursor: pointer;
   padding: 18px 0;
@@ -241,52 +284,14 @@
   outline: none;
   display: flex;
   justify-content: space-between;
+  transition: 0.3s;
 }
-
-.active,
-.collapsible:hover {
-  background-color: $color_main_division;
-}
-
-.content {
-  padding: 0 18px 30px 18px;
-  display: none;
-  overflow: hidden;
-}
-
-/* Here start COLLAPSIBLE of ButtonShare */
-
-.activeButtonShare,
-.collapsibleButtonShare:hover {
-  background-color: $color_main_inactive;
-}
-
-.title__card--created,
-.title__card--link,
-.button__twitter {
-  display: flex;
-  justify-content: center;
-  margin: 5px auto;
-}
-
-.button__create-card {
-  width: 220px;
-  height: 50px;
-  border-radius: 12px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0 13px;
-  line-height: 18px;
-  margin: 30px auto;
-}
-
-
 /* Here start PROFILE styles */
 .header-logo {
   width: 240px;
   height: 50px;
   margin: 30px auto;
+
   .logo_awesome {
     margin: 0;
     width: 200px;
@@ -296,8 +301,7 @@
 .profile {
   width: 100%;
   height: 460px;
-  background: linear-gradient(#4dcea6, #a6f3ba);
-  
+  background: linear-gradient(#a6f3ba, #4dcea6);
   margin: 0 auto;
   font-family: $font-family_option2;
 }
@@ -305,12 +309,13 @@
 ul,
 ol {
   list-style: none;
-  ;
 }
+
 .profile__container {
   width: 240px;
   margin: 0 auto;
 }
+
 .profile__action {
   width: 75px;
   height: 30px;
@@ -320,17 +325,16 @@ ol {
   border: 1px solid $color_main_pureWhite;
   border-radius: 15px;
   margin: 10px 0 20px;
-  // color: $color_main_gray;
   color: $color_main_pureWhite;
-  transition: .3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
   cursor: pointer;
-  box-shadow: 0px 2px 5px 0px rgba(2,158,158,.2);
-    &:hover {
-      color: $color_green_Light;
-      background-color:$color_main_pureWhite;
-      box-shadow: 0px 5px 5px 0px rgba(2,158,158,.2);
-      transform: translateY(-3px);
-    }
+  box-shadow: 0px 2px 5px 0px rgba(2, 158, 158, 0.2);
+  &:hover {
+    color: $color_green_Light;
+    background-color: $color_main_pureWhite;
+    box-shadow: 0px 5px 5px 0px rgba(2, 158, 158, 0.2);
+    transform: translateY(-3px);
+  }
 }
 
 .profile__action-text {
@@ -399,7 +403,7 @@ ol {
 
 .border_bottom {
   border-bottom: 2px solid $color_green_Medium;
-  opacity: .2;
+  opacity: 0.2;
 }
 
 .icon_border {
@@ -415,7 +419,6 @@ ol {
   .ico {
     font-size: 18px;
     color: $color_main_green;
-
   }
 }
 
@@ -455,48 +458,35 @@ ol {
   border-radius: 4px;
   background-color: $color_green_Medium;
 }
-@media all and (min-width: 768px)  {
-  .header-logo {
-    margin: 30px auto 30px 40px;
+
+/* Green style for profile card*/
+
+.green {
+  .profile__name {
+    color: $color_green_Dark;
   }
-  .main__container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 40px;
-    background: linear-gradient($color_main_boneWhite, $color_main_pureWhite)
+
+  .ico {
+    color: $color_green_Dark;
   }
-  .profile {
-    width: 100%;
-    height: 815px;
-    margin: 0 0 0 30px;
-    border-radius: 5px;
-    order: 1;
-    display: flex;
-    align-items: center;
+
+  .border_bottom {
+    border-bottom: 2px solid $color_green_Medium;
   }
-  .card__section2 {
-    min-width: 350px;
+
+  .skill {
+    background-color: $color_green_Medium;
   }
-  .section2__list {
-    margin: 0;
+
+  .icon_border {
+    border: 2px solid $color_green_Light;
   }
-  .footer-index {
-    padding: 20px 40px;
-  }
-  .copyright-index {
-    min-width: 350px;
-    text-align: left;
-  }
-  .footer__logos {
-    display: flex;
-    width: 100%;
-    margin-left: 30px;
-    justify-content: space-between;
-  }
-  .logo-undefined {
-    margin: 0;
+
+  .profile__vertical-line {
+    background-color: $color_green_Light;
   }
 }
+
 /* Red style for profile card*/
 
 .red {
@@ -522,11 +512,10 @@ ol {
 
   .profile__vertical-line {
     background-color: $color_red_Light;
-  }  
+  }
 }
 
 /* Gray style for profile card*/
-
 .gray {
   .profile__name {
     color: $color_gray_Dark;
@@ -539,7 +528,7 @@ ol {
   .border_bottom {
     border-bottom: 2px solid $color_gray_Medium;
   }
-  
+
   .skill {
     background-color: $color_gray_Medium;
   }
@@ -550,5 +539,59 @@ ol {
 
   .profile__vertical-line {
     background-color: $color_gray_Light;
-  }  
+  }
+}
+
+@media all and (min-width: 768px) {
+  .main__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background: linear-gradient($color_main_boneWhite, $color_main_pureWhite);
+  }
+  .profile {
+    width: 100%;
+    height: 815px;
+    margin: 0 0 0 30px;
+    border-radius: 5px;
+    order: 1;
+    display: flex;
+    align-items: center;
+  }
+  .card__section2 {
+    min-width: 350px;
+  }
+  .section2__list {
+    margin: 0;
+  }
+}
+
+/* Font styles for profile card*/
+
+.font-ubuntu {
+
+  .profile__name {
+    font-family: $font-family_option1;
+  }
+  .profile__profession {
+    font-family: $font-family_option1;
+  }
+} 
+  
+.font-comic {
+  .profile__name {
+    font-family: $font-family_option2;
+  }
+  .profile__profession {
+    font-family: $font-family_option2;
+  }
+} 
+  
+.font-montserrat {
+  .profile__name {
+    font-family: $font-family_option3;
+  }
+  .profile__profession {
+    font-family: $font-family_option3;
+  }
 }

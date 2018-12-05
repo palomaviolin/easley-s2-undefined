@@ -18,7 +18,9 @@
 	"js": {
 		"src": [
       "_src/assets/js/main.js",
-      "_src/assets/js/card_image.js"  
+      "_src/assets/js/card_image.js",  
+      "_src/assets/js/card_colors.js",
+      "_src/assets/js/card_accordion.js"
 		],
 		"dest": "public/assets/js/",
     "dist": "docs/assets/js/"
