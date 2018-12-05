@@ -16,7 +16,7 @@
   display: block;
 }
 .logo-undefined {
-  height: 40px;
+  height: 50px;
   margin-bottom: 20px;
 }
 .logo-adalab {
@@ -31,5 +31,8 @@
   }
   .footer__logos {
     margin: 0;
+  }
+  .logo-undefined {
+    margin-bottom: 0;
   }
 }

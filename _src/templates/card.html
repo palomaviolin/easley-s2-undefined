@@ -25,7 +25,6 @@
                     <i class="far fa-trash-alt"></i>
                     <span class="profile__action-text">Reset</span>
                 </button>
-
                 <div class="profile__data">
                     <div class="profile__data-top">
                         <div class="profile__vertical-line"></div>
@@ -63,15 +62,12 @@
 
         <section class="card__section2">
             <ul class="section2__list">
-                <li class="section2__list--collapsible">
-
-                    <div class="collapsible">
-                        <h2 class="section2__list--h2"><i class="far fa-object-ungroup icon__card-page"></i> Design</h2>                    
+                <li class="section2__list--collapsible first_block">
+                    <div id="first_child" class="collapsible">
+                        <h2 class="section2__list--h2"><i class="far fa-object-ungroup icon__card-page"></i> Design</h2>
                         <div><i class="fas fa-chevron-down icon__arrow--card-page"></i></div>
                     </div>
-
                     <div class="content">
-
                         <div class="section2__colors--wrapper">
                             <div class="section2__design--titles">Colors</div>
                             <div>
@@ -122,22 +118,20 @@
                     </div>
 
                 </li>
-
-                <li class="section2__list--collapsible">
-                    <div class="collapsible">
+                <li class="section2__list--collapsible second_block">
+                    <div id ="second_child" class="collapsible">
                         <h2 class="section2__list--h2"><i class="fas fa-keyboard icon__card-page"></i> Complete</h2>
                         <div><i class="fas fa-chevron-down icon__arrow--card-page"></i></div>
                     </div>
                     <div class="content">
                         <form action="">
-
                             <div class="titles__complete-form"><label for="email">Full name</label></div>
-                            <div><input class="section2__completeform--input" placeholder="Ex: Sally Hill" id="name" type="text" name="name"
-                                    required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: Sally Hill" id="name"
+                                    type="text" name="name" required></div>
 
                             <div class="titles__complete-form"><label for="email">Job position</label></div>
-                            <div><input class="section2__completeform--input" placeholder="Ex: Front-end unicorn" id="job" type="text" name="job"
-                                    required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: Front-end unicorn" id="job"
+                                    type="text" name="job" required></div>
 
                             <div class="titles__complete-form"><label for="image">Profile image</label></div>
                             <div class="formcomplete__container--addimage">
@@ -146,20 +140,20 @@
                             </div>
 
                             <div class="titles__complete-form"><label for="email">Email</label></div>
-                            <div><input class="section2__completeform--input" placeholder="Ex: sally.hill@gmail.com" id="email" type="email" name="email"
-                                    required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: sally.hill@gmail.com" id="email"
+                                    type="email" name="email" required></div>
 
                             <div class="titles__complete-form"><label for="telf_movil">Telephone number</label></div>
-                            <div><input class="section2__completeform--input" placeholder="Ex: 555-55-55-55" id="telf_movil" type="text" name="telf_movil"
-                                    pattern="^6[0-9]{8}$" required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: 555-55-55-55" id="telf_movil"
+                                    type="text" name="telf_movil" pattern="^6[0-9]{8}$" required></div>
 
                             <div class="titles__complete-form"><label for="email">LinkedIn</label></div>
-                            <div><input class="section2__completeform--input"  placeholder="Ex: linkedin.com/in/sally-hill" id="linkedin" type="email"
-                                    name="linkedin" required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: linkedin.com/in/sally-hill"
+                                    id="linkedin" type="email" name="linkedin" required></div>
 
                             <div class="titles__complete-form"><label for="email">GitHub</label></div>
-                            <div><input class="section2__completeform--input" placeholder="Ex: @sally-hill" id="github" type="email" name="github"
-                                    required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: @sally-hill" id="github"
+                                    type="email" name="github" required></div>
 
                             <div class="titles__complete-form"><label for="skills">Skills (max 3)</label></div>
 
@@ -181,17 +175,17 @@
                         </form>
                     </div>
                 </li>
-                <li class="section2__list--collapsible">
-                    <div class="collapsible">
-                        <h2 class="section2__list--h2"><i class="fas fa-share-alt icon__card-page"></i> Share</h2>        
+                <li class="section2__list--collapsible third_block">
+                    <div id="third_child" class="collapsible">
+                        <h2 class="section2__list--h2"><i class="fas fa-share-alt icon__card-page"></i> Share</h2>
                         <div><i class="fas fa-chevron-down icon__arrow--card-page"></i></div>
                     </div>
-                    <div class="content">
-                        <button class="collapsible button__create-card">
+                    <div class="content button_container">
+                        <button class="button__create-card">
                             <i class="far fa-id-card"></i>
                             <a> Create visit card</a>
                         </button>
-                        <div class="content content2">
+                        <div class="create__mesage">
                             <div class="title__card--created">The card has been created</div>
                             <a class="title__card--link">https://awesome-profile-card.com?id=A456DF0001</a>
                             <button class="button__twitter">
@@ -202,12 +196,9 @@
                     </div>
                 </li>
             </ul>
-
         </section>
     </main>
-
     <partial src="_footer.html" label="Main"></partial>
-
     <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 

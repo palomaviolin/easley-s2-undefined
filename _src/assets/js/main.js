@@ -1,19 +1,31 @@
 'use strict';
 
-console.log('>> Ready :)');
+const firstChild = document.querySelector('#first_child');
+const secondChild = document.querySelector('#second_child');
+const thirdChild = document.querySelector('#third_child');
+const create = document.querySelector('.button__create-card');
+const content = document.querySelector('.create__mesage');
 
-var coll = document.getElementsByClassName("collapsible");
-var i;
+firstChild.addEventListener('click', openFun);
+secondChild.addEventListener('click', openFun);
+thirdChild.addEventListener('click', openFun);
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
+function openFun(e) {
+  e.currentTarget.classList.toggle('active');
+  if (e.currentTarget.classList.contains('active')) {
+    e.currentTarget.parentElement.classList.add('open');
+  } else {
+    e.currentTarget.parentElement.classList.remove('open');
+  }
 }
 
+create.addEventListener('click', showLink);
+
+function showLink(e) {
+  create.classList.toggle('active');
+  if (e.currentTarget.classList.contains('active')) {
+    content.classList.add('show');
+  } else {
+    content.classList.remove('show');
+  }
+}
