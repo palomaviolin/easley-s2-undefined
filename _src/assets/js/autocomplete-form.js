@@ -62,3 +62,17 @@ function myFunction3() {
        text.style.display = "none";
     }
 }
+
+
+// Here starts EMAIL JavaScript:
+
+let emailInput = document.body.querySelector('#email-input');
+
+function updateEmail (event) {
+  console.log(event);
+  let emailLabel = document.querySelector('#email-card');
+  console.log(emailLabel);
+    emailLabel.href = `mailto:${event.currentTarget.value}`;
+}
+
+emailInput.addEventListener('keyup', updateEmail);
