@@ -85,7 +85,7 @@ let githubInput = document.body.querySelector('#github-input');
 
 function updateGithub (event) {
   let githubLabel = document.querySelector('#github-card');
-    githubLabel.href = `https://github.com/${event.currentTarget.value}`;
+    githubLabel.href = `https://${event.currentTarget.value}`;
 }
 
 githubInput.addEventListener('keyup', updateGithub);
