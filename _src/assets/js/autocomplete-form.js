@@ -76,3 +76,33 @@ function updateEmail (event) {
 }
 
 emailInput.addEventListener('keyup', updateEmail);
+
+
+
+// Here starts GitHub JavaScript:
+
+let githubInput = document.body.querySelector('#github-input');
+
+function updateGithub (event) {
+  let githubLabel = document.querySelector('#github-card');
+    githubLabel.href = `https://github.com/${event.currentTarget.value}`;
+}
+
+githubInput.addEventListener('keyup', updateGithub);
+
+
+
+// Here starts LinkedIn JavaScript:
+
+let linkedinInput = document.body.querySelector('#linkedin-input');
+
+function updateLinkedin (event) {
+  let linkedinLabel = document.querySelector('#linkedin-card');
+    linkedinLabel.href = `https://www.linkedin.com/in/${event.currentTarget.value}`;
+}
+
+linkedinInput.addEventListener('keyup', updateLinkedin);
+
+
+
+
