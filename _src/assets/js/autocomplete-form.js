@@ -98,7 +98,7 @@ let linkedinInput = document.body.querySelector('#linkedin-input');
 
 function updateLinkedin (event) {
   let linkedinLabel = document.querySelector('#linkedin-card');
-    linkedinLabel.href = `https://www.linkedin.com/in/${event.currentTarget.value}`;
+    linkedinLabel.href = `https://www.${event.currentTarget.value}`;
 }
 
 linkedinInput.addEventListener('keyup', updateLinkedin);
