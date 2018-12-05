@@ -542,9 +542,6 @@ ol {
 }
 
 @media all and (min-width: 768px) {
-  .header-logo {
-    margin: 30px auto 30px 40px;
-  }
   .main__container {
     display: flex;
     justify-content: space-between;
@@ -565,22 +562,6 @@ ol {
   }
   .section2__list {
     margin: 0;
-  }
-  .footer-index {
-    padding: 20px 40px;
-  }
-  .copyright-index {
-    min-width: 350px;
-    text-align: left;
-  }
-  .footer__logos {
-    display: flex;
-    margin-left: 30px;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .footer__logo {
-    margin-left: 30px;
   }
 }
 
