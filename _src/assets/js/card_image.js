@@ -1,4 +1,3 @@
-////IMAGE 
 
 const fr = new FileReader();
 const uploadBtn = document.querySelector('.button__add--image');

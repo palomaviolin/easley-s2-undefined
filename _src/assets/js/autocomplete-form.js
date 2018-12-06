@@ -32,10 +32,10 @@ jobPositionInput.addEventListener('keyup', updateJobPosition);
 
 //HTML Checkbox
 function myFunction() {
-    var checkBox = document.getElementById("myCheck");
-    var text = document.getElementById("html");
-    if (checkBox.checked == true) {
-        text.style.display = "block";
+    let checkBox = document.getElementById("myCheck");
+    let text = document.getElementById("html");
+    if (checkBox.checked === true) {
+        text.style.display = "flex";
     } else {
         text.style.display = "none";
     }
@@ -43,10 +43,10 @@ function myFunction() {
 
 //CSS Checkbox 
 function myFunction2() {
-    var checkBox = document.getElementById("css-input");
-    var text = document.getElementById("css");
-    if (checkBox.checked == true) {
-        text.style.display = "block";
+    let checkBox = document.getElementById("css-input");
+    let text = document.getElementById("css");
+    if (checkBox.checked === true) {
+        text.style.display = "flex";
     } else {
         text.style.display = "none";
     }
@@ -54,10 +54,10 @@ function myFunction2() {
 
 //React Checkbox 
 function myFunction3() {
-    var checkBox = document.getElementById("react-input");
-    var text = document.getElementById("react");
-    if (checkBox.checked == true) {
-        text.style.display = "block";
+    let checkBox = document.getElementById("react-input");
+    let text = document.getElementById("react");
+    if (checkBox.checked === true) {
+        text.style.display = "flex";
     } else {
         text.style.display = "none";
     }
