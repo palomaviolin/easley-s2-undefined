@@ -20,7 +20,8 @@
       "_src/assets/js/main.js",
       "_src/assets/js/card_colors.js",
       "_src/assets/js/card_accordion.js",
-      "_src/assets/js/card_image.js"
+      "_src/assets/js/card_image.js",
+      "_src/assets/js/autocomplete-form.js"
 		],
 		"dest": "public/assets/js/",
     "dist": "docs/assets/js/"
