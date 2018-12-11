@@ -103,6 +103,7 @@ let githubInput = document.body.querySelector('#github-input');
 function updateGithub(event) {
   let githubLabel = document.querySelector('#github-card');
   githubLabel.href = `https://${event.currentTarget.value}`;
+  updateDataObject('github', event.currentTarget.value);
 }
 
 githubInput.addEventListener('keyup', updateGithub);
@@ -115,6 +116,7 @@ let linkedinInput = document.body.querySelector('#linkedin-input');
 function updateLinkedin(event) {
   let linkedinLabel = document.querySelector('#linkedin-card');
   linkedinLabel.href = `https://www.${event.currentTarget.value}`;
+  updateDataObject('linkedin', event.currentTarget.value);
 }
 
 linkedinInput.addEventListener('keyup', updateLinkedin);
