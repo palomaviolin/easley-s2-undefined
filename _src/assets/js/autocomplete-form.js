@@ -118,3 +118,5 @@ function updateLinkedin(event) {
 }
 
 linkedinInput.addEventListener('keyup', updateLinkedin);
+
+
