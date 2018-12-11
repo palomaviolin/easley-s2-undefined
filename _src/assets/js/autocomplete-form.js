@@ -16,6 +16,11 @@ let dataObject = {
 function updateDataObject(key,value) {
   dataObject[key] = value;
 }
+
+function updateLocalStorage(){
+  localStorage.setItem('dataObject', JSON.stringify(dataObject));
+} 
+
 // Here starts NAME JavaScript:
 
 let fullNameInput = document.body.querySelector('#name-input');
@@ -25,6 +30,7 @@ function updateFullName(event) {
   let fullNameLabel = document.body.querySelector('#name');
   fullNameLabel.innerText = event.target.value;
   updateDataObject('name', event.target.value);
+  updateLocalStorage();
 }
 
 fullNameInput.addEventListener('keyup', updateFullName);
@@ -40,6 +46,7 @@ function updateJobPosition(event) {
   let jobPositionLabel = document.body.querySelector('#job-card');
   jobPositionLabel.innerText = event.target.value;
   updateDataObject('job', event.target.value);
+  updateLocalStorage();
 }
 
 jobPositionInput.addEventListener('keyup', updateJobPosition);
@@ -91,6 +98,7 @@ function updateEmail(event) {
   console.log(emailLabel);
   emailLabel.href = `mailto:${event.currentTarget.value}`;
   updateDataObject('email', event.currrentTarget.value);
+  updateLocalStorage();
 }
 
 emailInput.addEventListener('keyup', updateEmail);
@@ -104,6 +112,7 @@ function updateGithub(event) {
   let githubLabel = document.querySelector('#github-card');
   githubLabel.href = `https://${event.currentTarget.value}`;
   updateDataObject('github', event.currentTarget.value);
+  updateLocalStorage();
 }
 
 githubInput.addEventListener('keyup', updateGithub);
@@ -117,8 +126,22 @@ function updateLinkedin(event) {
   let linkedinLabel = document.querySelector('#linkedin-card');
   linkedinLabel.href = `https://www.${event.currentTarget.value}`;
   updateDataObject('linkedin', event.currentTarget.value);
+  updateLocalStorage();
 }
 
 linkedinInput.addEventListener('keyup', updateLinkedin);
+
+// Here starts Telephone Javascript 
+
+let telInput = document.body.querySelector('#telf_movil');
+
+function updateTelephone(event) {
+  let telLabel = document.querySelector('#tel-card');
+  telLabel.href = `tel:${event.currentTarget.value}`;
+  updateDataObject('phone', event.currentTarget.value);
+  updateLocalStorage();
+}
+
+telInput.addEventListener('keyup', updateTelephone);
 
 
