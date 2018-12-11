@@ -70,11 +70,7 @@
   margin-bottom: 30px;
   &:hover {
     background-color: $color_green_Dark;
-    border: 3px solid $color_footer_gray;
-  }
-  &:hover .btn-start_a {
-    font-weight: bold;
-    font-size: 20px;
+    margin-top: 12px;
   }
 }
 
