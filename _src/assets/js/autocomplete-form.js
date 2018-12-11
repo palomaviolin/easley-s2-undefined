@@ -102,5 +102,15 @@ function updateLinkedin(event) {
 linkedinInput.addEventListener('keyup', updateLinkedin);
 
 
+// Here starts Telephone Javascript 
+
+let telInput = document.body.querySelector('#telf_movil');
+
+function updateTelephone(event) {
+    let telLabel = document.querySelector('#tel-card');
+    telLabel.href = `tel:${event.currentTarget.value}`;
+}
+
+telInput.addEventListener('keyup', updateTelephone);
 
 
