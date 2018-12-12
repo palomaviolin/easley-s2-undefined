@@ -3,25 +3,31 @@
   text-align: center;
   padding: 20px;
 }
+
 .copyright-index {
   color: $color_footer_gray;
   font-size: 14px;
   font-weight: $font-weight_regular;
   font-family: $font-family_main;
 }
+
 .footer__logos {
   margin: 40px auto 0;
 }
+
 .footer__logo {
   display: block;
 }
+
 .logo-undefined {
   height: 50px;
   margin-bottom: 20px;
 }
+
 .logo-adalab {
   height: 40px;
 }
+
 @media all and (min-width: 768px) {
   .footer-index {
     display: flex;
@@ -30,13 +36,16 @@
     border-top: 1px solid $color_main_division;
     padding: 20px 40px;
   }
+
   .logo-undefined {
     margin-bottom: 0;
   }
+
   .copyright-index {
     min-width: 350px;
     text-align: left;
   }
+
   .footer__logos {
     margin: 0;
     display: flex;
@@ -44,6 +53,7 @@
     justify-content: space-between;
     align-items: center;
   }
+
   .footer__logo {
     margin-left: 30px;
   }
