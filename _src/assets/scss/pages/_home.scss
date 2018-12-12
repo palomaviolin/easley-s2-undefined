@@ -68,9 +68,11 @@
   height: 42px;
   margin-top: 10px;
   margin-bottom: 30px;
+  transition: .3s ease-in-out;
   &:hover {
     background-color: $color_green_Dark;
-    margin-top: 12px;
+    transform: translateY(5px);
+    cursor: pointer;
   }
 }
 
