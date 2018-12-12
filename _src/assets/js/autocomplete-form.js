@@ -56,7 +56,7 @@ jobPositionInput.addEventListener('keyup', updateJobPosition);
 
 //HTML Checkbox
 function myFunction() {
-  let checkBox = document.getElementById("myCheck");
+  let checkBox = document.getElementById("html-input");
   let text = document.getElementById("html");
   if (checkBox.checked === true) {
     text.style.display = "flex";
@@ -204,7 +204,7 @@ inputMontserrat.addEventListener('click', saveTypography);
 
 //Habilidades
 
-// let inputUbuntu = document.querySelector('#font__option--1');
+// let inputHTML = document.querySelector('#font__option--1');
 // let inputComicSans = document.querySelector('#font__option--2');
 // let inputMontserrat = document.querySelector('#font__option--3');
 
