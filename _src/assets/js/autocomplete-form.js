@@ -26,7 +26,7 @@ function updateLocalStorage(){
 let fullNameInput = document.body.querySelector('#name-input');
 
 function updateFullName(event) {
-  console.log(event);
+  // console.log(event);
   let fullNameLabel = document.body.querySelector('#name');
   fullNameLabel.innerText = event.target.value;
   updateDataObject('name', event.target.value);
@@ -39,10 +39,10 @@ fullNameInput.addEventListener('keyup', updateFullName);
 // Here starts JOB JavaScript:
 
 let jobPositionInput = document.body.querySelector('#job-input');
-console.log('jobPositionInput', jobPositionInput); // This line is to view the element jobPositionInput in the console.
+//console.log('jobPositionInput', jobPositionInput); // This line is to view the element jobPositionInput in the console.
 
 function updateJobPosition(event) {
-  console.log(event);
+  // console.log(event);
   let jobPositionLabel = document.body.querySelector('#job-card');
   jobPositionLabel.innerText = event.target.value;
   updateDataObject('job', event.target.value);
@@ -145,3 +145,30 @@ function updateTelephone(event) {
 telInput.addEventListener('keyup', updateTelephone);
 
 
+//Color palette
+
+let inputGreen = document.querySelector('#palette__green');
+let inputRed = document.querySelector('#palette__red');
+let inputGray = document.querySelector('#palette__gray');
+
+function savePalette() {
+  if (inputGreen.checked === true) {
+    console.log('green');
+    dataObject.palette = 1;
+    updateDataObject('palette', 1);
+  } else if (inputRed.checked === true){
+    console.log('red');
+    dataObject.palette = 2;
+    updateDataObject('palette', 2);
+  } else if (inputGray.checked === true){
+    console.log('gray');
+    dataObject.palette = 3;
+    updateDataObject('palette', 3);
+  } else {
+    console.log('green');
+  }
+  updateLocalStorage();
+}
+inputGreen.addEventListener('click', savePalette);
+inputRed.addEventListener('click', savePalette);
+inputGray.addEventListener('click', savePalette);
