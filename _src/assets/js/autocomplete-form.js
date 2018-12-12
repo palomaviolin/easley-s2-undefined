@@ -245,8 +245,11 @@ function apiCall(json) {
   }
 })
 .then(res => res.json())
-.then(response => cardLink.innerHTML = response.cardURL)
-.then(response => console.log('Success:', JSON.stringify(response)))
+.then(response => {
+
+  cardLink.innerHTML = response.cardURL;
+
+})
 .catch(error => console.error('Error:', error));}
 
 button.addEventListener('click', apiCall);
