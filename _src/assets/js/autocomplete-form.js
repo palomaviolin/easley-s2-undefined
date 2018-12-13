@@ -12,10 +12,10 @@ function updateLocalStorage() {
 // Here starts NAME JavaScript:
 
 let fullNameInput = document.body.querySelector('#name-input');
+let fullNameLabel = document.body.querySelector('#name');
 
 function updateFullName(event) {
   // console.log(event);
-  let fullNameLabel = document.body.querySelector('#name');
   fullNameLabel.innerText = event.target.value;
   updateDataObject('name', event.target.value);
   updateLocalStorage();
@@ -142,16 +142,16 @@ let inputGray = document.querySelector('#palette__gray');
 function savePalette() {
   if (inputGreen.checked === true) {
     console.log('green');
-    dataObject.palette = 1;
-    updateDataObject('palette', 1);
+    dataObject.palette = '1';
+    updateDataObject('palette', '1');
   } else if (inputRed.checked === true) {
     console.log('red');
-    dataObject.palette = 2;
-    updateDataObject('palette', 2);
+    dataObject.palette = '2';
+    updateDataObject('palette', '2');
   } else if (inputGray.checked === true) {
     console.log('gray');
-    dataObject.palette = 3;
-    updateDataObject('palette', 3);
+    dataObject.palette = '3';
+    updateDataObject('palette', '3');
   } else {
     console.log('green');
   }
@@ -244,3 +244,20 @@ function apiCall(json) {
 }
 
 button.addEventListener('click', apiCall);
+
+
+
+function getLocalStorage() {
+  // localStorage.getItem('dataObject');
+  let myLocalStorage = localStorage.getItem('dataObject');
+  let myLocalStorageObject = JSON.parse(myLocalStorage);
+  console.log(myLocalStorageObject);
+
+  if (myLocalStorageObject !== null) {
+    dataObject = myLocalStorageObject; 
+    fullNameInput.value = dataObject.name;
+    fullNameLabel.innerText = dataObject.name;
+    jobPositionInput.value = dataObject.job;
+  } 
+}
+getLocalStorage();
