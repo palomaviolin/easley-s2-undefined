@@ -46,6 +46,43 @@ let skillsList = document.querySelector('#container-checkboxes');
 console.log(skillsList);
 let skillsCard = document.querySelector('#container-checkboxes-card');
 
+let skills = [];
+
+function updateSkills() {
+  let counter = 0;
+  let MAX_SKILLS = 3;
+
+  // Resetear etiquetas de la card
+  skillsCard.innerHTML = '';
+  
+  // Cogemos todos los li de la caja de checkboxes
+  let checkboxListItems = skillsList.querySelectorAll('li');
+
+  // Iteramos por cada li de checkbox
+  for (const checkboxListItem of checkboxListItems) {
+    // Cogemos el checkbox del li que estamos procesando
+    let checkbox = checkboxListItem.querySelector('input');
+
+    // Si el checkbox está checked y el contador de skills seleccionadas es menor que el máximo, añadimos etiqueta a la card
+    if (counter < MAX_SKILLS && checkbox.checked) {
+      console.log(counter);
+
+      // Creamos un elemento <li> para la etiqueta 
+    let cardListItemElem = document.createElement('li');
+    cardListItemElem.style = `list-style-type: none; padding: 1px; font-family:"Open Sans", sans-serif; font-weight: 400; font-size: 13px; color: white; background-color: #438792; width: 80px; border-radius: 4px; margin: 2px; display: inline-block;`; // Para quitar el punto de cada 'li' que sale por defecto.
+
+    // Añadimos el nombre de la skill (que es textContent del li de checkboxes-container) como texto hijo del <li> de la card
+    let cardListItemContent = document.createTextNode(`${checkboxListItem.textContent}`);
+    cardListItemElem.appendChild(cardListItemContent);
+
+    // Finalmente, añadimos el <li> a la lista
+    skillsCard.appendChild(cardListItemElem);
+    counter++;     
+    }
+  }
+
+}
+
 function init() {
   fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
     .then(response => response.json())
@@ -58,6 +95,7 @@ function init() {
       // Reseteamos contenido de lista de skills
       skillsList.innerHTML = '';
 
+      /*
       // Print de las skills en la CARD
       for (let i = 0; i < skillsArr.length; i++) {
         // Objeto de skill
@@ -75,15 +113,26 @@ function init() {
         // Finalmente, añadimos el <li> a la lista
         skillsCard.appendChild(listItemElem);
       }
+      */
+
       // Print de las skills en el FORMULARIO
       for (let i = 0; i < skillsArr.length; i++) {
         // Objeto de skill
         let currentSkill = skillsArr[i];
+
+        // Creamos array con nombre de skill y estado (marcado o desmarcado)
+        skills.push({ name: currentSkill, checked: false });
+
         console.log(currentSkill);
 
         // Creamos un elemento <li> 
         let listItemElem = document.createElement('li');
-        listItemElem.innerHTML = `<input type="checkbox">`; // Para poner checkbox delante de cada skill.
+
+        // Para poner checkbox delante de cada skill
+        let listItemCheckbox = document.createElement('input');
+        listItemCheckbox.type = 'checkbox';
+        listItemCheckbox.addEventListener('click', updateSkills);
+        listItemElem.appendChild(listItemCheckbox);
         listItemElem.style = `list-style-type: none`; // Para quitar el punto de cada 'li' que sale por defecto.
 
         // Añadimos el nombre de la skill como texto hijo del <li>
@@ -93,8 +142,11 @@ function init() {
         // Finalmente, añadimos el <li> a la lista
         skillsList.appendChild(listItemElem);
       }
-
-
+      /*
+      checks --> se recorre con document.querySelectorAll
+      addEventListener.
+      handler con for de todos los chekcbox y si está true lo acumulo en una constante donde voy acumulando lis con eso
+      if inputComicSans. checked ==== true*/
     })
 }
 
