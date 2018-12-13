@@ -235,6 +235,7 @@ inputMontserrat.addEventListener('click', saveTypography);
 let url = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
 let button = document.querySelector('.button__create-card');
 const cardLink = document.querySelector('.title__card--link');
+const tweetbutton = document.querySelector('.twitter');
 
 function apiCall(json) {
   fetch(url, {
@@ -248,6 +249,7 @@ function apiCall(json) {
 .then(response => {
 
   cardLink.innerHTML = response.cardURL;
+  tweetbutton.href ="https://twitter.com/intent/tweet?text=%C2%A1He%20creado%20esta%20tarjeta%20personalizada%20con%20Awesome%20Profile%20Card%20de%20undefined-team!%20✨" +response.cardURL;
 
 })
 .catch(error => console.error('Error:', error));}
