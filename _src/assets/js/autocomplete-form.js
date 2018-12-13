@@ -95,9 +95,9 @@ let emailInput = document.body.querySelector('#email-input');
 function updateEmail(event) {
   console.log(event);
   let emailLabel = document.querySelector('#email-card');
-  console.log(emailLabel);
+  // console.log(emailLabel);
   emailLabel.href = `mailto:${event.currentTarget.value}`;
-  updateDataObject('email', event.currrentTarget.value);
+  updateDataObject('email', event.currentTarget.value);
   updateLocalStorage();
 }
 
