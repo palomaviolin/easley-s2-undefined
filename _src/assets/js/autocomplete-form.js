@@ -46,11 +46,11 @@ let skillsList = document.querySelector('#container-checkboxes');
 console.log(skillsList);
 let skillsCard = document.querySelector('#container-checkboxes-card');
 
-function init () {
+function init() {
   fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
-  .then(response => response.json())
-  .then(function (data){
-    console.log(data);
+    .then(response => response.json())
+    .then(function (data) {
+      console.log(data);
       let skillsArr = data.skills; // Objeto con un array de strings
       console.log(skillsArr);
       let skillsList = document.querySelector('#container-checkboxes');
@@ -58,25 +58,6 @@ function init () {
       // Reseteamos contenido de lista de skills
       skillsList.innerHTML = '';
 
-      // Print de las skills en el FORMULARIO
-      for (let i = 0; i < skillsArr.length; i++) {
-          // Objeto de skill
-          let currentSkill = skillsArr[i];
-          console.log(currentSkill);
-
-          // Creamos un elemento <li> 
-          let listItemElem = document.createElement('li');
-          listItemElem.innerHTML = `<input type="checkbox">`; // Para poner checkbox delante de cada skill.
-          listItemElem.style = `list-style-type: none`; // Para quitar el punto de cada 'li' que sale por defecto.
-    
-          // Añadimos el nombre de la skill como texto hijo del <li>
-          let listItemContent = document.createTextNode(`${currentSkill}`);
-          listItemElem.appendChild(listItemContent);
-
-          // Finalmente, añadimos el <li> a la lista
-          skillsList.appendChild(listItemElem);
-          }
-      
       // Print de las skills en la CARD
       for (let i = 0; i < skillsArr.length; i++) {
         // Objeto de skill
@@ -86,15 +67,35 @@ function init () {
         // Creamos un elemento <li> 
         let listItemElem = document.createElement('li');
         listItemElem.style = `list-style-type: none; background-color: pink; width: 80px; border-radius: 4px; margin: 2px; display: inline-block;`; // Para quitar el punto de cada 'li' que sale por defecto.
-  
+
         // Añadimos el nombre de la skill como texto hijo del <li>
         let listItemContent = document.createTextNode(`${currentSkill}`);
         listItemElem.appendChild(listItemContent);
 
         // Finalmente, añadimos el <li> a la lista
         skillsList.appendChild(listItemElem);
-        }
-})
+      }
+      // Print de las skills en el FORMULARIO
+      for (let i = 0; i < skillsArr.length; i++) {
+        // Objeto de skill
+        let currentSkill = skillsArr[i];
+        console.log(currentSkill);
+
+        // Creamos un elemento <li> 
+        let listItemElem = document.createElement('li');
+        listItemElem.innerHTML = `<input type="checkbox">`; // Para poner checkbox delante de cada skill.
+        listItemElem.style = `list-style-type: none`; // Para quitar el punto de cada 'li' que sale por defecto.
+
+        // Añadimos el nombre de la skill como texto hijo del <li>
+        let listItemContent = document.createTextNode(`${currentSkill}`);
+        listItemElem.appendChild(listItemContent);
+
+        // Finalmente, añadimos el <li> a la lista
+        skillsList.appendChild(listItemElem);
+      }
+
+
+    })
 }
 
 init();
@@ -286,12 +287,12 @@ const tweetbutton = document.querySelector('.twitter');
 
 function apiCall(json) {
   fetch(url, {
-      method: 'POST', // or 'PUT'
-      body: JSON.stringify(dataObject), // data can be `string` or {object}!
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
+    method: 'POST', // or 'PUT'
+    body: JSON.stringify(dataObject), // data can be `string` or {object}!
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
     .then(res => res.json())
     .then(response => {
 
