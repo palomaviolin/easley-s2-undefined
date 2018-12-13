@@ -1,4 +1,5 @@
 'use strict';
+
 const fr = new FileReader();
 const uploadBtn = document.querySelector('.button__add--image');
 
@@ -18,6 +19,9 @@ function getImage(e) {
 function writeImage() {
   for (const cardImage of profileImages) {
     cardImage.style.backgroundImage = `url(${fr.result})`;
+    console.log(fr.result);
+    updateDataObject('photo', fr.result);
+    updateLocalStorage();
   }
 }
 
@@ -27,3 +31,4 @@ function fakeFileClick() {
 
 fileField.addEventListener('change', getImage);
 uploadBtn.addEventListener('click', fakeFileClick);
+

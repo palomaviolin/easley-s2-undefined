@@ -1,25 +1,13 @@
 'use strict';
 
-let dataObject = {
-  'palette': 1,
-  'typography': 2,
-  'name': '',
-  'job': '',
-  'phone': '',
-  'email': '',
-  'linkedin': '',
-  'github': '',
-  'photo': '',
-  'skills': ['', '', '']
-}; 
 
-function updateDataObject(key,value) {
+function updateDataObject(key, value) {
   dataObject[key] = value;
 }
 
-function updateLocalStorage(){
+function updateLocalStorage() {
   localStorage.setItem('dataObject', JSON.stringify(dataObject));
-} 
+}
 
 // Here starts NAME JavaScript:
 
@@ -156,11 +144,11 @@ function savePalette() {
     console.log('green');
     dataObject.palette = 1;
     updateDataObject('palette', 1);
-  } else if (inputRed.checked === true){
+  } else if (inputRed.checked === true) {
     console.log('red');
     dataObject.palette = 2;
     updateDataObject('palette', 2);
-  } else if (inputGray.checked === true){
+  } else if (inputGray.checked === true) {
     console.log('gray');
     dataObject.palette = 3;
     updateDataObject('palette', 3);
@@ -184,11 +172,11 @@ function saveTypography() {
     console.log('ubuntu');
     dataObject.typography = 'u';
     updateDataObject('typography', 'u');
-  } else if (inputComicSans.checked === true){
+  } else if (inputComicSans.checked === true) {
     console.log('ComicSans');
     dataObject.typography = 'c';
     updateDataObject('typography', 'c');
-  } else if (inputMontserrat.checked === true){
+  } else if (inputMontserrat.checked === true) {
     console.log('Montserrat');
     dataObject.typography = 'm';
     updateDataObject('typography', 'm');
@@ -200,3 +188,59 @@ function saveTypography() {
 inputUbuntu.addEventListener('click', saveTypography);
 inputComicSans.addEventListener('click', saveTypography);
 inputMontserrat.addEventListener('click', saveTypography);
+
+
+//Habilidades
+
+// let inputUbuntu = document.querySelector('#font__option--1');
+// let inputComicSans = document.querySelector('#font__option--2');
+// let inputMontserrat = document.querySelector('#font__option--3');
+
+// function saveTypography() {
+//   if (inputUbuntu.checked === true) {
+//     console.log('ubuntu');
+//     dataObject.typography = 'u';
+//     updateDataObject('typography', 'u');
+//   } else if (inputComicSans.checked === true){
+//     console.log('ComicSans');
+//     dataObject.typography = 'c';
+//     updateDataObject('typography', 'c');
+//   } else if (inputMontserrat.checked === true){
+//     console.log('Montserrat');
+//     dataObject.typography = 'm';
+//     updateDataObject('typography', 'm');
+//   } else {
+//     console.log('Montserrat');
+//   }
+//   updateLocalStorage();
+// }
+// inputUbuntu.addEventListener('click', saveTypography);
+// inputComicSans.addEventListener('click', saveTypography);
+// inputMontserrat.addEventListener('click', saveTypography);
+
+// Here starts the API call
+
+let url = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
+let button = document.querySelector('.button__create-card');
+const cardLink = document.querySelector('.title__card--link');
+const tweetbutton = document.querySelector('.twitter');
+
+function apiCall(json) {
+  fetch(url, {
+      method: 'POST', // or 'PUT'
+      body: JSON.stringify(dataObject), // data can be `string` or {object}!
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => res.json())
+    .then(response => {
+
+      cardLink.innerHTML = response.cardURL;
+      tweetbutton.href = "https://twitter.com/intent/tweet?text=%C2%A1He%20creado%20esta%20tarjeta%20personalizada%20con%20Awesome%20Profile%20Card%20de%20undefined-team!%20✨" + response.cardURL;
+
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+button.addEventListener('click', apiCall);
