@@ -80,7 +80,6 @@ function updateSkills() {
     counter++;     
     }
   }
-
 }
 
 function init() {
@@ -94,26 +93,6 @@ function init() {
 
       // Reseteamos contenido de lista de skills
       skillsList.innerHTML = '';
-
-      /*
-      // Print de las skills en la CARD
-      for (let i = 0; i < skillsArr.length; i++) {
-        // Objeto de skill
-        let currentSkill = skillsArr[i];
-        console.log(currentSkill);
-
-        // Creamos un elemento <li> 
-        let listItemElem = document.createElement('li');
-        listItemElem.style = `list-style-type: none; padding: 1px; font-family:"Open Sans", sans-serif; font-weight: 400; font-size: 13px; color: white; background-color: #438792; width: 80px; border-radius: 4px; margin: 2px; display: inline-block;`; // Para quitar el punto de cada 'li' que sale por defecto.
-
-        // Añadimos el nombre de la skill como texto hijo del <li>
-        let listItemContent = document.createTextNode(`${currentSkill}`);
-        listItemElem.appendChild(listItemContent);
-
-        // Finalmente, añadimos el <li> a la lista
-        skillsCard.appendChild(listItemElem);
-      }
-      */
 
       // Print de las skills en el FORMULARIO
       for (let i = 0; i < skillsArr.length; i++) {
@@ -142,51 +121,11 @@ function init() {
         // Finalmente, añadimos el <li> a la lista
         skillsList.appendChild(listItemElem);
       }
-      /*
-      checks --> se recorre con document.querySelectorAll
-      addEventListener.
-      handler con for de todos los chekcbox y si está true lo acumulo en una constante donde voy acumulando lis con eso
-      if inputComicSans. checked ==== true*/
     })
 }
 
 init();
 
-/*
-
-//HTML Checkbox
-function myFunction() {
-  let checkBox = document.getElementById("myCheck");
-  let text = document.getElementById("html");
-  if (checkBox.checked === true) {
-    text.style.display = "flex";
-  } else {
-    text.style.display = "none";
-  }
-}
-
-//CSS Checkbox 
-function myFunction2() {
-  let checkBox = document.getElementById("css-input");
-  let text = document.getElementById("css");
-  if (checkBox.checked === true) {
-    text.style.display = "flex";
-  } else {
-    text.style.display = "none";
-  }
-}
-
-//React Checkbox 
-function myFunction3() {
-  let checkBox = document.getElementById("react-input");
-  let text = document.getElementById("react");
-  if (checkBox.checked === true) {
-    text.style.display = "flex";
-  } else {
-    text.style.display = "none";
-  }
-}
-*/
 
 // Here starts EMAIL JavaScript:
 
