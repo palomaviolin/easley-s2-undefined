@@ -73,7 +73,7 @@ function init() {
         listItemElem.appendChild(listItemContent);
 
         // Finalmente, añadimos el <li> a la lista
-        skillsList.appendChild(listItemElem);
+        skillsCard.appendChild(listItemElem);
       }
       // Print de las skills en el FORMULARIO
       for (let i = 0; i < skillsArr.length; i++) {
