@@ -12,6 +12,3 @@ let dataObject = {
   'photo': '',
   'skills': ['', '', '']
 };
-
-
-
