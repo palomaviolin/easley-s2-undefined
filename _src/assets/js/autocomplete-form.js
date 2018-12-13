@@ -69,7 +69,7 @@ function updateSkills() {
 
       // Creamos un elemento <li> para la etiqueta 
     let cardListItemElem = document.createElement('li');
-    cardListItemElem.style = `list-style-type: none; padding: 1px; font-family:"Open Sans", sans-serif; font-weight: 400; font-size: 13px; color: white; background-color: #438792; width: 80px; border-radius: 4px; margin: 2px; display: inline-block;`; // Para quitar el punto de cada 'li' que sale por defecto.
+    cardListItemElem.style = `list-style-type: none; padding: 1px; font-family:"Open Sans", sans-serif; font-weight: 400; font-size: 13px; color: white; background-color: #438792; width: 80px; border-radius: 4px; margin: 2px; display: inline-block; text-align: center;`; // Para quitar el punto de cada 'li' que sale por defecto.
 
     // Añadimos el nombre de la skill (que es textContent del li de checkboxes-container) como texto hijo del <li> de la card
     let cardListItemContent = document.createTextNode(`${checkboxListItem.textContent}`);
@@ -112,7 +112,7 @@ function init() {
         listItemCheckbox.type = 'checkbox';
         listItemCheckbox.addEventListener('click', updateSkills);
         listItemElem.appendChild(listItemCheckbox);
-        listItemElem.style = `list-style-type: none`; // Para quitar el punto de cada 'li' que sale por defecto.
+        listItemElem.style = `list-style-type: none; margin-left: 6px;`; // Para quitar el punto de cada 'li' que sale por defecto.
 
         // Añadimos el nombre de la skill como texto hijo del <li>
         let listItemContent = document.createTextNode(`${currentSkill}`);
