@@ -66,7 +66,7 @@ function init() {
 
         // Creamos un elemento <li> 
         let listItemElem = document.createElement('li');
-        listItemElem.style = `list-style-type: none; background-color: pink; width: 80px; border-radius: 4px; margin: 2px; display: inline-block;`; // Para quitar el punto de cada 'li' que sale por defecto.
+        listItemElem.style = `list-style-type: none; padding: 1px; font-family:"Open Sans", sans-serif; font-weight: 400; font-size: 13px; color: white; background-color: #438792; width: 80px; border-radius: 4px; margin: 2px; display: inline-block;`; // Para quitar el punto de cada 'li' que sale por defecto.
 
         // Añadimos el nombre de la skill como texto hijo del <li>
         let listItemContent = document.createTextNode(`${currentSkill}`);
