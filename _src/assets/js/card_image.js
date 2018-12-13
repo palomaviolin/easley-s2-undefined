@@ -18,6 +18,7 @@ function getImage(e) {
 function writeImage() {
   for (const cardImage of profileImages) {
     cardImage.style.backgroundImage = `url(${fr.result})`;
+    console.log(fr.result);
   }
 }
 
