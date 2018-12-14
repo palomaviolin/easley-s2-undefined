@@ -197,32 +197,6 @@ inputMontserrat.addEventListener('click', saveTypography);
 
 //Habilidades
 
-// let inputUbuntu = document.querySelector('#font__option--1');
-// let inputComicSans = document.querySelector('#font__option--2');
-// let inputMontserrat = document.querySelector('#font__option--3');
-
-// function saveTypography() {
-//   if (inputUbuntu.checked === true) {
-//     console.log('ubuntu');
-//     dataObject.typography = 'u';
-//     updateDataObject('typography', 'u');
-//   } else if (inputComicSans.checked === true){
-//     console.log('ComicSans');
-//     dataObject.typography = 'c';
-//     updateDataObject('typography', 'c');
-//   } else if (inputMontserrat.checked === true){
-//     console.log('Montserrat');
-//     dataObject.typography = 'm';
-//     updateDataObject('typography', 'm');
-//   } else {
-//     console.log('Montserrat');
-//   }
-//   updateLocalStorage();
-// }
-// inputUbuntu.addEventListener('click', saveTypography);
-// inputComicSans.addEventListener('click', saveTypography);
-// inputMontserrat.addEventListener('click', saveTypography);
-
 // Here starts the API call
 
 let url = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
