@@ -58,6 +58,8 @@ function updateSkills() {
   // Cogemos todos los li de la caja de checkboxes
   let checkboxListItems = skillsList.querySelectorAll('li');
 
+  let skillsDataForLocalStorage = [];
+
   // Iteramos por cada li de checkbox
   for (const checkboxListItem of checkboxListItems) {
     // Cogemos el checkbox del li que estamos procesando
@@ -68,18 +70,21 @@ function updateSkills() {
       console.log(counter);
 
       // Creamos un elemento <li> para la etiqueta 
-    let cardListItemElem = document.createElement('li');
-    cardListItemElem.style = `list-style-type: none; padding: 1px; font-family:"Open Sans", sans-serif; font-weight: 400; font-size: 13px; color: white; background-color: #438792; width: 80px; border-radius: 4px; margin: 2px; display: inline-block; text-align: center;`; // Para quitar el punto de cada 'li' que sale por defecto.
+      let cardListItemElem = document.createElement('li');
+      cardListItemElem.style = `list-style-type: none; padding: 1px; font-family:"Open Sans", sans-serif; font-weight: 400; font-size: 13px; color: white; background-color: #438792; width: 80px; border-radius: 4px; margin: 2px; display: inline-block; text-align: center;`; // Para quitar el punto de cada 'li' que sale por defecto.
 
-    // Añadimos el nombre de la skill (que es textContent del li de checkboxes-container) como texto hijo del <li> de la card
-    let cardListItemContent = document.createTextNode(`${checkboxListItem.textContent}`);
-    cardListItemElem.appendChild(cardListItemContent);
+      // Añadimos el nombre de la skill (que es textContent del li de checkboxes-container) como texto hijo del <li> de la card
+      let cardListItemContent = document.createTextNode(`${checkboxListItem.textContent}`);
+      cardListItemElem.appendChild(cardListItemContent);
+    
+      updateDataObject('skills', event.target.value);
 
-    // Finalmente, añadimos el <li> a la lista
-    skillsCard.appendChild(cardListItemElem);
-    counter++;     
+      // Finalmente, añadimos el <li> a la lista
+      skillsCard.appendChild(cardListItemElem);
+      counter++;     
     }
   }
+  updateLocalStorage();
 }
 
 function init() {
