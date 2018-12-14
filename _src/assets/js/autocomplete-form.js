@@ -313,7 +313,7 @@ function getLocalStorage() {
     githubLabel.href = dataObject.github;
 
     for (const cardImage of profileImages) {
-      cardImage.style.backgroundImage = `url(${dataObject.photo})`;
+      cardImage.style.backgroundImage = url(`${dataObject.photo}`);
       if (dataObject.photo === '') {
         cardImage.style.backgroundImage = url('../images/default_picture.jpg');
       }
