@@ -51,11 +51,7 @@
                         </li>
                     </ul>
                     <div class="border_bottom"></div>
-                    <ul class="list_skills">
-                        <li id="html" style="display:none" class="skill skill1">html</li>
-                        <li id="css" style="display:none" class="skill skill2">css</li>
-                        <li id="react" style="display:none" class="skill skill3">gulp</li>
-                    </ul>
+                    <ul id="container-checkboxes-card" class="list_skills"></ul>
                 </div>
             </div>
         </section>
@@ -164,22 +160,7 @@
                                     id="github-input" type="email" name="github" required></div>
 
                             <div class="titles__complete-form"><label for="skills">Skills (max 3)</label></div>
-
-                            <div class="titles__complete-form">
-                                <label for="html">
-                                    <input id="myCheck" type="checkbox" value="html" name="html" onclick="myFunction()">HTML
-                                </label>
-                            </div>
-                            <div class="titles__complete-form">
-                                <label for="css">
-                                    <input id="css-input" type="checkbox" value="css" name="css" onclick="myFunction2()">CSS
-                                </label>
-                            </div>
-                            <div class="titles__complete-form">
-                                <label for="react">
-                                    <input id="react-input" type="checkbox" value="react" name="react" onclick="myFunction3()">React
-                                </label>
-                            </div>
+                            <div id="container-checkboxes" class="titles__complete-form"></div>
                         </form>
                     </div>
                 </li>
