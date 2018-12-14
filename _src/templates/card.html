@@ -8,7 +8,8 @@
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900|Montserrat:400,500,600,700|Open+Sans:400,500,600,700|Ubuntu:400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900|Montserrat:400,500,600,700|Open+Sans:400,500,600,700|Ubuntu:400,500,600,700"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
@@ -34,7 +35,7 @@
                         </div>
                     </div>
                     <div class="profile__picture-container profile__image">
-                   </div>
+                    </div>
                     <ul class="list_contact">
                         <li class="icon_border">
                             <a id="tel-card" class="icon-link" href="" target="_blank"><i class="fas fa-mobile-alt ico"></i></a>
@@ -62,69 +63,78 @@
                         <h2 class="section2__list--h2"><i class="far fa-object-ungroup icon__card-page"></i> Design</h2>
                         <div><i class="fas fa-chevron-down icon__arrow--card-page"></i></div>
                     </div>
-                    <div class="content">
-                        <div class="section2__colors--wrapper">
-                            <div class="section2__design--titles">Colors</div>
-                            <div>
-                                <label for="palette__green" class="palette__green">
-                                    <input  checked="checked" class="formdesign__circle" id="palette__green" type="radio" value="color__green" name="palette__color">
-                                    <div class="palette__triple--box">
-                                        <div class="palette__dimensions palette__green--dark"></div>
-                                        <div class="palette__dimensions palette__green--medium"></div>
-                                        <div class="palette__dimensions palette__green--light"></div>
-                                    </div>
-                                </label>
-                                <label for="palette__red" class="palette__red">
-                                    <input class="formdesign__circle" id="palette__red" type="radio" value="color__red" name="palette__color">
-                                    <div class="palette__triple--box">
-                                        <div class="palette__dimensions palette__red--dark"></div>
-                                        <div class="palette__dimensions palette__red--medium"></div>
-                                        <div class="palette__dimensions palette__red--light"></div>
-                                    </div>
-                                </label>
-                                <label for="palette__gray" class="palette__gray">
-                                    <input class="formdesign__circle" id="palette__gray" type="radio" value="color__gray" name="palette__color">
-                                    <div class="palette__triple--box">
-                                        <div class="palette__dimensions palette__gray--dark"></div>
-                                        <div class="palette__dimensions palette__gray--medium"></div>
-                                        <div class="palette__dimensions palette__gray--light"></div>
-                                    </div>
-                                </label>
+                        <div class="content">
+                            <div class="section2__colors--wrapper">
+                                <div class="section2__design--titles">Colors</div>
+                                <form id="color-form">
+                                    <label for="palette__green" class="palette__green">
+                                        <input checked="checked" class="formdesign__circle" id="palette__green" type="radio"
+                                            value="color__green" name="palette__color">
+                                        <div class="palette__triple--box">
+                                            <div class="palette__dimensions palette__green--dark"></div>
+                                            <div class="palette__dimensions palette__green--medium"></div>
+                                            <div class="palette__dimensions palette__green--light"></div>
+                                        </div>
+                                    </label>
+                                    <label for="palette__red" class="palette__red">
+                                        <input class="formdesign__circle" id="palette__red" type="radio" value="color__red"
+                                            name="palette__color">
+                                        <div class="palette__triple--box">
+                                            <div class="palette__dimensions palette__red--dark"></div>
+                                            <div class="palette__dimensions palette__red--medium"></div>
+                                            <div class="palette__dimensions palette__red--light"></div>
+                                        </div>
+                                    </label>
+                                    <label for="palette__gray" class="palette__gray">
+                                        <input class="formdesign__circle" id="palette__gray" type="radio" value="color__gray"
+                                            name="palette__color">
+                                        <div class="palette__triple--box">
+                                            <div class="palette__dimensions palette__gray--dark"></div>
+                                            <div class="palette__dimensions palette__gray--medium"></div>
+                                            <div class="palette__dimensions palette__gray--light"></div>
+                                        </div>
+                                    </label>
+                                </form>
+                            </div>
+
+                            <div class="fonts__container">
+                                <div class="section2__design--titles">Fonts</div>
+                                <div class="fontfamily__types">
+                                    <form id="font-form">
+                                    <label for="font__option--1" class="fontfamily__options">
+                                        <input class="formdesign__circle" id="font__option--1" type="radio" value="Ubuntu"
+                                            name="fontfamily__option">
+                                        <span class="ubuntu">Ubuntu</span>
+                                    </label>
+                                    <label for="font__option--2" class="fontfamily__options">
+                                        <input checked="checked" class="formdesign__circle" id="font__option--2" type="radio"
+                                            value="Comic Sans" name="fontfamily__option">
+                                        <span class="comic-sans">Comic Sans</span>
+                                    </label>
+                                    <label for="font__option--3" class="fontfamily__options">
+                                        <input class="formdesign__circle" id="font__option--3" type="radio" value="Montserrat"
+                                            name="fontfamily__option">
+                                        <span class="montserrat">Montserrat</span>
+                                    </label>
+                                </form>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="fonts__container">
-                            <div class="section2__design--titles">Fonts</div>
-                            <div class="fontfamily__types">
-                                <label for="font__option--1" class="fontfamily__options">
-                                    <input class="formdesign__circle"  id="font__option--1" type="radio" value="Ubuntu" name="fontfamily__option">
-                                    <span class="ubuntu">Ubuntu</span>
-                                </label>
-                                <label for="font__option--2" class="fontfamily__options">
-                                    <input checked="checked" class="formdesign__circle"  id="font__option--2" type="radio" value="Comic Sans" name="fontfamily__option">
-                                    <span class="comic-sans">Comic Sans</span>
-                                </label>
-                                <label for="font__option--3" class="fontfamily__options">
-                                    <input class="formdesign__circle"  id="font__option--3" type="radio" value="Montserrat" name="fontfamily__option">
-                                    <span class="montserrat">Montserrat</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
                 </li>
                 <li class="section2__list--collapsible second_block">
-                    <div id ="second_child" class="collapsible">
+                    <div id="second_child" class="collapsible">
                         <h2 class="section2__list--h2"><i class="fas fa-keyboard icon__card-page"></i> Complete</h2>
                         <div><i class="fas fa-chevron-down icon__arrow--card-page"></i></div>
                     </div>
                     <div class="content">
-                        <form action="">
+                        <form action="" id="form">
                             <div class="titles__complete-form"><label for="email">Full name</label></div>
-                            <div><input class="section2__completeform--input" placeholder="Ex: Sally Hill" id="name-input" type="text" name="name" required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: Sally Hill" id="name-input"
+                                    type="text" name="name" required></div>
 
                             <div class="titles__complete-form"><label for="email">Job position</label></div>
-                            <div><input class="section2__completeform--input" placeholder="Ex: Front-end unicorn" id="job-input" type="text" name="job" required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: Front-end unicorn" id="job-input"
+                                    type="text" name="job" required></div>
 
                             <div class="titles__complete-form"><label for="image">Profile image</label></div>
                             <div class="formcomplete__container--addimage">
@@ -143,11 +153,11 @@
 
                             <div class="titles__complete-form"><label for="email">LinkedIn</label></div>
                             <div><input class="section2__completeform--input" placeholder="Ex: linkedin.com/in/sally-hill"
-                                id="linkedin-input" type="email" name="linkedin" required></div>
+                                    id="linkedin-input" type="email" name="linkedin" required></div>
 
                             <div class="titles__complete-form"><label for="email">GitHub</label></div>
-                            <div><input class="section2__completeform--input" placeholder="Ex: github.com/sally-hill" id="github-input"
-                                    type="email" name="github" required></div>
+                            <div><input class="section2__completeform--input" placeholder="Ex: github.com/sally-hill"
+                                    id="github-input" type="email" name="github" required></div>
 
                             <div class="titles__complete-form"><label for="skills">Skills (max 3)</label></div>
                             <div id="container-checkboxes" class="titles__complete-form"></div>

@@ -1,8 +1,8 @@
 'use strict';
 
 let dataObject = {
-  'palette': 1,
-  'typography': 2,
+  'palette': '',
+  'typography': '',
   'name': '',
   'job': '',
   'phone': '',
@@ -12,3 +12,4 @@ let dataObject = {
   'photo': '',
   'skills': ['', '', '']
 };
+
