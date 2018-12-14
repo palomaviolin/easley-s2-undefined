@@ -323,14 +323,12 @@ function getLocalStorage() {
     githubInput.value = dataObject.github;
     githubLabel.href = dataObject.github;
 
-    for (const cardImage of profileImages) {
-      cardImage.style.backgroundImage = url(`${dataObject.photo}`);
-      if (dataObject.photo === '') {
-        cardImage.style.backgroundImage = url('../images/default_picture.jpg');
+    if (dataObject.photo !== '') {
+      for (const cardImage of profileImages) {
+        cardImage.style.backgroundImage = `url(${dataObject.photo})`;
       }
     }
-    skillsDataForLocalStorage = dataObject.skills;
-
+    //skillsDataForLocalStorage = dataObject.skills;
   } 
 }
 getLocalStorage();
