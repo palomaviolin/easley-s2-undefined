@@ -265,6 +265,14 @@ function getLocalStorage() {
  
     jobPositionLabel.innerHTML= dataObject.job;
     jobPositionInput.value = dataObject.job;
+
+
+    if (dataObject.name === '') {
+      fullNameLabel.innerText = 'Name Surname';
+    }
+    if (dataObject.job === '') {
+      jobPositionLabel.innerText = 'Job';
+    }
  
     emailInput.value = dataObject.email;
     emailLabel.href = dataObject.email;
@@ -281,3 +289,36 @@ function getLocalStorage() {
   } 
 }
 getLocalStorage();
+
+
+//Reset button
+const resetBtn = document.querySelector('.profile__action');
+const form = document.querySelector('#form');
+const colorForm = document.querySelector('#color-form');
+const fontForm = document.querySelector('#font-form');
+
+function resetAll() {
+  dataObject = {
+    'palette': '',
+    'typography': '',
+    'name': '',
+    'job': '',
+    'phone': '',
+    'email': '',
+    'linkedin': '',
+    'github': '',
+    'photo': '',
+    'skills': ['', '', '']
+  };
+  updateLocalStorage();
+  cardLink.innerHTML = 'Share the card with your friends!';
+  tweetbutton.href = '';
+  form.reset();
+  colorForm.reset();
+  fontForm.reset();
+  fullNameLabel.innerText = 'Name Surname';
+  jobPositionLabel.innerText = 'Job';
+  profileImages[0].style.backgroundImage = dataObject.photo;
+  profileImages[1].style.backgroundImage = dataObject.photo;
+}
+resetBtn.addEventListener('click', resetAll);
