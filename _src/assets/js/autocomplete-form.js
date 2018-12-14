@@ -68,6 +68,7 @@ function updateSkills() {
     // Si el checkbox está checked y el contador de skills seleccionadas es menor que el máximo, añadimos etiqueta a la card
     if (counter < MAX_SKILLS && checkbox.checked) {
       console.log(counter);
+      console.log(checkbox);
 
       // Creamos un elemento <li> para la etiqueta 
       let cardListItemElem = document.createElement('li');
@@ -76,15 +77,19 @@ function updateSkills() {
       // Añadimos el nombre de la skill (que es textContent del li de checkboxes-container) como texto hijo del <li> de la card
       let cardListItemContent = document.createTextNode(`${checkboxListItem.textContent}`);
       cardListItemElem.appendChild(cardListItemContent);
-    
-      updateDataObject('skills', event.target.value);
+      skillsDataForLocalStorage.push(checkbox.value);
+          
+
 
       // Finalmente, añadimos el <li> a la lista
       skillsCard.appendChild(cardListItemElem);
       counter++;     
     }
   }
+  updateDataObject('skills', skillsDataForLocalStorage);
   updateLocalStorage();
+
+
 }
 
 function init() {
@@ -115,6 +120,7 @@ function init() {
         // Para poner checkbox delante de cada skill
         let listItemCheckbox = document.createElement('input');
         listItemCheckbox.type = 'checkbox';
+        listItemCheckbox.value = skillsArr[i];
         listItemCheckbox.addEventListener('click', updateSkills);
         listItemElem.appendChild(listItemCheckbox);
         listItemElem.style = `list-style-type: none; margin-left: 6px;`; // Para quitar el punto de cada 'li' que sale por defecto.
