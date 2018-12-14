@@ -32,3 +32,5 @@ function fakeFileClick() {
 fileField.addEventListener('change', getImage);
 uploadBtn.addEventListener('click', fakeFileClick);
 
+//
+

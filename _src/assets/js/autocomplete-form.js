@@ -259,7 +259,9 @@ function getLocalStorage() {
   console.log(myLocalStorageObject);
 
   if (myLocalStorageObject !== null) {
+ 
     dataObject = myLocalStorageObject; 
+ 
     fullNameInput.value = dataObject.name;
     fullNameLabel.innerHTML = dataObject.name;
  
@@ -278,6 +280,9 @@ function getLocalStorage() {
     githubInput.value = dataObject.github;
     githubLabel.href = dataObject.github;
 
+    for (const cardImage of profileImages) {
+      cardImage.style.backgroundImage = `url(${dataObject.photo})`;
+    }
   } 
 }
 getLocalStorage();
