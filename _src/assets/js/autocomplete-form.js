@@ -94,6 +94,8 @@ function updateSkills() {
 }
 
 function init() {
+  let localStorageSkills = dataObject['skills'];
+
   fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
     .then(response => response.json())
     .then(function (data) {
@@ -110,9 +112,6 @@ function init() {
         // Objeto de skill
         let currentSkill = skillsArr[i];
 
-        // Creamos array con nombre de skill y estado (marcado o desmarcado)
-        skills.push({ name: currentSkill, checked: false });
-
         console.log(currentSkill);
 
         // Creamos un elemento <li> 
@@ -121,8 +120,18 @@ function init() {
         // Para poner checkbox delante de cada skill
         let listItemCheckbox = document.createElement('input');
         listItemCheckbox.type = 'checkbox';
-        listItemCheckbox.value = skillsArr[i];
+        listItemCheckbox.value = currentSkill;
         listItemCheckbox.addEventListener('click', updateSkills);
+        
+        // Determinamos si el nombre de la skill actual está en la lista almacenada en el array del localStorage
+        // Si la skill no está, indexOf devolverá -1. Si está, devolverá un número distinto de -1, que será la posición
+        // en el array de dicho skill.
+        if (localStorageSkills.indexOf(currentSkill) !== -1) {
+          listItemCheckbox.checked = true;
+        } else {
+          listItemCheckbox.checked = false;
+        }
+
         listItemElem.appendChild(listItemCheckbox);
         listItemElem.style = `list-style-type: none; margin-left: 6px;`; // Para quitar el punto de cada 'li' que sale por defecto.
 
@@ -135,8 +144,6 @@ function init() {
       }
     })
 }
-
-init();
 
 
 // Here starts EMAIL JavaScript:
@@ -327,11 +334,12 @@ function getLocalStorage() {
       for (const cardImage of profileImages) {
         cardImage.style.backgroundImage = `url(${dataObject.photo})`;
       }
-    }
-    //skillsDataForLocalStorage = dataObject.skills;
+    }    
   } 
 }
+
 getLocalStorage();
+init();
 
 
 //Reset button
