@@ -13,4 +13,3 @@ let dataObject = {
   'skills': ['', '', '']
 };
 
-

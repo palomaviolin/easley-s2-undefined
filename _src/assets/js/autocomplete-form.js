@@ -242,7 +242,6 @@ function getLocalStorage() {
     jobPositionLabel.innerHTML= dataObject.job;
     jobPositionInput.value = dataObject.job;
 
-
     if (dataObject.name === '') {
       fullNameLabel.innerText = 'Name Surname';
     }
@@ -262,9 +261,14 @@ function getLocalStorage() {
     githubInput.value = dataObject.github;
     githubLabel.href = dataObject.github;
 
+
     for (const cardImage of profileImages) {
       cardImage.style.backgroundImage = `url(${dataObject.photo})`;
+      if (dataObject.photo === '') {
+        cardImage.style.backgroundImage = url(../images/default_picture.jpg);
+      }
     }
+    
   } 
 }
 getLocalStorage();
