@@ -27,11 +27,12 @@ fullNameInput.addEventListener('keyup', updateFullName);
 // Here starts JOB JavaScript:
 
 let jobPositionInput = document.body.querySelector('#job-input');
+let jobPositionLabel = document.body.querySelector('#job-card');
 //console.log('jobPositionInput', jobPositionInput); // This line is to view the element jobPositionInput in the console.
 
 function updateJobPosition(event) {
   // console.log(event);
-  let jobPositionLabel = document.body.querySelector('#job-card');
+
   jobPositionLabel.innerText = event.target.value;
   updateDataObject('job', event.target.value);
   updateLocalStorage();
@@ -79,13 +80,16 @@ function myFunction3() {
 // Here starts EMAIL JavaScript:
 
 let emailInput = document.body.querySelector('#email-input');
+console.log('email', emailInput);
+let emailLabel = document.querySelector('#email-card');
+console.log('emaillabel', emailLabel);
 
 function updateEmail(event) {
   console.log(event);
-  let emailLabel = document.querySelector('#email-card');
+
   console.log(emailLabel);
   emailLabel.href = `mailto:${event.currentTarget.value}`;
-  updateDataObject('email', event.currrentTarget.value);
+  updateDataObject('email', event.currentTarget.value);
   updateLocalStorage();
 }
 
@@ -95,9 +99,9 @@ emailInput.addEventListener('keyup', updateEmail);
 // Here starts GitHub JavaScript:
 
 let githubInput = document.body.querySelector('#github-input');
+let githubLabel = document.querySelector('#github-card');
 
 function updateGithub(event) {
-  let githubLabel = document.querySelector('#github-card');
   githubLabel.href = `https://${event.currentTarget.value}`;
   updateDataObject('github', event.currentTarget.value);
   updateLocalStorage();
@@ -109,9 +113,9 @@ githubInput.addEventListener('keyup', updateGithub);
 // Here starts LinkedIn JavaScript:
 
 let linkedinInput = document.body.querySelector('#linkedin-input');
+let linkedinLabel = document.querySelector('#linkedin-card');
 
 function updateLinkedin(event) {
-  let linkedinLabel = document.querySelector('#linkedin-card');
   linkedinLabel.href = `https://www.${event.currentTarget.value}`;
   updateDataObject('linkedin', event.currentTarget.value);
   updateLocalStorage();
@@ -122,9 +126,10 @@ linkedinInput.addEventListener('keyup', updateLinkedin);
 // Here starts Telephone Javascript 
 
 let telInput = document.body.querySelector('#telf_movil');
+let telLabel = document.querySelector('#tel-card');
+console.log('telLAbel', telLabel);
 
 function updateTelephone(event) {
-  let telLabel = document.querySelector('#tel-card');
   telLabel.href = `tel:${event.currentTarget.value}`;
   updateDataObject('phone', event.currentTarget.value);
   updateLocalStorage();
@@ -256,8 +261,23 @@ function getLocalStorage() {
   if (myLocalStorageObject !== null) {
     dataObject = myLocalStorageObject; 
     fullNameInput.value = dataObject.name;
-    fullNameLabel.innerText = dataObject.name;
+    fullNameLabel.innerHTML = dataObject.name;
+ 
+    jobPositionLabel.innerHTML= dataObject.job;
     jobPositionInput.value = dataObject.job;
+ 
+    emailInput.value = dataObject.email;
+    emailLabel.href = dataObject.email;
+ 
+    linkedinInput.value = dataObject.linkedin;
+    linkedinLabel.href = dataObject.linkedin;
+
+    telInput.value = dataObject.phone;
+    telLabel.href = dataObject.phone;
+
+    githubInput.value = dataObject.github;
+    githubLabel.href = dataObject.github;
+
   } 
 }
 getLocalStorage();
