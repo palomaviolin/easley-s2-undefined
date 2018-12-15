@@ -67,7 +67,7 @@
                         <div class="content">
                             <div class="section2__colors--wrapper">
                                 <div class="section2__design--titles">Colors</div>
-                                <div>
+                                <form id="color-form">
                                     <label for="palette__green" class="palette__green">
                                         <input checked="checked" class="formdesign__circle" id="palette__green"
                                         type="radio" value="color__green" name="palette__color">
@@ -95,26 +95,28 @@
                                             <div class="palette__dimensions palette__gray--light"></div>
                                         </div>
                                     </label>
-                                </div>
+                                </form>
                             </div>
                             <div class="fonts__container">
                                 <div class="section2__design--titles">Fonts</div>
                                 <div class="fontfamily__types">
-                                    <label for="font__option--1" class="fontfamily__options">
-                                        <input class="formdesign__circle" id="font__option--1" type="radio" value="Ubuntu"
-                                        name="fontfamily__option"> <span class="ubuntu">Ubuntu</span>
+                                    <form id="font-form">
+                                        <label for="font__option--1" class="fontfamily__options">
+                                            <input class="formdesign__circle" id="font__option--1" type="radio" value="Ubuntu"
+                                            name="fontfamily__option"> <span class="ubuntu">Ubuntu</span>
 
-                                    </label>
-                                    <label for="font__option--2" class="fontfamily__options">
-                                        <input checked="checked" class="formdesign__circle" id="font__option--2"
-                                        type="radio" value="Comic Sans" name="fontfamily__option"> <span class="comic-sans">Comic Sans</span>
+                                        </label>
+                                        <label for="font__option--2" class="fontfamily__options">
+                                            <input checked="checked" class="formdesign__circle" id="font__option--2"
+                                            type="radio" value="Comic Sans" name="fontfamily__option"> <span class="comic-sans">Comic Sans</span>
 
-                                    </label>
-                                    <label for="font__option--3" class="fontfamily__options">
-                                        <input class="formdesign__circle" id="font__option--3" type="radio" value="Montserrat"
-                                        name="fontfamily__option"> <span class="montserrat">Montserrat</span>
+                                        </label>
+                                        <label for="font__option--3" class="fontfamily__options">
+                                            <input class="formdesign__circle" id="font__option--3" type="radio" value="Montserrat"
+                                            name="fontfamily__option"> <span class="montserrat">Montserrat</span>
 
-                                    </label>
+                                        </label>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +129,7 @@
                             </div>
                         </div>
                         <div class="content">
-                            <form action="">
+                            <form action="" id="form">
                                 <div class="titles__complete-form">
                                     <label for="email">Full name</label>
                                 </div>
