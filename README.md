@@ -1,4 +1,4 @@
-![](docs/assets/images/undefined-logo.svg)
+![](docs/assets/images/undefined-logo.png)
 
 This repository is created to bring live to a website where you can create a business card so as to improve your professional environment. This amazing tool is maked by the UNDEFINED-TEAM (2018).
 
