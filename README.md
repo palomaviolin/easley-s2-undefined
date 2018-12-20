@@ -1,8 +1,8 @@
 ![](docs/assets/images/undefined-logo.png)
 
-## Welcome to Card Awesome Profile Cards, a repo made by the UNDEFINED TEAM
+## Welcome to Card Awesome Profile Cards, a repo made by the UNDEFINED TEAM.
 
-Initially, this repository was created to bring live to a [website](http://beta.adalab.es/easley-s2-undefined/) where you could create a business card so as to improve your professional environment. While we were working on the project, we discovered that this repository is also a great open source **tool to learn for Junior Front-end Developers**. 🌈
+Initially, this repository was created to bring life to a [website](http://beta.adalab.es/easley-s2-undefined/) where you could create a business card so as to improve your professional environment. While we were working on the project, we discovered that this repository is also a great open source **tool to learn for Junior Front-end Developers**. 🌈
 
 💪  We encourage people to participate in our repo. You could download or clone the repo and contribute to it.
 
