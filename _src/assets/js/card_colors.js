@@ -6,21 +6,21 @@ const grayPaletteElement = document.querySelector('#palette__gray');
 const profileDataElement = document.querySelector('.profile__data');
 
 // Palette color selection color green
-function greenProfileDataHandler() {
+const greenProfileDataHandler = () =>  {
   profileDataElement.classList.add('green');
   profileDataElement.classList.remove('red', 'gray');
-}
+};
 
 // Palette color selection color red
-function redProfileDataHandler() {
+const redProfileDataHandler = () =>  {
   profileDataElement.classList.add('red');
   profileDataElement.classList.remove('green', 'gray');
-}
+};
 // Palette color selection color gray
-function grayProfileDataHandler() {
+const grayProfileDataHandler = () =>  {
   profileDataElement.classList.add('gray');
   profileDataElement.classList.remove('green', 'red');
-}
+};
 
 greenPaletteElement.addEventListener('click', greenProfileDataHandler);
 redPaletteElement.addEventListener('click', redProfileDataHandler);
@@ -34,22 +34,22 @@ const montserrat = document.querySelector('#font__option--3');
 
 const profileDataGroup = document.querySelector('.profile__data-group');
 
-function ubuntuProfileDataHandler() {
+const ubuntuProfileDataHandler = () => {
   profileDataGroup.classList.add('font-ubuntu');
   profileDataGroup.classList.remove('font-comic', 'font-montserrat');
-}
+};
 
 
-function comicProfileDataHandler() {
+const comicProfileDataHandler = () =>  {
   profileDataGroup.classList.add('font-comic');
   profileDataGroup.classList.remove('font-ubuntu', 'font-montserrat');
-}
+};
 
 
-function montserratProfileDataHandler() {
+const montserratProfileDataHandler = () =>  {
   profileDataGroup.classList.add('font-montserrat');
   profileDataGroup.classList.remove('font-ubuntu', 'font-comic');
-}
+};
 
 ubuntu.addEventListener('click', ubuntuProfileDataHandler);
 comic.addEventListener('click', comicProfileDataHandler);
