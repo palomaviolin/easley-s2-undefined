@@ -8,7 +8,7 @@ const content = document.querySelector('.create__mesage');
 const thirdBlock = document.querySelector('.third_block');
 // console.log(thirdBlock);
 
-function openFun(e) {
+const openFun = (e) => {
   e.currentTarget.classList.toggle('active');
   if (e.currentTarget.classList.contains('active')) {
     e.currentTarget.parentElement.classList.add('open');
@@ -22,7 +22,7 @@ secondChild.addEventListener('click', openFun);
 thirdChild.addEventListener('click', openFun);
 
 
-function showLink(e) {
+const showLink = (e) => {
   create.classList.toggle('active');
   if (e.currentTarget.classList.contains('active')) {
     content.classList.add('show');
