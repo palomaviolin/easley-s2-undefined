@@ -144,32 +144,23 @@ inputMontserrat.addEventListener('click', saveTypography);
 // Logic to complite the SKILLS:
 
 let skillsList = document.querySelector('#container-checkboxes');
-console.log(skillsList);
 let skillsCard = document.querySelector('#container-checkboxes-card');
 
 let skills = [];
 
-function updateSkills() {
+const updateSkills = () => {
   let counter = 0;
   let MAX_SKILLS = 3;
-
-  // Resetear etiquetas de la card
-  skillsCard.innerHTML = '';
-  
-  // Cogemos todos los li de la caja de checkboxes
+  let skillsDataForLocalStorage = [];
   let checkboxListItems = skillsList.querySelectorAll('li');
 
-  let skillsDataForLocalStorage = [];
-
-  // Iteramos por cada li de checkbox
+  skillsCard.innerHTML = '';
   for (const checkboxListItem of checkboxListItems) {
-    // Cogemos el checkbox del li que estamos procesando
     let checkbox = checkboxListItem.querySelector('input');
 
     // Si el checkbox está checked y el contador de skills seleccionadas es menor que el máximo, añadimos etiqueta a la card
     if (counter < MAX_SKILLS && checkbox.checked) {
-      console.log(counter);
-      console.log(checkbox);
+  
 
       // Creamos un elemento <li> para la etiqueta 
       let cardListItemElem = document.createElement('li');
@@ -189,7 +180,7 @@ function updateSkills() {
   }
   updateDataObject('skills', skillsDataForLocalStorage);
   updateLocalStorage();
-}
+};
 
 function init() {
   let localStorageSkills = dataObject['skills'];
