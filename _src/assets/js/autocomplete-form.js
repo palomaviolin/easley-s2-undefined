@@ -77,15 +77,16 @@ function updateSkills() {
 
 
 }
+// Call list of skills from server and put if to localStorage
 
-function init() {
+const init = () => {
   let localStorageSkills = dataObject['skills'];
 
   fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
     .then(response => response.json())
     .then(function (data) {
       console.log(data);
-      let skillsArr = data.skills; // Objeto con un array de strings
+      let skillsArr = data.skills; 
       console.log(skillsArr);
       let skillsList = document.querySelector('#container-checkboxes');
 
@@ -127,8 +128,8 @@ function init() {
         // Finalmente, añadimos el <li> a la lista
         skillsList.appendChild(listItemElem);
       }
-    })
-}
+    });
+};
 
 
 // Here starts EMAIL JavaScript:
@@ -248,8 +249,6 @@ inputUbuntu.addEventListener('click', saveTypography);
 inputComicSans.addEventListener('click', saveTypography);
 inputMontserrat.addEventListener('click', saveTypography);
 
-
-//Habilidades
 
 // Here starts the API call
 
