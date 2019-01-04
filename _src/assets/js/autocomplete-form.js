@@ -41,10 +41,9 @@ function updateJobPosition(event) {
 jobPositionInput.addEventListener('keyup', updateJobPosition);
 
 
-// Here starts SKILLS JavaScript:
+// Functions to handle the Skills checked boxes:
 
 let skillsList = document.querySelector('#container-checkboxes');
-console.log(skillsList);
 let skillsCard = document.querySelector('#container-checkboxes-card');
 
 let skills = [];
@@ -52,39 +51,25 @@ let skills = [];
 function updateSkills() {
   let counter = 0;
   let MAX_SKILLS = 3;
-
-  // Resetear etiquetas de la card
+  let skillsDataForLocalStorage = [];
+  let checkboxListItems = skillsList.querySelectorAll('li');
   skillsCard.innerHTML = '';
   
-  // Cogemos todos los li de la caja de checkboxes
-  let checkboxListItems = skillsList.querySelectorAll('li');
-
-  let skillsDataForLocalStorage = [];
-
-  // Iteramos por cada li de checkbox
   for (const checkboxListItem of checkboxListItems) {
-    // Cogemos el checkbox del li que estamos procesando
     let checkbox = checkboxListItem.querySelector('input');
-
-    // Si el checkbox está checked y el contador de skills seleccionadas es menor que el máximo, añadimos etiqueta a la card
     if (counter < MAX_SKILLS && checkbox.checked) {
-      console.log(counter);
-      console.log(checkbox);
-
-      // Creamos un elemento <li> para la etiqueta 
+     
       let cardListItemElem = document.createElement('li');
-      cardListItemElem.style = `list-style-type: none; padding: 1px; font-family:"Open Sans", sans-serif; font-weight: 400; font-size: 13px; color: white; background-color: #438792; width: 80px; border-radius: 4px; margin: 2px; display: inline-block; text-align: center;`; // Para quitar el punto de cada 'li' que sale por defecto.
+      cardListItemElem.classList.add('list_item');
 
-      // Añadimos el nombre de la skill (que es textContent del li de checkboxes-container) como texto hijo del <li> de la card
       let cardListItemContent = document.createTextNode(`${checkboxListItem.textContent}`);
       cardListItemElem.appendChild(cardListItemContent);
       skillsDataForLocalStorage.push(checkbox.value);
           
-
-
-      // Finalmente, añadimos el <li> a la lista
       skillsCard.appendChild(cardListItemElem);
       counter++;     
+    } else {
+      checkbox.checked = false;
     }
   }
   updateDataObject('skills', skillsDataForLocalStorage);

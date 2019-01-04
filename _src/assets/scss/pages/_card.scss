@@ -607,3 +607,17 @@ ol {
     font-family: $font-family_option3;
   }
 }
+.list_item {
+  list-style-type: none; 
+  padding: 1px; 
+  font-family:"Open Sans", sans-serif; 
+  font-weight: 400; 
+  font-size: 13px; 
+  color: white;
+  background-color: #438792;
+  width: 80px;
+  border-radius: 4px;
+  margin: 2px;
+  display: inline-block;
+  text-align: center;
+}
