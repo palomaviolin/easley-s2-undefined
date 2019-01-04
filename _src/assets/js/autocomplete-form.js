@@ -317,6 +317,44 @@ function getLocalStorage() {
     if (dataObject.job === '') {
       jobPositionLabel.innerText = 'Job';
     }
+
+    const fontForName = document.querySelector('.profile__data-group');
+    if (dataObject.typography === 'c') {
+      fontForName.classList.add('font-comic');
+      fontForName.classList.remove('font-montserrat');
+      fontForName.classList.remove('font-ubuntu');
+      inputComicSans.checked = true;
+    } else if (dataObject.typography === 'm') {
+      fontForName.classList.add('font-montserrat');
+      fontForName.classList.remove('font-comic');
+      fontForName.classList.remove('font-ubuntu');
+      inputMontserrat.checked = true;
+    } else if (dataObject.typography === 'u') {
+      fontForName.classList.add('font-ubuntu');
+      fontForName.classList.remove('font-montserrat');
+      fontForName.classList.remove('font-comic');
+      inputUbuntu.checked = true;
+    }
+
+    const colorForName = document.querySelector('.profile__data');
+    if (dataObject.palette === '1') {
+      colorForName.classList.add('green');
+      colorForName.classList.remove('red');
+      colorForName.classList.remove('gray');
+      inputGreen.checked = true;
+    } else if (dataObject.palette === '2') {
+      colorForName.classList.add('red');
+      colorForName.classList.remove('gray');
+      colorForName.classList.remove('green');
+      inputRed.checked = true;
+    } else if (dataObject.palette === '3') {
+      colorForName.classList.add('gray');
+      colorForName.classList.remove('red');
+      colorForName.classList.remove('green');
+      inputGray.checked = true;
+    }
+
+
  
     emailInput.value = dataObject.email;
     emailLabel.href = dataObject.email;
