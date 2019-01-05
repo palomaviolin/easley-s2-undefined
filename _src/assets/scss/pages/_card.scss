@@ -621,3 +621,22 @@ ol {
   display: inline-block;
   text-align: center;
 }
+.list_item.green {
+  background-color: $color_green_Medium;
+}
+.list_item.red {
+  background-color: $color_red_Light;
+}
+.list_item.gray {
+  background-color: $color_gray_Light;
+}
+
+.list_skills.green .list_item {
+  background-color: $color_green_Medium;
+}
+.list_skills.red .list_item {
+  background-color: $color_red_Light;
+}
+.list_skills.gray .list_item {
+  background-color: $color_gray_Light;
+}

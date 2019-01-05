@@ -54,20 +54,30 @@ function updateSkills() {
   let skillsDataForLocalStorage = [];
   let checkboxListItems = skillsList.querySelectorAll('li');
   skillsCard.innerHTML = '';
-  
+
   for (const checkboxListItem of checkboxListItems) {
     let checkbox = checkboxListItem.querySelector('input');
     if (counter < MAX_SKILLS && checkbox.checked) {
-     
+
       let cardListItemElem = document.createElement('li');
       cardListItemElem.classList.add('list_item');
 
       let cardListItemContent = document.createTextNode(`${checkboxListItem.textContent}`);
       cardListItemElem.appendChild(cardListItemContent);
       skillsDataForLocalStorage.push(checkbox.value);
-          
+
       skillsCard.appendChild(cardListItemElem);
-      counter++;     
+      counter++;
+
+      // Condition for keep the same tags color
+      if (dataObject.palette === '1') {
+        cardListItemElem.classList.add('green');
+      } else if (dataObject.palette === '2') {
+        cardListItemElem.classList.add('red');
+      } else if (dataObject.palette === '3') {
+        cardListItemElem.classList.add('gray');
+      }
+
     } else {
       checkbox.checked = false;
     }
@@ -77,6 +87,7 @@ function updateSkills() {
 
 
 }
+
 // Call list of skills from server and put if to localStorage
 
 const init = () => {
@@ -85,9 +96,9 @@ const init = () => {
   fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
     .then(response => response.json())
     .then(function (data) {
-      console.log(data);
-      let skillsArr = data.skills; 
-      console.log(skillsArr);
+      // console.log(data);
+      let skillsArr = data.skills;
+      // console.log(skillsArr);
       let skillsList = document.querySelector('#container-checkboxes');
 
       // Reseteamos contenido de lista de skills
@@ -98,9 +109,9 @@ const init = () => {
         // Objeto de skill
         let currentSkill = skillsArr[i];
 
-        console.log(currentSkill);
+        // console.log(currentSkill);
 
-        // Creamos un elemento <li> 
+        // Creamos un elemento <li>
         let listItemElem = document.createElement('li');
 
         // Para poner checkbox delante de cada skill
@@ -108,7 +119,7 @@ const init = () => {
         listItemCheckbox.type = 'checkbox';
         listItemCheckbox.value = currentSkill;
         listItemCheckbox.addEventListener('click', updateSkills);
-        
+
         // Determinamos si el nombre de la skill actual está en la lista almacenada en el array del localStorage
         // Si la skill no está, indexOf devolverá -1. Si está, devolverá un número distinto de -1, que será la posición
         // en el array de dicho skill.
@@ -135,12 +146,12 @@ const init = () => {
 // Here starts EMAIL JavaScript:
 
 let emailInput = document.body.querySelector('#email-input');
-console.log('email', emailInput);
+// console.log('email', emailInput);
 let emailLabel = document.querySelector('#email-card');
-console.log('emaillabel', emailLabel);
+// console.log('emaillabel', emailLabel);
 
 function updateEmail(event) {
-  console.log(event);
+  // console.log(event);
   let emailLabel = document.querySelector('#email-card');
   // console.log(emailLabel);
   emailLabel.href = `mailto:${event.currentTarget.value}`;
@@ -178,11 +189,11 @@ function updateLinkedin(event) {
 
 linkedinInput.addEventListener('keyup', updateLinkedin);
 
-// Here starts Telephone Javascript 
+// Here starts Telephone Javascript
 
 let telInput = document.body.querySelector('#telf_movil');
 let telLabel = document.querySelector('#tel-card');
-console.log('telLAbel', telLabel);
+// console.log('telLAbel', telLabel);
 
 function updateTelephone(event) {
   telLabel.href = `tel:${event.currentTarget.value}`;
@@ -201,19 +212,19 @@ let inputGray = document.querySelector('#palette__gray');
 
 function savePalette() {
   if (inputGreen.checked === true) {
-    console.log('green');
+    // console.log('green');
     dataObject.palette = '1';
     updateDataObject('palette', '1');
   } else if (inputRed.checked === true) {
-    console.log('red');
+    // console.log('red');
     dataObject.palette = '2';
     updateDataObject('palette', '2');
   } else if (inputGray.checked === true) {
-    console.log('gray');
+    // console.log('gray');
     dataObject.palette = '3';
     updateDataObject('palette', '3');
   } else {
-    console.log('green');
+    // console.log('green');
   }
   updateLocalStorage();
 }
@@ -269,7 +280,7 @@ function apiCall(json) {
     .then(response => {
 
       cardLink.innerHTML = response.cardURL;
-      tweetbutton.href = "https://twitter.com/intent/tweet?text=%C2%A1He%20creado%20esta%20tarjeta%20personalizada%20con%20Awesome%20Profile%20Card%20de%20undefined-team!%20✨" + response.cardURL;
+      tweetbutton.href = 'https://twitter.com/intent/tweet?text=%C2%A1He%20creado%20esta%20tarjeta%20personalizada%20con%20Awesome%20Profile%20Card%20de%20undefined-team!%20✨' + response.cardURL;
 
     })
     .catch(error => console.error('Error:', error));
@@ -283,15 +294,15 @@ function getLocalStorage() {
   // localStorage.getItem('dataObject');
   let myLocalStorage = localStorage.getItem('dataObject');
   let myLocalStorageObject = JSON.parse(myLocalStorage);
-  console.log(myLocalStorageObject);
+  // console.log(myLocalStorageObject);
 
   if (myLocalStorageObject !== null) {
- 
-    dataObject = myLocalStorageObject; 
- 
+
+    dataObject = myLocalStorageObject;
+
     fullNameInput.value = dataObject.name;
     fullNameLabel.innerHTML = dataObject.name;
- 
+
     jobPositionLabel.innerHTML= dataObject.job;
     jobPositionInput.value = dataObject.job;
 
@@ -339,10 +350,10 @@ function getLocalStorage() {
     }
 
 
- 
+
     emailInput.value = dataObject.email;
     emailLabel.href = dataObject.email;
- 
+
     linkedinInput.value = dataObject.linkedin;
     linkedinLabel.href = dataObject.linkedin;
 
@@ -356,8 +367,26 @@ function getLocalStorage() {
       for (const cardImage of profileImages) {
         cardImage.style.backgroundImage = `url(${dataObject.photo})`;
       }
-    }    
-  } 
+    }
+
+    // Get skills list from localstorage
+    const chosenSkillsList = document.querySelector('.list_skills');
+    const chosenSkillsArray = dataObject.skills;
+    for (const eachChosenSkill of chosenSkillsArray) {
+      let cardListItemElem = document.createElement('li');
+      cardListItemElem.classList.add('list_item');
+      const putstuffinside = document.createTextNode(`${eachChosenSkill}`);
+      cardListItemElem.appendChild(putstuffinside);
+      chosenSkillsList.appendChild(cardListItemElem);
+      if (dataObject.palette === '1') {
+        cardListItemElem.classList.add('green');
+      } else if (dataObject.palette === '2') {
+        cardListItemElem.classList.add('red');
+      } else if (dataObject.palette === '3') {
+        cardListItemElem.classList.add('gray');
+      }
+    }
+  }
 }
 
 getLocalStorage();
