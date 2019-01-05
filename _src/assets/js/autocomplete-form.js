@@ -140,13 +140,9 @@ let emailLabel = document.querySelector('#email-card');
 console.log('emaillabel', emailLabel);
 
 function updateEmail(event) {
-<<<<<<< HEAD
-  let emailLabel = document.querySelector('#email-card');
-=======
   console.log(event);
   let emailLabel = document.querySelector('#email-card');
   // console.log(emailLabel);
->>>>>>> c2d6ce50a20ffa8bba05aa5da56c700bdce0d798
   emailLabel.href = `mailto:${event.currentTarget.value}`;
   updateDataObject('email', event.currentTarget.value);
   updateLocalStorage();
