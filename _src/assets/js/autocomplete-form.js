@@ -54,20 +54,30 @@ function updateSkills() {
   let skillsDataForLocalStorage = [];
   let checkboxListItems = skillsList.querySelectorAll('li');
   skillsCard.innerHTML = '';
-  
+
   for (const checkboxListItem of checkboxListItems) {
     let checkbox = checkboxListItem.querySelector('input');
     if (counter < MAX_SKILLS && checkbox.checked) {
-     
+
       let cardListItemElem = document.createElement('li');
       cardListItemElem.classList.add('list_item');
 
       let cardListItemContent = document.createTextNode(`${checkboxListItem.textContent}`);
       cardListItemElem.appendChild(cardListItemContent);
       skillsDataForLocalStorage.push(checkbox.value);
-          
+
       skillsCard.appendChild(cardListItemElem);
-      counter++;     
+      counter++;
+
+      // Condition for keep the same tags color
+      if (dataObject.palette === '1') {
+        cardListItemElem.classList.add('green');
+      } else if (dataObject.palette === '2') {
+        cardListItemElem.classList.add('red');
+      } else if (dataObject.palette === '3') {
+        cardListItemElem.classList.add('gray');
+      }
+      
     } else {
       checkbox.checked = false;
     }
@@ -86,7 +96,7 @@ const init = () => {
     .then(response => response.json())
     .then(function (data) {
       console.log(data);
-      let skillsArr = data.skills; 
+      let skillsArr = data.skills;
       console.log(skillsArr);
       let skillsList = document.querySelector('#container-checkboxes');
 
@@ -108,7 +118,7 @@ const init = () => {
         listItemCheckbox.type = 'checkbox';
         listItemCheckbox.value = currentSkill;
         listItemCheckbox.addEventListener('click', updateSkills);
-        
+
         // Determinamos si el nombre de la skill actual está en la lista almacenada en el array del localStorage
         // Si la skill no está, indexOf devolverá -1. Si está, devolverá un número distinto de -1, que será la posición
         // en el array de dicho skill.
@@ -286,13 +296,13 @@ function getLocalStorage() {
   console.log(myLocalStorageObject);
 
   if (myLocalStorageObject !== null) {
- 
-    dataObject = myLocalStorageObject; 
- 
+
+    dataObject = myLocalStorageObject;
+
     fullNameInput.value = dataObject.name;
     fullNameLabel.innerHTML = dataObject.name;
- 
-    jobPositionLabel.innerHTML= dataObject.job;
+
+    jobPositionLabel.innerHTML = dataObject.job;
     jobPositionInput.value = dataObject.job;
 
     if (dataObject.name === '') {
@@ -339,10 +349,10 @@ function getLocalStorage() {
     }
 
 
- 
+
     emailInput.value = dataObject.email;
     emailLabel.href = dataObject.email;
- 
+
     linkedinInput.value = dataObject.linkedin;
     linkedinLabel.href = dataObject.linkedin;
 
@@ -356,8 +366,27 @@ function getLocalStorage() {
       for (const cardImage of profileImages) {
         cardImage.style.backgroundImage = `url(${dataObject.photo})`;
       }
-    }    
-  } 
+    }
+
+    // Get skills list from localstorage
+    const chosenSkillsList = document.querySelector('.list_skills');
+    const chosenSkillsArray = dataObject.skills;
+    for (const eachChosenSkill of chosenSkillsArray) {
+      let cardListItemElem = document.createElement('li');
+      cardListItemElem.classList.add('list_item');
+      const putstuffinside = document.createTextNode(`${eachChosenSkill}`);
+      cardListItemElem.appendChild(putstuffinside);
+      chosenSkillsList.appendChild(cardListItemElem);
+      if (dataObject.palette === '1') {
+        cardListItemElem.classList.add('green');
+      } else if (dataObject.palette === '2') {
+        cardListItemElem.classList.add('red');
+      } else if (dataObject.palette === '3') {
+        cardListItemElem.classList.add('gray');
+      }
+    }
+
+  }
 }
 
 getLocalStorage();
