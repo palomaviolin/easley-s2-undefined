@@ -260,8 +260,8 @@ inputComicSans.addEventListener('click', saveTypography);
 inputMontserrat.addEventListener('click', saveTypography);
 
 
-// Here starts the API call
 
+//Logic to post in backend the data from page
 let url = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
 let button = document.querySelector('.button__create-card');
 const cardLink = document.querySelector('.title__card--link');
@@ -288,12 +288,10 @@ function apiCall(json) {
 button.addEventListener('click', apiCall);
 
 
-
-function getLocalStorage() {
-  // localStorage.getItem('dataObject');
+//Function to read Local Storage and fill the page
+const getLocalStorage = () => {
   let myLocalStorage = localStorage.getItem('dataObject');
   let myLocalStorageObject = JSON.parse(myLocalStorage);
-  console.log(myLocalStorageObject);
 
   if (myLocalStorageObject !== null) {
 
@@ -393,13 +391,14 @@ getLocalStorage();
 init();
 
 
-//Reset button
+//Function to handle reset button
 const resetBtn = document.querySelector('.profile__action');
 const form = document.querySelector('#form');
 const colorForm = document.querySelector('#color-form');
 const fontForm = document.querySelector('#font-form');
-
-function resetAll() {
+const containerSkills = document.querySelector('#container-checkboxes-card');
+console.log('lista', containerSkills);
+const resetAll = () => {
   dataObject = {
     'palette': '',
     'typography': '',
@@ -422,5 +421,7 @@ function resetAll() {
   jobPositionLabel.innerText = 'Job';
   profileImages[0].style.backgroundImage = dataObject.photo;
   profileImages[1].style.backgroundImage = dataObject.photo;
+  containerSkills.innerHTML = "";
+
 }
 resetBtn.addEventListener('click', resetAll);
