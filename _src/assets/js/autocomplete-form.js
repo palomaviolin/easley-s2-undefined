@@ -289,6 +289,8 @@ button.addEventListener('click', apiCall);
 
 
 //Function to read Local Storage and fill the page
+const colorForName = document.querySelector('.profile__data');
+const fontForName = document.querySelector('.profile__data-group');
 const getLocalStorage = () => {
   let myLocalStorage = localStorage.getItem('dataObject');
   let myLocalStorageObject = JSON.parse(myLocalStorage);
@@ -310,39 +312,31 @@ const getLocalStorage = () => {
       jobPositionLabel.innerText = 'Job';
     }
 
-    const fontForName = document.querySelector('.profile__data-group');
     if (dataObject.typography === 'c') {
       fontForName.classList.add('font-comic');
-      fontForName.classList.remove('font-montserrat');
-      fontForName.classList.remove('font-ubuntu');
+      fontForName.classList.remove('font-montserrat','font-ubuntu');
       inputComicSans.checked = true;
     } else if (dataObject.typography === 'm') {
       fontForName.classList.add('font-montserrat');
-      fontForName.classList.remove('font-comic');
-      fontForName.classList.remove('font-ubuntu');
+      fontForName.classList.remove('font-comic', 'font-ubuntu');
       inputMontserrat.checked = true;
     } else if (dataObject.typography === 'u') {
       fontForName.classList.add('font-ubuntu');
-      fontForName.classList.remove('font-montserrat');
-      fontForName.classList.remove('font-comic');
+      fontForName.classList.remove('font-montserrat', 'font-comic');
       inputUbuntu.checked = true;
     }
 
-    const colorForName = document.querySelector('.profile__data');
     if (dataObject.palette === '1') {
       colorForName.classList.add('green');
-      colorForName.classList.remove('red');
-      colorForName.classList.remove('gray');
+      colorForName.classList.remove('red', 'gray');
       inputGreen.checked = true;
     } else if (dataObject.palette === '2') {
       colorForName.classList.add('red');
-      colorForName.classList.remove('gray');
-      colorForName.classList.remove('green');
+      colorForName.classList.remove('gray', 'green');
       inputRed.checked = true;
     } else if (dataObject.palette === '3') {
       colorForName.classList.add('gray');
-      colorForName.classList.remove('red');
-      colorForName.classList.remove('green');
+      colorForName.classList.remove('red', 'green');
       inputGray.checked = true;
     }
 
@@ -383,7 +377,6 @@ const getLocalStorage = () => {
         cardListItemElem.classList.add('gray');
       }
     }
-
   }
 }
 
@@ -417,11 +410,14 @@ const resetAll = () => {
   form.reset();
   colorForm.reset();
   fontForm.reset();
+  colorForName.classList.add('green');
+  colorForName.classList.remove('red', 'gray');
+  fontForName.classList.add('font-comic');
+  fontForName.classList.remove('font-montserrat','font-ubuntu');
   fullNameLabel.innerText = 'Name Surname';
   jobPositionLabel.innerText = 'Job';
   profileImages[0].style.backgroundImage = dataObject.photo;
   profileImages[1].style.backgroundImage = dataObject.photo;
-  containerSkills.innerHTML = "";
-
-}
+  containerSkills.innerHTML = '';
+};
 resetBtn.addEventListener('click', resetAll);
