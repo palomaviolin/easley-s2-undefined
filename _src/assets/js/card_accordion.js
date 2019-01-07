@@ -10,7 +10,7 @@ const firstBlock = document.querySelector('.first_block');
 const secondBlock = document.querySelector('.second_block');
 
 
-function openFun(e) {
+const openFun = (e) => {
   
   const currentBlock = e.currentTarget;
   currentBlock.classList.toggle('active');
@@ -31,14 +31,14 @@ function openFun(e) {
     firstBlock.classList.remove('open');
     secondBlock.classList.remove('open');
   }
-}
+};
 
 firstChild.addEventListener('click', openFun);
 secondChild.addEventListener('click', openFun);
 thirdChild.addEventListener('click', openFun);
 
 
-function showLink(e) {
+const showLink = (e) => {
   create.classList.toggle('active');
   if (e.currentTarget.classList.contains('active')) {
     content.classList.add('show');
@@ -47,5 +47,6 @@ function showLink(e) {
     content.classList.remove('show');
     thirdBlock.classList.remove('add_height');
   }
-}
+};
+
 create.addEventListener('click', showLink);
