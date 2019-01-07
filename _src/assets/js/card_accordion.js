@@ -8,23 +8,25 @@ const content = document.querySelector('.create__mesage');
 const thirdBlock = document.querySelector('.third_block');
 const firstBlock = document.querySelector('.first_block');
 const secondBlock = document.querySelector('.second_block');
-// console.log(thirdBlock);
 
-firstBlock.classList.add('open');
+
 function openFun(e) {
+  
   const currentBlock = e.currentTarget;
   currentBlock.classList.toggle('active');
 
-  if (currentBlock.classList.contains('active') && currentBlock.parentElement === firstBlock) {
-    e.currentTarget.parentElement.classList.add('open');
+  if (currentBlock.parentElement === firstBlock) {
+    e.currentTarget.parentElement.classList.toggle('open');
     secondBlock.classList.remove('open');
     thirdBlock.classList.remove('open');
 
-  } else if (currentBlock.classList.contains('active') && currentBlock.parentElement === secondBlock) {
+  } else if (currentBlock.parentElement === secondBlock) {
+
     e.currentTarget.parentElement.classList.add('open');
     firstBlock.classList.remove('open');
     thirdBlock.classList.remove('open');
-  }else if (currentBlock.classList.contains('active') && currentBlock.parentElement === thirdBlock) {
+
+  } else if (currentBlock.parentElement === thirdBlock) {
     e.currentTarget.parentElement.classList.add('open');
     firstBlock.classList.remove('open');
     secondBlock.classList.remove('open');
