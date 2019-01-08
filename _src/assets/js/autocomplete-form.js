@@ -41,10 +41,9 @@ function updateJobPosition(event) {
 jobPositionInput.addEventListener('keyup', updateJobPosition);
 
 
-// Here starts SKILLS JavaScript:
+// Functions to handle the Skills checked boxes:
 
 let skillsList = document.querySelector('#container-checkboxes');
-console.log(skillsList);
 let skillsCard = document.querySelector('#container-checkboxes-card');
 
 let skills = [];
@@ -52,39 +51,35 @@ let skills = [];
 function updateSkills() {
   let counter = 0;
   let MAX_SKILLS = 3;
-
-  // Resetear etiquetas de la card
-  skillsCard.innerHTML = '';
-  
-  // Cogemos todos los li de la caja de checkboxes
-  let checkboxListItems = skillsList.querySelectorAll('li');
-
   let skillsDataForLocalStorage = [];
+  let checkboxListItems = skillsList.querySelectorAll('li');
+  skillsCard.innerHTML = '';
 
-  // Iteramos por cada li de checkbox
   for (const checkboxListItem of checkboxListItems) {
-    // Cogemos el checkbox del li que estamos procesando
     let checkbox = checkboxListItem.querySelector('input');
-
-    // Si el checkbox está checked y el contador de skills seleccionadas es menor que el máximo, añadimos etiqueta a la card
     if (counter < MAX_SKILLS && checkbox.checked) {
-      console.log(counter);
-      console.log(checkbox);
 
-      // Creamos un elemento <li> para la etiqueta 
       let cardListItemElem = document.createElement('li');
-      cardListItemElem.style = `list-style-type: none; padding: 1px; font-family:"Open Sans", sans-serif; font-weight: 400; font-size: 13px; color: white; background-color: #438792; width: 80px; border-radius: 4px; margin: 2px; display: inline-block; text-align: center;`; // Para quitar el punto de cada 'li' que sale por defecto.
+      cardListItemElem.classList.add('list_item');
 
-      // Añadimos el nombre de la skill (que es textContent del li de checkboxes-container) como texto hijo del <li> de la card
       let cardListItemContent = document.createTextNode(`${checkboxListItem.textContent}`);
       cardListItemElem.appendChild(cardListItemContent);
       skillsDataForLocalStorage.push(checkbox.value);
-          
 
-
-      // Finalmente, añadimos el <li> a la lista
       skillsCard.appendChild(cardListItemElem);
-      counter++;     
+      counter++;
+
+      // Condition for keep the same tags color
+      if (dataObject.palette === '1') {
+        cardListItemElem.classList.add('green');
+      } else if (dataObject.palette === '2') {
+        cardListItemElem.classList.add('red');
+      } else if (dataObject.palette === '3') {
+        cardListItemElem.classList.add('gray');
+      }
+      
+    } else {
+      checkbox.checked = false;
     }
   }
   updateDataObject('skills', skillsDataForLocalStorage);
@@ -92,15 +87,16 @@ function updateSkills() {
 
 
 }
+// Call list of skills from server and put if to localStorage
 
-function init() {
+const init = () => {
   let localStorageSkills = dataObject['skills'];
 
   fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
     .then(response => response.json())
     .then(function (data) {
       console.log(data);
-      let skillsArr = data.skills; // Objeto con un array de strings
+      let skillsArr = data.skills;
       console.log(skillsArr);
       let skillsList = document.querySelector('#container-checkboxes');
 
@@ -122,7 +118,7 @@ function init() {
         listItemCheckbox.type = 'checkbox';
         listItemCheckbox.value = currentSkill;
         listItemCheckbox.addEventListener('click', updateSkills);
-        
+
         // Determinamos si el nombre de la skill actual está en la lista almacenada en el array del localStorage
         // Si la skill no está, indexOf devolverá -1. Si está, devolverá un número distinto de -1, que será la posición
         // en el array de dicho skill.
@@ -142,8 +138,8 @@ function init() {
         // Finalmente, añadimos el <li> a la lista
         skillsList.appendChild(listItemElem);
       }
-    })
-}
+    });
+};
 
 
 // Here starts EMAIL JavaScript:
@@ -264,10 +260,8 @@ inputComicSans.addEventListener('click', saveTypography);
 inputMontserrat.addEventListener('click', saveTypography);
 
 
-//Habilidades
 
-// Here starts the API call
-
+//Logic to post in backend the data from page
 let url = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
 let button = document.querySelector('.button__create-card');
 const cardLink = document.querySelector('.title__card--link');
@@ -294,21 +288,21 @@ function apiCall(json) {
 button.addEventListener('click', apiCall);
 
 
-
-function getLocalStorage() {
-  // localStorage.getItem('dataObject');
+//Function to read Local Storage and fill the page
+const colorForName = document.querySelector('.profile__data');
+const fontForName = document.querySelector('.profile__data-group');
+const getLocalStorage = () => {
   let myLocalStorage = localStorage.getItem('dataObject');
   let myLocalStorageObject = JSON.parse(myLocalStorage);
-  console.log(myLocalStorageObject);
 
   if (myLocalStorageObject !== null) {
- 
-    dataObject = myLocalStorageObject; 
- 
+
+    dataObject = myLocalStorageObject;
+
     fullNameInput.value = dataObject.name;
     fullNameLabel.innerHTML = dataObject.name;
- 
-    jobPositionLabel.innerHTML= dataObject.job;
+
+    jobPositionLabel.innerHTML = dataObject.job;
     jobPositionInput.value = dataObject.job;
 
     if (dataObject.name === '') {
@@ -317,10 +311,40 @@ function getLocalStorage() {
     if (dataObject.job === '') {
       jobPositionLabel.innerText = 'Job';
     }
- 
+
+    if (dataObject.typography === 'c') {
+      fontForName.classList.add('font-comic');
+      fontForName.classList.remove('font-montserrat','font-ubuntu');
+      inputComicSans.checked = true;
+    } else if (dataObject.typography === 'm') {
+      fontForName.classList.add('font-montserrat');
+      fontForName.classList.remove('font-comic', 'font-ubuntu');
+      inputMontserrat.checked = true;
+    } else if (dataObject.typography === 'u') {
+      fontForName.classList.add('font-ubuntu');
+      fontForName.classList.remove('font-montserrat', 'font-comic');
+      inputUbuntu.checked = true;
+    }
+
+    if (dataObject.palette === '1') {
+      colorForName.classList.add('green');
+      colorForName.classList.remove('red', 'gray');
+      inputGreen.checked = true;
+    } else if (dataObject.palette === '2') {
+      colorForName.classList.add('red');
+      colorForName.classList.remove('gray', 'green');
+      inputRed.checked = true;
+    } else if (dataObject.palette === '3') {
+      colorForName.classList.add('gray');
+      colorForName.classList.remove('red', 'green');
+      inputGray.checked = true;
+    }
+
+
+
     emailInput.value = dataObject.email;
     emailLabel.href = dataObject.email;
- 
+
     linkedinInput.value = dataObject.linkedin;
     linkedinLabel.href = dataObject.linkedin;
 
@@ -334,21 +358,40 @@ function getLocalStorage() {
       for (const cardImage of profileImages) {
         cardImage.style.backgroundImage = `url(${dataObject.photo})`;
       }
-    }    
-  } 
+    }
+
+    // Get skills list from localstorage
+    const chosenSkillsList = document.querySelector('.list_skills');
+    const chosenSkillsArray = dataObject.skills;
+    for (const eachChosenSkill of chosenSkillsArray) {
+      let cardListItemElem = document.createElement('li');
+      cardListItemElem.classList.add('list_item');
+      const putstuffinside = document.createTextNode(`${eachChosenSkill}`);
+      cardListItemElem.appendChild(putstuffinside);
+      chosenSkillsList.appendChild(cardListItemElem);
+      if (dataObject.palette === '1') {
+        cardListItemElem.classList.add('green');
+      } else if (dataObject.palette === '2') {
+        cardListItemElem.classList.add('red');
+      } else if (dataObject.palette === '3') {
+        cardListItemElem.classList.add('gray');
+      }
+    }
+  }
 }
 
 getLocalStorage();
 init();
 
 
-//Reset button
+//Function to handle reset button
 const resetBtn = document.querySelector('.profile__action');
 const form = document.querySelector('#form');
 const colorForm = document.querySelector('#color-form');
 const fontForm = document.querySelector('#font-form');
-
-function resetAll() {
+const containerSkills = document.querySelector('#container-checkboxes-card');
+console.log('lista', containerSkills);
+const resetAll = () => {
   dataObject = {
     'palette': '',
     'typography': '',
@@ -367,9 +410,14 @@ function resetAll() {
   form.reset();
   colorForm.reset();
   fontForm.reset();
+  colorForName.classList.add('green');
+  colorForName.classList.remove('red', 'gray');
+  fontForName.classList.add('font-comic');
+  fontForName.classList.remove('font-montserrat','font-ubuntu');
   fullNameLabel.innerText = 'Name Surname';
   jobPositionLabel.innerText = 'Job';
   profileImages[0].style.backgroundImage = dataObject.photo;
   profileImages[1].style.backgroundImage = dataObject.photo;
-}
+  containerSkills.innerHTML = '';
+};
 resetBtn.addEventListener('click', resetAll);
