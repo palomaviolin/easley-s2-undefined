@@ -1,207 +1,87 @@
 'use strict';
 
+// Update localStorage
+const updateDataObject = (key, value) => dataObject[key] = value;
+const updateLocalStorage = () => localStorage.setItem('dataObject', JSON.stringify(dataObject));
 
-function updateDataObject(key, value) {
-  dataObject[key] = value;
-}
-
-function updateLocalStorage() {
-  localStorage.setItem('dataObject', JSON.stringify(dataObject));
-}
-
-// Here starts NAME JavaScript:
+// Logic to complite the NAME:
 
 let fullNameInput = document.body.querySelector('#name-input');
 let fullNameLabel = document.body.querySelector('#name');
 
-function updateFullName(event) {
-  // console.log(event);
+
+const updateFullName = (event) => {
   fullNameLabel.innerText = event.target.value;
   updateDataObject('name', event.target.value);
   updateLocalStorage();
-}
+};
 
 fullNameInput.addEventListener('keyup', updateFullName);
 
 
-// Here starts JOB JavaScript:
+// Logic to complite the JOB:
 
 let jobPositionInput = document.body.querySelector('#job-input');
 let jobPositionLabel = document.body.querySelector('#job-card');
-//console.log('jobPositionInput', jobPositionInput); // This line is to view the element jobPositionInput in the console.
 
-function updateJobPosition(event) {
-  // console.log(event);
 
+const updateJobPosition = (event) => {
   jobPositionLabel.innerText = event.target.value;
   updateDataObject('job', event.target.value);
   updateLocalStorage();
-}
-
+};
 jobPositionInput.addEventListener('keyup', updateJobPosition);
 
 
-// Functions to handle the Skills checked boxes:
-
-let skillsList = document.querySelector('#container-checkboxes');
-let skillsCard = document.querySelector('#container-checkboxes-card');
-
-let skills = [];
-
-function updateSkills() {
-  let counter = 0;
-  let MAX_SKILLS = 3;
-  let skillsDataForLocalStorage = [];
-  let checkboxListItems = skillsList.querySelectorAll('li');
-  skillsCard.innerHTML = '';
-
-  for (const checkboxListItem of checkboxListItems) {
-    let checkbox = checkboxListItem.querySelector('input');
-    if (counter < MAX_SKILLS && checkbox.checked) {
-
-      let cardListItemElem = document.createElement('li');
-      cardListItemElem.classList.add('list_item');
-
-      let cardListItemContent = document.createTextNode(`${checkboxListItem.textContent}`);
-      cardListItemElem.appendChild(cardListItemContent);
-      skillsDataForLocalStorage.push(checkbox.value);
-
-      skillsCard.appendChild(cardListItemElem);
-      counter++;
-
-      // Condition for keep the same tags color
-      if (dataObject.palette === '1') {
-        cardListItemElem.classList.add('green');
-      } else if (dataObject.palette === '2') {
-        cardListItemElem.classList.add('red');
-      } else if (dataObject.palette === '3') {
-        cardListItemElem.classList.add('gray');
-      }
-      
-    } else {
-      checkbox.checked = false;
-    }
-  }
-  updateDataObject('skills', skillsDataForLocalStorage);
-  updateLocalStorage();
-
-
-}
-// Call list of skills from server and put if to localStorage
-
-const init = () => {
-  let localStorageSkills = dataObject['skills'];
-
-  fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
-    .then(response => response.json())
-    .then(function (data) {
-      console.log(data);
-      let skillsArr = data.skills;
-      console.log(skillsArr);
-      let skillsList = document.querySelector('#container-checkboxes');
-
-      // Reseteamos contenido de lista de skills
-      skillsList.innerHTML = '';
-
-      // Print de las skills en el FORMULARIO
-      for (let i = 0; i < skillsArr.length; i++) {
-        // Objeto de skill
-        let currentSkill = skillsArr[i];
-
-        console.log(currentSkill);
-
-        // Creamos un elemento <li> 
-        let listItemElem = document.createElement('li');
-
-        // Para poner checkbox delante de cada skill
-        let listItemCheckbox = document.createElement('input');
-        listItemCheckbox.type = 'checkbox';
-        listItemCheckbox.value = currentSkill;
-        listItemCheckbox.addEventListener('click', updateSkills);
-
-        // Determinamos si el nombre de la skill actual está en la lista almacenada en el array del localStorage
-        // Si la skill no está, indexOf devolverá -1. Si está, devolverá un número distinto de -1, que será la posición
-        // en el array de dicho skill.
-        if (localStorageSkills.indexOf(currentSkill) !== -1) {
-          listItemCheckbox.checked = true;
-        } else {
-          listItemCheckbox.checked = false;
-        }
-
-        listItemElem.appendChild(listItemCheckbox);
-        listItemElem.style = `list-style-type: none; margin-left: 6px;`; // Para quitar el punto de cada 'li' que sale por defecto.
-
-        // Añadimos el nombre de la skill como texto hijo del <li>
-        let listItemContent = document.createTextNode(`${currentSkill}`);
-        listItemElem.appendChild(listItemContent);
-
-        // Finalmente, añadimos el <li> a la lista
-        skillsList.appendChild(listItemElem);
-      }
-    });
-};
-
-
-// Here starts EMAIL JavaScript:
+// Logic to complite the EMAIL:
 
 let emailInput = document.body.querySelector('#email-input');
-console.log('email', emailInput);
 let emailLabel = document.querySelector('#email-card');
-console.log('emaillabel', emailLabel);
 
-function updateEmail(event) {
-  console.log(event);
-  let emailLabel = document.querySelector('#email-card');
-  // console.log(emailLabel);
+const updateEmail = (event) => {
   emailLabel.href = `mailto:${event.currentTarget.value}`;
   updateDataObject('email', event.currentTarget.value);
   updateLocalStorage();
-}
-
+};
 emailInput.addEventListener('keyup', updateEmail);
 
+// Logic to complite the TELEPHONE NUMBER 
 
-// Here starts GitHub JavaScript:
+let telInput = document.body.querySelector('#telf_movil');
+let telLabel = document.querySelector('#tel-card');
 
-let githubInput = document.body.querySelector('#github-input');
-let githubLabel = document.querySelector('#github-card');
-
-function updateGithub(event) {
-  githubLabel.href = `https://${event.currentTarget.value}`;
-  updateDataObject('github', event.currentTarget.value);
+const updateTelephone = (event) => {
+  telLabel.href = `tel:${event.currentTarget.value}`;
+  updateDataObject('phone', event.currentTarget.value);
   updateLocalStorage();
-}
+};
 
-githubInput.addEventListener('keyup', updateGithub);
-
+telInput.addEventListener('keyup', updateTelephone);
 
 // Here starts LinkedIn JavaScript:
 
 let linkedinInput = document.body.querySelector('#linkedin-input');
 let linkedinLabel = document.querySelector('#linkedin-card');
 
-function updateLinkedin(event) {
+const updateLinkedin = (event) => {
   linkedinLabel.href = `https://www.${event.currentTarget.value}`;
   updateDataObject('linkedin', event.currentTarget.value);
   updateLocalStorage();
-}
+};
 
 linkedinInput.addEventListener('keyup', updateLinkedin);
 
-// Here starts Telephone Javascript 
+// Logic to complite the GitHub:
 
-let telInput = document.body.querySelector('#telf_movil');
-let telLabel = document.querySelector('#tel-card');
-console.log('telLAbel', telLabel);
+let githubInput = document.body.querySelector('#github-input');
+let githubLabel = document.querySelector('#github-card');
 
-function updateTelephone(event) {
-  telLabel.href = `tel:${event.currentTarget.value}`;
-  updateDataObject('phone', event.currentTarget.value);
+const updateGithub = (event) => {
+  githubLabel.href = `https://${event.currentTarget.value}`;
+  updateDataObject('github', event.currentTarget.value);
   updateLocalStorage();
-}
-
-telInput.addEventListener('keyup', updateTelephone);
-
+};
+githubInput.addEventListener('keyup', updateGithub);
 
 //Color palette
 
@@ -260,6 +140,107 @@ inputComicSans.addEventListener('click', saveTypography);
 inputMontserrat.addEventListener('click', saveTypography);
 
 
+
+// Logic to complite the SKILLS:
+
+let skillsList = document.querySelector('#container-checkboxes');
+let skillsCard = document.querySelector('#container-checkboxes-card');
+
+let skills = [];
+
+const updateSkills = () => {
+  let counter = 0;
+  let MAX_SKILLS = 3;
+  let skillsDataForLocalStorage = [];
+  let checkboxListItems = skillsList.querySelectorAll('li');
+
+  skillsCard.innerHTML = '';
+  for (const checkboxListItem of checkboxListItems) {
+    let checkbox = checkboxListItem.querySelector('input');
+    if (counter < MAX_SKILLS && checkbox.checked) {
+  
+
+      let cardListItemElem = document.createElement('li');
+      cardListItemElem.classList.add('list_item');
+
+      let cardListItemContent = document.createTextNode(`${checkboxListItem.textContent}`);
+      cardListItemElem.appendChild(cardListItemContent);
+      skillsDataForLocalStorage.push(checkbox.value);
+
+      skillsCard.appendChild(cardListItemElem);
+      counter++;
+
+      // Condition for keep the same tags color
+      if (dataObject.palette === '1') {
+        cardListItemElem.classList.add('green');
+      } else if (dataObject.palette === '2') {
+        cardListItemElem.classList.add('red');
+      } else if (dataObject.palette === '3') {
+        cardListItemElem.classList.add('gray');
+      }
+      
+    } else {
+      checkbox.checked = false;
+    }
+  }
+  updateDataObject('skills', skillsDataForLocalStorage);
+  updateLocalStorage();
+};
+
+const init = () => {
+  let localStorageSkills = dataObject['skills'];
+
+  fetch('https://raw.githubusercontent.com/Adalab/dorcas-s2-proyecto-data/master/skills.json')
+    .then(response => response.json())
+    .then(function (data) {
+      console.log(data);
+      let skillsArr = data.skills;
+      console.log(skillsArr);
+      let skillsList = document.querySelector('#container-checkboxes');
+
+      // Reseteamos contenido de lista de skills
+      skillsList.innerHTML = '';
+
+      // Print de las skills en el FORMULARIO
+      for (let i = 0; i < skillsArr.length; i++) {
+        // Objeto de skill
+        let currentSkill = skillsArr[i];
+
+        console.log(currentSkill);
+
+        // Creamos un elemento <li> 
+        let listItemElem = document.createElement('li');
+
+        // Para poner checkbox delante de cada skill
+        let listItemCheckbox = document.createElement('input');
+        listItemCheckbox.type = 'checkbox';
+        listItemCheckbox.value = currentSkill;
+        listItemCheckbox.addEventListener('click', updateSkills);
+
+        // Determinamos si el nombre de la skill actual está en la lista almacenada en el array del localStorage
+        // Si la skill no está, indexOf devolverá -1. Si está, devolverá un número distinto de -1, que será la posición
+        // en el array de dicho skill.
+        if (localStorageSkills.indexOf(currentSkill) !== -1) {
+          listItemCheckbox.checked = true;
+        } else {
+          listItemCheckbox.checked = false;
+        }
+
+        listItemElem.appendChild(listItemCheckbox);
+        listItemElem.style = `list-style-type: none; margin-left: 6px;`; // Para quitar el punto de cada 'li' que sale por defecto.
+
+        // Añadimos el nombre de la skill como texto hijo del <li>
+        let listItemContent = document.createTextNode(`${currentSkill}`);
+        listItemElem.appendChild(listItemContent);
+
+        // Finalmente, añadimos el <li> a la lista
+        skillsList.appendChild(listItemElem);
+      }
+    });
+};
+
+
+// Here starts the API call
 
 //Logic to post in backend the data from page
 let url = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/';
