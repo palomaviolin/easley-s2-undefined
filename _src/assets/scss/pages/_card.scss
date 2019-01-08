@@ -607,3 +607,35 @@ ol {
     font-family: $font-family_option3;
   }
 }
+.list_item {
+  list-style-type: none; 
+  font-family:"Open Sans", sans-serif; 
+  font-weight: 400; 
+  font-size: 13px; 
+  color: white;
+  background-color: #438792;
+  width: 80px;
+  border-radius: 4px;
+  margin: 2px;
+  display: inline-block;
+  text-align: center;
+}
+.list_item.green {
+  background-color: $color_green_Medium;
+}
+.list_item.red {
+  background-color: $color_red_Light;
+}
+.list_item.gray {
+  background-color: $color_gray_Light;
+}
+
+.list_skills.green .list_item {
+  background-color: $color_green_Medium;
+}
+.list_skills.red .list_item {
+  background-color: $color_red_Light;
+}
+.list_skills.gray .list_item {
+  background-color: $color_gray_Light;
+}
