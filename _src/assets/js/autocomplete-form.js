@@ -316,36 +316,30 @@ function getLocalStorage() {
     const fontForName = document.querySelector('.profile__data-group');
     if (dataObject.typography === 'c') {
       fontForName.classList.add('font-comic');
-      fontForName.classList.remove('font-montserrat');
-      fontForName.classList.remove('font-ubuntu');
+      fontForName.classList.remove('font-montserrat', 'font-ubuntu');
       inputComicSans.checked = true;
     } else if (dataObject.typography === 'm') {
       fontForName.classList.add('font-montserrat');
-      fontForName.classList.remove('font-comic');
-      fontForName.classList.remove('font-ubuntu');
+      fontForName.classList.remove('font-comic', 'font-ubuntu');
       inputMontserrat.checked = true;
     } else if (dataObject.typography === 'u') {
       fontForName.classList.add('font-ubuntu');
-      fontForName.classList.remove('font-montserrat');
-      fontForName.classList.remove('font-comic');
+      fontForName.classList.remove('font-montserrat', 'font-comic');
       inputUbuntu.checked = true;
     }
 
     const colorForName = document.querySelector('.profile__data');
     if (dataObject.palette === '1') {
       colorForName.classList.add('green');
-      colorForName.classList.remove('red');
-      colorForName.classList.remove('gray');
+      colorForName.classList.remove('red', 'gray');
       inputGreen.checked = true;
     } else if (dataObject.palette === '2') {
       colorForName.classList.add('red');
-      colorForName.classList.remove('gray');
-      colorForName.classList.remove('green');
+      colorForName.classList.remove('gray', 'green');
       inputRed.checked = true;
     } else if (dataObject.palette === '3') {
       colorForName.classList.add('gray');
-      colorForName.classList.remove('red');
-      colorForName.classList.remove('green');
+      colorForName.classList.remove('red', 'green');
       inputGray.checked = true;
     }
 
@@ -420,6 +414,14 @@ function resetAll() {
   fontForm.reset();
   fullNameLabel.innerText = 'Name Surname';
   jobPositionLabel.innerText = 'Job';
+  const colorForName = document.querySelector('.profile__data');
+  colorForName.classList.add('green');
+  colorForName.classList.remove('red', 'gray');
+  const fontForName = document.querySelector('.profile__data-group');
+  fontForName.classList.add('font-comic');
+  fontForName.classList.remove('font-montserrat', 'font-ubuntu');
+  const skillsTags = document.querySelector('#container-checkboxes-card');
+  skillsTags.innerHTML = '';
   profileImages[0].style.backgroundImage = dataObject.photo;
   profileImages[1].style.backgroundImage = dataObject.photo;
 }
