@@ -2,7 +2,7 @@
 
 ## Welcome to Card Awesome Profile Cards, a repo made by the UNDEFINED TEAM.
 
-Initially, this repository was created to bring life to a [website](http://beta.adalab.es/easley-s2-undefined/) where you could create a business card so as to improve your professional environment. While we were working on the project, we discovered that this repository is also a great open source **tool to learn for Junior Front-end Developers**. 🌈
+Initially, this repository was created to bring life to a [website](http://palomaviolin.github.io/easley-s2-undefined/) where you could create a business card so as to improve your professional environment. While we were working on the project, we discovered that this repository is also a great open source **tool to learn for Junior Front-end Developers**. 🌈
 
 💪  We encourage people to participate in our repo. You could download or clone the repo and contribute to it.
 
@@ -27,7 +27,7 @@ This project contains a node/gulp package with SCSS, a system of HTML templates 
 ![](docs/assets/images/url_clone.png)
 ![](docs/assets/images/git_clone.png)
 
-2. Write `$ npm install` and press enter, in order to activate the **Gulp tasks** that are included in the project. (**npm install** to install the necessary packages to convert SASS to CSS, minify, etc). Also you start the repo with `$ gulp` 
+2. Write `$ npm install` and press enter, in order to activate the **Gulp tasks** that are included in the project. (**npm install** to install the necessary packages to convert SASS to CSS, minify, etc). Also you start the repo with `$ gulp`
 Note: We have incorporated the gulp package from Adalab: [Adalab web starter kit](https://github.com/Adalab/Adalab-web-starter-kit).
 
 ![](docs/assets/images/npm_install.png)
